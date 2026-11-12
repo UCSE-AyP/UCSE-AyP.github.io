@@ -718,7 +718,159 @@
         .content-section { padding: 20px; }
         .exam-header-bar { flex-direction: column; align-items: flex-start; }
       }
+    
+        /* === UCSE Password Gate (dialog + forms best practices) === */
+        html[data-auth-locked="true"] body > :not(#ucse-auth-dialog):not(script):not(style) {
+            display: none !important;
+        }
+        @media print {
+            html[data-auth-locked="true"] body {
+                display: none !important;
+            }
+        }
+        #ucse-auth-dialog {
+            border: 0;
+            border-radius: 14px;
+            padding: 0;
+            max-width: 420px;
+            width: calc(100% - 32px);
+            background: #ffffff;
+            color: #1e293b;
+            box-shadow: 0 20px 50px rgba(15, 23, 42, 0.35);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+        #ucse-auth-dialog[open] {
+            display: block;
+        }
+        #ucse-auth-dialog:modal {
+            overscroll-behavior: contain;
+        }
+        #ucse-auth-dialog::backdrop {
+            background: linear-gradient(135deg, rgba(31, 55, 99, 0.96) 0%, rgba(15, 23, 42, 0.98) 100%);
+            overflow: hidden;
+            overscroll-behavior: contain;
+        }
+        .ucse-auth-header {
+            background: linear-gradient(135deg, #1f3763 0%, #2a5298 100%);
+            color: #ffffff;
+            padding: 22px 24px;
+            border-bottom: 4px solid #ffd800;
+            border-radius: 14px 14px 0 0;
+            text-align: center;
+        }
+        .ucse-auth-header h2 {
+            margin: 0 0 4px 0;
+            font-size: 1.2rem;
+            letter-spacing: 0.4px;
+            text-transform: uppercase;
+            color: #ffffff;
+        }
+        .ucse-auth-header p {
+            margin: 0;
+            font-size: 0.875rem;
+            opacity: 0.92;
+            color: #f8fafc;
+        }
+        .ucse-auth-body {
+            padding: 24px;
+        }
+        .ucse-auth-field {
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            gap: 0.35rem;
+            margin-block-end: 1.25rem;
+        }
+        .ucse-auth-field label {
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: #1f3763;
+            display: inline-block;
+            padding: 6px 0;
+            margin: -6px 0;
+        }
+        .ucse-auth-input-wrap {
+            display: flex;
+            gap: 8px;
+            align-items: stretch;
+        }
+        .ucse-auth-input-wrap input {
+            flex: 1;
+            font: inherit;
+            font-size: max(1rem, 1em);
+            padding: 0.75rem 0.9rem;
+            min-height: 48px;
+            border: 2px solid #64748b;
+            border-radius: 8px;
+            box-sizing: border-box;
+            color: #0f172a;
+            background: #f8fafc;
+        }
+        .ucse-auth-input-wrap input:focus-visible,
+        .ucse-auth-toggle:focus-visible,
+        .ucse-auth-submit:focus-visible {
+            outline: 3px solid #2a5298;
+            outline-offset: 2px;
+        }
+        .ucse-auth-input-wrap input[aria-invalid="true"] {
+            border-color: #dc2626;
+            background: #fef2f2;
+        }
+        .ucse-auth-toggle {
+            font: inherit;
+            font-size: 0.875rem;
+            font-weight: 600;
+            min-height: 48px;
+            min-width: 72px;
+            padding: 0 12px;
+            border: 2px solid #cbd5e1;
+            border-radius: 8px;
+            background: #f1f5f9;
+            color: #1e293b;
+            cursor: pointer;
+        }
+        .ucse-auth-hint {
+            font-size: 0.82rem;
+            color: #475569;
+        }
+        .ucse-auth-error {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: #b91c1c;
+            min-height: 1.35rem;
+            visibility: hidden;
+        }
+        .ucse-auth-error[data-visible="true"] {
+            visibility: visible;
+        }
+        .ucse-auth-submit {
+            width: 100%;
+            font: inherit;
+            font-size: max(1rem, 1em);
+            font-weight: 700;
+            min-height: 48px;
+            padding: 0.75rem 1rem;
+            border: 0;
+            border-radius: 8px;
+            background: #1f3763;
+            color: #ffffff;
+            cursor: pointer;
+            transition: background 0.15s ease;
+        }
+        .ucse-auth-submit:hover {
+            background: #2a5298;
+        }
+
     </style>
+    <script>
+        try {
+            if (sessionStorage.getItem('ucse_exam_unlocked') !== '1') {
+                document.documentElement.setAttribute('data-auth-locked', 'true');
+            }
+        } catch (e) {
+            document.documentElement.setAttribute('data-auth-locked', 'true');
+        }
+    </script>
 </head>
 <body class="teal">
 
@@ -1495,5 +1647,115 @@ void mostrarTabla(const ReservaHotel arr[], int tam) {
         }
       });
     </script>
+
+    <dialog id="ucse-auth-dialog" closedby="none" aria-labelledby="ucse-auth-title">
+        <div class="ucse-auth-header">
+            <h2 id="ucse-auth-title">Acceso Restringido al Examen</h2>
+            <p>Algoritmos y Programación • UCSE</p>
+        </div>
+        <div class="ucse-auth-body">
+            <form id="ucse-auth-form" method="dialog" novalidate>
+                <div class="ucse-auth-field">
+                    <label for="ucse-auth-pass">Contraseña de habilitación <span aria-hidden="true">*</span></label>
+                    <div class="ucse-auth-input-wrap">
+                        <input id="ucse-auth-pass" name="exam_password" type="password" inputmode="numeric" autocomplete="current-password" autocorrect="off" autocapitalize="none" spellcheck="false" enterkeyhint="done" aria-describedby="ucse-auth-hint ucse-auth-error" required autofocus>
+                        <button type="button" id="ucse-auth-toggle" class="ucse-auth-toggle" aria-pressed="false" aria-label="Mostrar contraseña">Mostrar</button>
+                    </div>
+                    <span id="ucse-auth-hint" class="ucse-auth-hint">Solicite la clave numérica al docente en el aula.</span>
+                    <div id="ucse-auth-error" class="ucse-auth-error" role="alert" aria-live="polite">Contraseña incorrecta. Acceso bloqueado.</div>
+                </div>
+                <button type="submit" class="ucse-auth-submit">Desbloquear Examen</button>
+            </form>
+        </div>
+    </dialog>
+    <script>
+        (function () {
+            const STORAGE_KEY = 'ucse_exam_unlocked';
+            const EXPECTED_SIG = 1076444563;
+            const dialog = document.getElementById('ucse-auth-dialog');
+            const form = document.getElementById('ucse-auth-form');
+            const input = document.getElementById('ucse-auth-pass');
+            const errorEl = document.getElementById('ucse-auth-error');
+            const toggleBtn = document.getElementById('ucse-auth-toggle');
+
+            function sig(str) {
+                let h = 2166136261 >>> 0;
+                for (let i = 0; i < str.length; i++) {
+                    h ^= str.charCodeAt(i);
+                    h = Math.imul(h, 16777619) >>> 0;
+                }
+                return h >>> 0;
+            }
+
+            function isUnlocked() {
+                try {
+                    return sessionStorage.getItem(STORAGE_KEY) === '1';
+                } catch (e) {
+                    return false;
+                }
+            }
+
+            function markUnlocked() {
+                try {
+                    sessionStorage.setItem(STORAGE_KEY, '1');
+                } catch (e) {}
+            }
+
+            if (isUnlocked()) {
+                document.documentElement.removeAttribute('data-auth-locked');
+                return;
+            }
+
+            document.documentElement.setAttribute('data-auth-locked', 'true');
+            if (dialog && typeof dialog.showModal === 'function' && !dialog.open) {
+                dialog.showModal();
+            }
+
+            dialog.addEventListener('cancel', function (e) {
+                if (!isUnlocked()) {
+                    e.preventDefault();
+                    errorEl.setAttribute('data-visible', 'true');
+                    input.setAttribute('aria-invalid', 'true');
+                    input.focus();
+                }
+            });
+
+            dialog.addEventListener('close', function () {
+                dialog.returnValue = '';
+                if (!isUnlocked()) {
+                    dialog.showModal();
+                }
+            });
+
+            input.addEventListener('input', function () {
+                input.removeAttribute('aria-invalid');
+                errorEl.removeAttribute('data-visible');
+            });
+
+            toggleBtn.addEventListener('click', function () {
+                const showing = input.type === 'text';
+                input.type = showing ? 'password' : 'text';
+                toggleBtn.setAttribute('aria-pressed', String(!showing));
+                toggleBtn.setAttribute('aria-label', showing ? 'Mostrar contraseña' : 'Ocultar contraseña');
+                toggleBtn.textContent = showing ? 'Mostrar' : 'Ocultar';
+                input.focus();
+            });
+
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+                if (sig(input.value.trim()) === EXPECTED_SIG) {
+                    markUnlocked();
+                    document.documentElement.removeAttribute('data-auth-locked');
+                    dialog.close();
+                } else {
+                    input.setAttribute('aria-invalid', 'true');
+                    errorEl.setAttribute('data-visible', 'true');
+                    input.select();
+                    input.focus();
+                }
+            });
+        })();
+    </script>
+
 </body>
 </html>
