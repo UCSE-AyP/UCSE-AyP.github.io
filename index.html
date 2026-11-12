@@ -338,6 +338,7 @@
         }
 
         @container (max-width: 780px) {
+
             .grid-temas,
             .grid-temas.is-single {
                 grid-template-columns: 1fr;
@@ -601,20 +602,24 @@
                 translate: none;
                 transition-duration: 0.1s;
             }
+
             @starting-style {
                 .card-tema {
                     translate: none;
                 }
             }
+
             .card-tema:where([hidden], [data-closing]) {
                 translate: none;
             }
+
             .btn-start,
             .path-card,
             .btn-filter,
             .quick-link {
                 transition: none !important;
             }
+
             .card-tema:hover,
             .btn-start:hover {
                 transform: none !important;
@@ -622,6 +627,7 @@
         }
 
         @media (forced-colors: active) {
+
             .card-tema,
             .welcome-card,
             .path-card,
@@ -630,165 +636,14 @@
             .guidance-banner {
                 border: 2px solid CanvasText !important;
             }
+
             .btn-start,
             .btn-filter,
             .quick-link {
                 border: 2px solid ButtonText !important;
             }
         }
-    
-        /* === UCSE Password Gate (dialog + forms best practices) === */
-        html[data-auth-locked="true"] body > :not(#ucse-auth-dialog):not(script):not(style) {
-            display: none !important;
-        }
-        @media print {
-            html[data-auth-locked="true"] body {
-                display: none !important;
-            }
-        }
-        #ucse-auth-dialog {
-            border: 0;
-            border-radius: 14px;
-            padding: 0;
-            max-width: 420px;
-            width: calc(100% - 32px);
-            background: #ffffff;
-            color: #1e293b;
-            box-shadow: 0 20px 50px rgba(15, 23, 42, 0.35);
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-        }
-        #ucse-auth-dialog[open] {
-            display: block;
-        }
-        #ucse-auth-dialog:modal {
-            overscroll-behavior: contain;
-        }
-        #ucse-auth-dialog::backdrop {
-            background: linear-gradient(135deg, rgba(31, 55, 99, 0.96) 0%, rgba(15, 23, 42, 0.98) 100%);
-            overflow: hidden;
-            overscroll-behavior: contain;
-        }
-        .ucse-auth-header {
-            background: linear-gradient(135deg, #1f3763 0%, #2a5298 100%);
-            color: #ffffff;
-            padding: 22px 24px;
-            border-bottom: 4px solid #ffd800;
-            border-radius: 14px 14px 0 0;
-            text-align: center;
-        }
-        .ucse-auth-header h2 {
-            margin: 0 0 4px 0;
-            font-size: 1.2rem;
-            letter-spacing: 0.4px;
-            text-transform: uppercase;
-            color: #ffffff;
-        }
-        .ucse-auth-header p {
-            margin: 0;
-            font-size: 0.875rem;
-            opacity: 0.92;
-            color: #f8fafc;
-        }
-        .ucse-auth-body {
-            padding: 24px;
-        }
-        .ucse-auth-field {
-            display: flex;
-            flex-direction: column;
-            align-items: stretch;
-            gap: 0.35rem;
-            margin-block-end: 1.25rem;
-        }
-        .ucse-auth-field label {
-            font-weight: 700;
-            font-size: 0.95rem;
-            color: #1f3763;
-            display: inline-block;
-            padding: 6px 0;
-            margin: -6px 0;
-        }
-        .ucse-auth-input-wrap {
-            display: flex;
-            gap: 8px;
-            align-items: stretch;
-        }
-        .ucse-auth-input-wrap input {
-            flex: 1;
-            font: inherit;
-            font-size: max(1rem, 1em);
-            padding: 0.75rem 0.9rem;
-            min-height: 48px;
-            border: 2px solid #64748b;
-            border-radius: 8px;
-            box-sizing: border-box;
-            color: #0f172a;
-            background: #f8fafc;
-        }
-        .ucse-auth-input-wrap input:focus-visible,
-        .ucse-auth-toggle:focus-visible,
-        .ucse-auth-submit:focus-visible {
-            outline: 3px solid #2a5298;
-            outline-offset: 2px;
-        }
-        .ucse-auth-input-wrap input[aria-invalid="true"] {
-            border-color: #dc2626;
-            background: #fef2f2;
-        }
-        .ucse-auth-toggle {
-            font: inherit;
-            font-size: 0.875rem;
-            font-weight: 600;
-            min-height: 48px;
-            min-width: 72px;
-            padding: 0 12px;
-            border: 2px solid #cbd5e1;
-            border-radius: 8px;
-            background: #f1f5f9;
-            color: #1e293b;
-            cursor: pointer;
-        }
-        .ucse-auth-hint {
-            font-size: 0.82rem;
-            color: #475569;
-        }
-        .ucse-auth-error {
-            font-size: 0.875rem;
-            font-weight: 600;
-            color: #b91c1c;
-            min-height: 1.35rem;
-            visibility: hidden;
-        }
-        .ucse-auth-error[data-visible="true"] {
-            visibility: visible;
-        }
-        .ucse-auth-submit {
-            width: 100%;
-            font: inherit;
-            font-size: max(1rem, 1em);
-            font-weight: 700;
-            min-height: 48px;
-            padding: 0.75rem 1rem;
-            border: 0;
-            border-radius: 8px;
-            background: #1f3763;
-            color: #ffffff;
-            cursor: pointer;
-            transition: background 0.15s ease;
-        }
-        .ucse-auth-submit:hover {
-            background: #2a5298;
-        }
-
     </style>
-    <script>
-        try {
-            if (sessionStorage.getItem('ucse_exam_unlocked') !== '1') {
-                document.documentElement.setAttribute('data-auth-locked', 'true');
-            }
-        } catch (e) {
-            document.documentElement.setAttribute('data-auth-locked', 'true');
-        }
-    </script>
 </head>
 
 <body>
@@ -800,9 +655,11 @@
         <p>Facultad de Ciencias de la Salud y Tecnologías de la Información • Cátedra de Algoritmos y Programación</p>
         <p class="header-subtitle">Recuperatorio Integral 2026 — Portal Unificado de Módulos 3 y 4</p>
         <div class="badge-bar">
-            <span class="badge badge-student"><i class="fas fa-user-graduate" aria-hidden="true"></i> Acceso Unificado de Estudiantes</span>
+            <span class="badge badge-student"><i class="fas fa-user-graduate" aria-hidden="true"></i> Acceso Unificado
+                de Estudiantes</span>
             <span class="badge"><i class="fas fa-layer-group" aria-hidden="true"></i> Módulo 3: Arreglos 1D</span>
-            <span class="badge"><i class="fas fa-cubes" aria-hidden="true"></i> Módulo 4: Structs AoS + Ordenamiento</span>
+            <span class="badge"><i class="fas fa-cubes" aria-hidden="true"></i> Módulo 4: Structs AoS +
+                Ordenamiento</span>
         </div>
     </header>
 
@@ -810,9 +667,12 @@
 
         <!-- SELECTOR DE MODALIDAD SEGUN SITUACION DEL ALUMNO -->
         <section class="welcome-card" aria-labelledby="sec-modalidad">
-            <h2 id="sec-modalidad"><i class="fas fa-route" aria-hidden="true"></i> Identifique qué Módulos debe Recuperar</h2>
+            <h2 id="sec-modalidad"><i class="fas fa-route" aria-hidden="true"></i> Identifique qué Módulos debe
+                Recuperar</h2>
             <p class="welcome-lead">
-                Según su condición académica, puede tener que rendir únicamente el <strong>Módulo 3</strong>, únicamente el <strong>Módulo 4</strong> o <strong>ambos módulos en conjunto</strong>. Seleccione su escenario para mostrar únicamente los portales que debe rendir, o ingrese directamente abajo.
+                Según su condición académica, puede tener que rendir únicamente el <strong>Módulo 3</strong>, únicamente
+                el <strong>Módulo 4</strong> o <strong>ambos módulos en conjunto</strong>. Seleccione su escenario para
+                mostrar únicamente los portales que debe rendir, o ingrese directamente abajo.
             </p>
 
             <div class="path-grid" role="group" aria-label="Filtrar portales según situación del alumno">
@@ -820,7 +680,9 @@
                     <div>
                         <span class="path-tag">Escenario A • 1 Módulo</span>
                         <h3><i class="fas fa-list-ol" aria-hidden="true"></i> Solo Recupera Módulo 3</h3>
-                        <p>Rinde exclusivamente el examen práctico en C++ sobre arreglos 1D (<code>float[15]</code>): 5 funciones puras con menú y <code>main()</code> ya provistos, compactación <em>Shift-Left</em> y estadísticas.</p>
+                        <p>Rinde exclusivamente el examen práctico en C++ sobre arreglos 1D (<code>float[15]</code>): 5
+                            funciones puras con menú y <code>main()</code> ya provistos, compactación
+                            <em>Shift-Left</em> y estadísticas.</p>
                     </div>
                     <button type="button" class="btn-filter" data-mode="m3" aria-pressed="false">
                         <i class="fas fa-eye" aria-hidden="true"></i> Mostrar Solo Módulo 3
@@ -831,7 +693,9 @@
                     <div>
                         <span class="path-tag">Escenario B • 1 Módulo</span>
                         <h3><i class="fas fa-table" aria-hidden="true"></i> Solo Recupera Módulo 4</h3>
-                        <p>Rinde la instancia bimodal: 75% laboratorio C++ (definición de <code>struct</code>, conexión del <code>switch</code> y 4 funciones nucleares con vistas y primitivas auxiliares ya provistas) + 25% traza escrita en papel.</p>
+                        <p>Rinde la instancia bimodal: 75% laboratorio C++ (definición de <code>struct</code>, conexión
+                            del <code>switch</code> y 4 funciones nucleares con vistas y primitivas auxiliares ya
+                            provistas) + 25% traza escrita en papel.</p>
                     </div>
                     <button type="button" class="btn-filter" data-mode="m4" aria-pressed="false">
                         <i class="fas fa-eye" aria-hidden="true"></i> Mostrar Solo Módulo 4
@@ -842,7 +706,9 @@
                     <div>
                         <span class="path-tag">Escenario C • Integral</span>
                         <h3><i class="fas fa-layer-group" aria-hidden="true"></i> Recupera Ambos (3 y 4)</h3>
-                        <p>Debe completar ambos módulos en la misma fecha. Las consignas están calibradas sin superposición entre M3 y M4; trabaje en archivos <code>.cpp</code> independientes y reserve tiempo para la hoja escrita.</p>
+                        <p>Debe completar ambos módulos en la misma fecha. Las consignas están calibradas sin
+                            superposición entre M3 y M4; trabaje en archivos <code>.cpp</code> independientes y reserve
+                            tiempo para la hoja escrita.</p>
                     </div>
                     <button type="button" class="btn-filter" data-mode="both" aria-pressed="true">
                         <i class="fas fa-check-double" aria-hidden="true"></i> Mostrar Ambos Módulos
@@ -853,7 +719,9 @@
             <div id="guidance-banner" class="guidance-banner" role="status" aria-live="polite">
                 <i class="fas fa-info-circle" aria-hidden="true"></i>
                 <div>
-                    <strong>Modo Integral Activo (Módulo 3 + Módulo 4):</strong> Se muestran ambos portales calibrados sin contenidos duplicados. Verifique qué Tema (Tema 1 o Tema 2) le fue asignado en cada módulo y reserve tiempo para la instancia escrita del Módulo 4.
+                    <strong>Modo Integral Activo (Módulo 3 + Módulo 4):</strong> Se muestran ambos portales calibrados
+                    sin contenidos duplicados. Verifique qué Tema (Tema 1 o Tema 2) le fue asignado en cada módulo y
+                    reserve tiempo para la instancia escrita del Módulo 4.
                 </div>
             </div>
         </section>
@@ -862,7 +730,8 @@
         <section aria-labelledby="sec-portales">
             <div class="section-header">
                 <h2 id="sec-portales">Portales de Examen Disponibles</h2>
-                <p>Se muestran los portales correspondientes al escenario seleccionado. Ingrese para leer las instrucciones y abrir su Tema asignado.</p>
+                <p>Se muestran los portales correspondientes al escenario seleccionado. Ingrese para leer las
+                    instrucciones y abrir su Tema asignado.</p>
             </div>
 
             <div id="grid-temas" class="grid-temas">
@@ -877,7 +746,10 @@
                         <h3 class="tema-title">3er Examen Recuperatorio</h3>
                         <div class="tema-subtitle">Arreglos Unidimensionales y Operaciones Fundamentales</div>
                         <p class="tema-desc">
-                            Procesamiento de series técnicas sobre <code>float[15]</code> partiendo de plantilla con <code>MostrarMenu</code> y <code>main()</code> completos. Implemente exactamente 5 funciones puras: alta validada con <code>while</code>, filtro por umbral, búsqueda lineal, baja física <em>Shift-Left</em> y estadísticas.
+                            Procesamiento de series técnicas sobre <code>float[15]</code> partiendo de plantilla con
+                            <code>MostrarMenu</code> y <code>main()</code> completos. Implemente exactamente 5 funciones
+                            puras: alta validada con <code>while</code>, filtro por umbral, búsqueda lineal, baja física
+                            <em>Shift-Left</em> y estadísticas.
                         </p>
 
                         <div class="spec-box">
@@ -887,7 +759,8 @@
                             </div>
                             <div class="spec-row">
                                 <span class="spec-label">Estructura:</span>
-                                <span class="spec-value"><code>float[15]</code> (sin <code>struct</code> ni ordenamiento)</span>
+                                <span class="spec-value"><code>float[15]</code> (sin <code>struct</code> ni
+                                    ordenamiento)</span>
                             </div>
                             <div class="spec-row">
                                 <span class="spec-label">Tema 1:</span>
@@ -925,7 +798,11 @@
                         <h3 class="tema-title">4to Examen Recuperatorio</h3>
                         <div class="tema-subtitle">Arreglos de Estructuras (AoS) y Ordenamiento Bimodal</div>
                         <p class="tema-desc">
-                            Gestión de registros <code>struct</code> (<code>CAPACIDAD = 15</code>, 4 registros precargados, esqueleto de <code>main()</code> con <code>switch</code> a completar, vistas y primitivas de M3 provistas). Implemente el <code>struct</code>, inserción <em>Shift-Right</em> con clave única, modificación <em>in-place</em>, Burbuja Mejorada con <code>intercambiar()</code> y traza escrita.
+                            Gestión de registros <code>struct</code> (<code>CAPACIDAD = 15</code>, 4 registros
+                            precargados, esqueleto de <code>main()</code> con <code>switch</code> a completar, vistas y
+                            primitivas de M3 provistas). Implemente el <code>struct</code>, inserción
+                            <em>Shift-Right</em> con clave única, modificación <em>in-place</em>, Burbuja Mejorada con
+                            <code>intercambiar()</code> y traza escrita.
                         </p>
 
                         <div class="spec-box">
@@ -968,24 +845,31 @@
 
         <!-- REGLAS COMUNES DE ENTREGA -->
         <section class="welcome-card" aria-labelledby="sec-reglas">
-            <h2 id="sec-reglas"><i class="fas fa-shield-alt" aria-hidden="true"></i> Reglas Comunes y Organización de la Entrega</h2>
+            <h2 id="sec-reglas"><i class="fas fa-shield-alt" aria-hidden="true"></i> Reglas Comunes y Organización de la
+                Entrega</h2>
             <div class="rules-grid">
                 <div class="rule-item">
                     <i class="fas fa-file-code" aria-hidden="true"></i>
                     <div>
-                        <strong>Archivos Independientes:</strong> Si recupera ambos módulos, cree un archivo <code>.cpp</code> distinto por cada módulo (por ejemplo, <code>m3_apellido.cpp</code> y <code>m4_apellido.cpp</code>) para compilar y entregar sin sobreescribir trabajo.
+                        <strong>Archivos Independientes:</strong> Si recupera ambos módulos, cree un archivo
+                        <code>.cpp</code> distinto por cada módulo (por ejemplo, <code>m3_apellido.cpp</code> y
+                        <code>m4_apellido.cpp</code>) para compilar y entregar sin sobreescribir trabajo.
                     </div>
                 </div>
                 <div class="rule-item">
                     <i class="fas fa-ban" aria-hidden="true"></i>
                     <div>
-                        <strong>Contratos de C++ Estrictos:</strong> No utilice variables globales mutables, <code>std::vector</code> ni asistentes externos/IA. Respete los prototipos, uso de <code>const</code> y referencias pedidos en cada enunciado.
+                        <strong>Contratos de C++ Estrictos:</strong> No utilice variables globales mutables,
+                        <code>std::vector</code> ni asistentes externos/IA. Respete los prototipos, uso de
+                        <code>const</code> y referencias pedidos en cada enunciado.
                     </div>
                 </div>
                 <div class="rule-item">
                     <i class="fas fa-clock" aria-hidden="true"></i>
                     <div>
-                        <strong>Gestión de Tiempo (Ambos Módulos):</strong> Verifique en cada portal la asignación de tema con el docente, compile de forma incremental tras cada función y reserve tiempo al final para la instancia escrita del Módulo 4.
+                        <strong>Gestión de Tiempo (Ambos Módulos):</strong> Verifique en cada portal la asignación de
+                        tema con el docente, compile de forma incremental tras cada función y reserve tiempo al final
+                        para la instancia escrita del Módulo 4.
                     </div>
                 </div>
             </div>
@@ -1094,116 +978,6 @@
             });
 
             setMode('both');
-        })();
-    </script>
-
-
-    <dialog id="ucse-auth-dialog" closedby="none" aria-labelledby="ucse-auth-title">
-        <div class="ucse-auth-header">
-            <h2 id="ucse-auth-title">Acceso Restringido al Examen</h2>
-            <p>Algoritmos y Programación • UCSE</p>
-        </div>
-        <div class="ucse-auth-body">
-            <form id="ucse-auth-form" method="dialog" novalidate>
-                <div class="ucse-auth-field">
-                    <label for="ucse-auth-pass">Contraseña de habilitación <span aria-hidden="true">*</span></label>
-                    <div class="ucse-auth-input-wrap">
-                        <input id="ucse-auth-pass" name="exam_password" type="password" inputmode="numeric" autocomplete="current-password" autocorrect="off" autocapitalize="none" spellcheck="false" enterkeyhint="done" aria-describedby="ucse-auth-hint ucse-auth-error" required autofocus>
-                        <button type="button" id="ucse-auth-toggle" class="ucse-auth-toggle" aria-pressed="false" aria-label="Mostrar contraseña">Mostrar</button>
-                    </div>
-                    <span id="ucse-auth-hint" class="ucse-auth-hint">Solicite la clave numérica al docente en el aula.</span>
-                    <div id="ucse-auth-error" class="ucse-auth-error" role="alert" aria-live="polite">Contraseña incorrecta. Acceso bloqueado.</div>
-                </div>
-                <button type="submit" class="ucse-auth-submit">Desbloquear Examen</button>
-            </form>
-        </div>
-    </dialog>
-    <script>
-        (function () {
-            const STORAGE_KEY = 'ucse_exam_unlocked';
-            const EXPECTED_SIG = 1076444563;
-            const dialog = document.getElementById('ucse-auth-dialog');
-            const form = document.getElementById('ucse-auth-form');
-            const input = document.getElementById('ucse-auth-pass');
-            const errorEl = document.getElementById('ucse-auth-error');
-            const toggleBtn = document.getElementById('ucse-auth-toggle');
-
-            function sig(str) {
-                let h = 2166136261 >>> 0;
-                for (let i = 0; i < str.length; i++) {
-                    h ^= str.charCodeAt(i);
-                    h = Math.imul(h, 16777619) >>> 0;
-                }
-                return h >>> 0;
-            }
-
-            function isUnlocked() {
-                try {
-                    return sessionStorage.getItem(STORAGE_KEY) === '1';
-                } catch (e) {
-                    return false;
-                }
-            }
-
-            function markUnlocked() {
-                try {
-                    sessionStorage.setItem(STORAGE_KEY, '1');
-                } catch (e) {}
-            }
-
-            if (isUnlocked()) {
-                document.documentElement.removeAttribute('data-auth-locked');
-                return;
-            }
-
-            document.documentElement.setAttribute('data-auth-locked', 'true');
-            if (dialog && typeof dialog.showModal === 'function' && !dialog.open) {
-                dialog.showModal();
-            }
-
-            dialog.addEventListener('cancel', function (e) {
-                if (!isUnlocked()) {
-                    e.preventDefault();
-                    errorEl.setAttribute('data-visible', 'true');
-                    input.setAttribute('aria-invalid', 'true');
-                    input.focus();
-                }
-            });
-
-            dialog.addEventListener('close', function () {
-                dialog.returnValue = '';
-                if (!isUnlocked()) {
-                    dialog.showModal();
-                }
-            });
-
-            input.addEventListener('input', function () {
-                input.removeAttribute('aria-invalid');
-                errorEl.removeAttribute('data-visible');
-            });
-
-            toggleBtn.addEventListener('click', function () {
-                const showing = input.type === 'text';
-                input.type = showing ? 'password' : 'text';
-                toggleBtn.setAttribute('aria-pressed', String(!showing));
-                toggleBtn.setAttribute('aria-label', showing ? 'Mostrar contraseña' : 'Ocultar contraseña');
-                toggleBtn.textContent = showing ? 'Mostrar' : 'Ocultar';
-                input.focus();
-            });
-
-            form.addEventListener('submit', function (e) {
-                e.preventDefault();
-                if (sig(input.value.trim()) === EXPECTED_SIG) {
-                    markUnlocked();
-                    document.documentElement.removeAttribute('data-auth-locked');
-                    dialog.close();
-                } else {
-                    input.setAttribute('aria-invalid', 'true');
-                    errorEl.setAttribute('data-visible', 'true');
-                    input.select();
-                    input.focus();
-                }
-            });
         })();
     </script>
 

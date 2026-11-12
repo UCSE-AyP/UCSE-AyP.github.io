@@ -1,1185 +1,1195 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🏨 Examen Recuperatorio Módulo 4 - Tema 2 (Sistema de Reservas Hoteleras (AoS)) - UCSE</title>
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-    <!-- Google Fonts Fira Code -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-      /* Paleta de colores institucional UCSE (https://www.ucse.edu.ar/) */
-      :root {
-        --ucse-azul-oscuro: #1f3763;
-        --ucse-azul-medio: #2a5298;
-        --ucse-amarillo: #ffd800;
-        --ucse-cian: #00bfff;
-        --ucse-rosa: #ff007f;
-        --ucse-blanco: #ffffff;
-        --ucse-gris-fondo: #f8f9fa;
-        --ucse-texto: #333333;
-      }
 
-      /* Robustez y compatibilidad de tipografías offline para laboratorios */
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🏨 Examen Recuperatorio Módulo 4 - Tema 2 (Sistema de Reservas Hoteleras (AoS)) - UCSE</title>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <!-- Google Fonts Fira Code -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* Paleta de colores institucional UCSE (https://www.ucse.edu.ar/) */
+    :root {
+      --ucse-azul-oscuro: #1f3763;
+      --ucse-azul-medio: #2a5298;
+      --ucse-amarillo: #ffd800;
+      --ucse-cian: #00bfff;
+      --ucse-rosa: #ff007f;
+      --ucse-blanco: #ffffff;
+      --ucse-gris-fondo: #f8f9fa;
+      --ucse-texto: #333333;
+    }
+
+    /* Robustez y compatibilidad de tipografías offline para laboratorios */
     @font-face {
       font-family: 'Fira Code';
       src: local('Consolas'), local('Courier New'), monospace;
     }
+
     body {
       font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
     }
-    code, pre, .console {
+
+    code,
+    pre,
+    .console {
       font-family: 'Fira Code', 'Consolas', 'Courier New', monospace;
     }
+
     body {
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-        color: var(--ucse-texto);
-        background-color: var(--ucse-gris-fondo);
-        line-height: 1.6;
-        margin: 0;
-        padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: var(--ucse-texto);
+      background-color: var(--ucse-gris-fondo);
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+    }
+
+    a {
+      text-decoration: none;
+      color: #464feb;
+    }
+
+    tr th,
+    tr td {
+      border: 1px solid #e6e6e6;
+    }
+
+    tr th {
+      background-color: #f5f5f5;
+      color: #1f3763;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      text-wrap: balance;
+    }
+
+    p,
+    li,
+    blockquote {
+      text-wrap: pretty;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(15px);
       }
 
-      a {
-        text-decoration: none;
-        color: #464feb;
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes slideInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-25px);
       }
 
-      tr th, tr td {
-        border: 1px solid #e6e6e6;
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        transform: scale(1);
       }
 
-      tr th {
-        background-color: #f5f5f5;
-        color: #1f3763;
+      50% {
+        transform: scale(1.03);
+      }
+    }
+
+    @keyframes rotate {
+      from {
+        transform: rotate(0deg);
       }
 
-      h1, h2, h3, h4, h5, h6 {
-        text-wrap: balance;
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes shimmer {
+      0% {
+        background-position: -1000px 0;
       }
 
-      p, li, blockquote {
-        text-wrap: pretty;
+      100% {
+        background-position: 1000px 0;
       }
+    }
 
-      @keyframes fadeIn {
-        from { opacity: 0; transform: translateY(15px); }
-        to { opacity: 1; transform: translateY(0); }
+    /* Encabezado UCSE */
+    .header-ucse {
+      background: linear-gradient(135deg, #1f3763 0%, #2a5298 100%);
+      color: #ffffff;
+      padding: 22px 0;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .header-ucse::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.08), transparent);
+      animation: rotate 20s linear infinite;
+    }
+
+    .header-ucse .logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 8px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .header-ucse .logo img,
+    .header-ucse .logo .logo-shield {
+      height: 76px;
+      width: 76px;
+      border-radius: 50%;
+      box-shadow: 0 2px 10px rgba(255, 255, 255, 0.25);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.15);
+      color: #ffd800;
+      font-size: 34px;
+      border: 2px solid rgba(255, 216, 0, 0.6);
+    }
+
+    .header-ucse .logo img:hover,
+    .header-ucse .logo .logo-shield:hover {
+      transform: scale(1.08) rotate(4deg);
+      box-shadow: 0 4px 20px rgba(255, 216, 0, 0.45);
+    }
+
+    .header-ucse h1 {
+      margin: 0;
+      font-size: 2.2em;
+      font-weight: 500;
+      letter-spacing: 0.8px;
+      color: #ffffff;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .header-ucse .subtitle {
+      font-size: 1.1em;
+      color: #e2e8f0;
+      margin-top: 5px;
+    }
+
+    /* Barra de navegación estilo UCSE */
+    .wp-block-navigation {
+      background: #1f3763;
+      padding: 0;
+      margin: 0;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-menu {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .nav-menu li {
+      margin: 0;
+    }
+
+    .nav-menu a {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 20px;
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.95em;
+      transition: all 0.3s ease;
+      border-bottom: 3px solid transparent;
+    }
+
+    .nav-menu a:hover {
+      background: #00bfff;
+      color: #ffffff;
+      border-bottom-color: #ffd800;
+    }
+
+    .nav-menu a.active {
+      background: #ff007f;
+      color: #ffffff;
+      border-bottom-color: #ffd800;
+      font-weight: 600;
+    }
+
+    /* Contenedor Principal */
+    .main-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .content-section {
+      background: #ffffff;
+      padding: 32px;
+      margin: 24px 0;
+      border-radius: 8px;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+      animation: fadeIn 0.6s ease-out;
+    }
+
+    .content-section h1 {
+      color: var(--ucse-azul-oscuro);
+      margin-top: 0;
+      border-bottom: 3px solid var(--ucse-cian);
+      padding-bottom: 12px;
+    }
+
+    /* Header Bar de la Evaluación */
+    .exam-header-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 24px;
+      border-bottom: 3px solid var(--ucse-cian);
+      padding-bottom: 16px;
+    }
+
+    .exam-badges {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-bottom: 10px;
+    }
+
+    .main-exam-title {
+      border-bottom: none !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      color: var(--ucse-azul-oscuro);
+      font-size: 2.1em;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .badge-tema-code {
+      background: linear-gradient(135deg, #1f3763 0%, #2a5298 100%);
+      color: #ffd800;
+      font-size: 1.35em;
+      font-weight: 800;
+      letter-spacing: 2px;
+      padding: 8px 18px;
+      border-radius: 10px;
+      border: 2px solid #ffd800;
+      box-shadow: 0 4px 12px rgba(31, 55, 99, 0.25);
+      text-align: center;
+    }
+
+    /* Alertas y Secciones de Ejercicio */
+    .requirements-alert {
+      background: linear-gradient(135deg, #ffd800 0%, #ffe066 100%);
+      color: #1a1a1a;
+      padding: 20px 24px;
+      border-radius: 8px;
+      margin: 20px 0;
+      border-left: 5px solid #ff007f;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .requirements-alert:hover {
+      transform: translateX(4px);
+      box-shadow: 0 4px 15px rgba(255, 216, 0, 0.35);
+    }
+
+    .exercise-section {
+      background: #f8f9fa;
+      border: 2px solid #00bfff;
+      border-radius: 8px;
+      padding: 25px;
+      margin: 25px 0;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    .exercise-section::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #00bfff, #ffd800, #ff007f);
+      background-size: 200% 100%;
+      border-radius: 4px 4px 0 0;
+      animation: shimmer 3s linear infinite;
+    }
+
+    .exercise-section:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 25px rgba(0, 191, 255, 0.18);
+      border-color: #ffd800;
+    }
+
+    .exercise-title {
+      color: #1f3763;
+      margin-top: 0;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #e2e8f0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+      font-size: 1.35em;
+    }
+
+    .exercise-weight {
+      background: #00bfff;
+      color: #ffffff;
+      padding: 4px 14px;
+      border-radius: 20px;
+      font-size: 0.82em;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .icon-text {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 14px 0;
+    }
+
+    .icon-text i {
+      color: #00bfff;
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+
+    .requirements-alert .icon-text i {
+      color: #1f3763;
+    }
+
+    /* Misión y Tarjetas de Tareas */
+    .mission-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin: 18px 0;
+    }
+
+    .mission-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-left: 5px solid var(--ucse-azul-oscuro);
+      border-radius: 8px;
+      padding: 16px 20px;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+      position: relative;
+    }
+
+    .mission-card:hover {
+      transform: translateX(4px);
+      border-left-color: var(--ucse-cian);
+      box-shadow: 0 4px 15px rgba(0, 191, 255, 0.15);
+    }
+
+    .mission-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+
+    .mission-card-title {
+      font-weight: 700;
+      color: var(--ucse-azul-oscuro);
+      font-size: 1.05em;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .mission-card-desc {
+      margin: 0;
+      color: #475569;
+      font-size: 0.95em;
+      line-height: 1.55;
+    }
+
+    /* Tooltips Interactivos de Rúbrica */
+    .rubric-pill {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      background: linear-gradient(135deg, #1f3763 0%, #2a5298 100%);
+      color: #ffd800;
+      font-weight: 700;
+      font-size: 0.85em;
+      padding: 4px 12px;
+      border-radius: 20px;
+      border: 1px solid rgba(255, 216, 0, 0.5);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .rubric-pill:hover {
+      background: #ff007f;
+      color: #ffffff;
+      border-color: #ffd800;
+    }
+
+    .rubric-tooltip {
+      position: absolute;
+      bottom: calc(100% + 10px);
+      right: 0;
+      width: 270px;
+      background: #1f3763;
+      color: #ffffff;
+      padding: 12px 14px;
+      border-radius: 8px;
+      font-size: 0.82em;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+      border: 1px solid #ffd800;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.25s ease;
+      z-index: 50;
+      pointer-events: none;
+      line-height: 1.4;
+    }
+
+    .rubric-tooltip::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      right: 20px;
+      border-width: 6px;
+      border-style: solid;
+      border-color: #ffd800 transparent transparent transparent;
+    }
+
+    .rubric-pill:hover .rubric-tooltip {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(-4px);
+    }
+
+    /* Tabs de Casos de Prueba */
+    .test-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 18px;
+      border-bottom: 2px solid #e2e8f0;
+      padding-bottom: 10px;
+    }
+
+    .tab-btn {
+      background: #ffffff;
+      color: var(--ucse-azul-oscuro);
+      border: 2px solid #cbd5e1;
+      border-radius: 8px;
+      padding: 10px 18px;
+      font-weight: 600;
+      font-size: 0.92em;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .tab-btn:hover {
+      background: #f1f5f9;
+      border-color: var(--ucse-cian);
+      color: var(--ucse-azul-medio);
+    }
+
+    .tab-btn.active {
+      background: linear-gradient(135deg, #1f3763 0%, #2a5298 100%);
+      color: #ffffff;
+      border-color: #ffd800;
+      box-shadow: 0 4px 12px rgba(31, 55, 99, 0.25);
+    }
+
+    .tab-content {
+      display: none;
+      opacity: 0;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .tab-content.active {
+      display: block;
+      opacity: 1;
+      animation: fadeIn 0.4s ease-in-out;
+    }
+
+    .test-case-grid {
+      display: grid;
+      grid-template-columns: 4fr 8fr;
+      gap: 16px;
+    }
+
+    @media (max-width: 900px) {
+      .test-case-grid {
+        grid-template-columns: 1fr;
       }
+    }
 
-      @keyframes slideInLeft {
-        from { opacity: 0; transform: translateX(-25px); }
-        to { opacity: 1; transform: translateX(0); }
-      }
+    /* Terminales y Consolas de Código */
+    .terminal-box {
+      background: #0f172a;
+      border: 1px solid #334155;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+    }
 
-      @keyframes pulse {
-        0%, 100% { transform: scale(1); }
-        50% { transform: scale(1.03); }
-      }
+    .terminal-header {
+      background: #1e293b;
+      padding: 9px 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #334155;
+    }
 
-      @keyframes rotate {
-        from { transform: rotate(0deg); }
-        to { transform: rotate(360deg); }
-      }
+    .terminal-title {
+      font-size: 0.8em;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
 
-      @keyframes shimmer {
-        0% { background-position: -1000px 0; }
-        100% { background-position: 1000px 0; }
-      }
+    .terminal-dots {
+      display: flex;
+      gap: 6px;
+    }
 
-      /* Encabezado UCSE */
-      .header-ucse {
-        background: linear-gradient(135deg, #1f3763 0%, #2a5298 100%);
-        color: #ffffff;
-        padding: 22px 0;
-        text-align: center;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-        position: relative;
-        overflow: hidden;
-      }
+    .terminal-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
 
-      .header-ucse::before {
-        content: "";
-        position: absolute;
-        top: -50%;
-        left: -50%;
-        width: 200%;
-        height: 200%;
-        background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.08), transparent);
-        animation: rotate 20s linear infinite;
-      }
+    .dot-red {
+      background: #ef4444;
+    }
 
+    .dot-yellow {
+      background: #f59e0b;
+    }
+
+    .dot-green {
+      background: #10b981;
+    }
+
+    .terminal-body {
+      padding: 16px;
+      overflow-x: auto;
+    }
+
+    .console {
+      font-family: 'Fira Code', 'Consolas', 'Courier New', monospace;
+      font-size: 0.88em;
+      line-height: 1.55;
+      margin: 0;
+      white-space: pre-wrap;
+    }
+
+    .console-input {
+      color: #93c5fd;
+    }
+
+    .console-output {
+      color: #4ade80;
+    }
+
+    /* Tablas estilo WordPress UCSE */
+    .wp-block-table {
+      margin: 20px 0;
+      border-radius: 8px;
+      overflow-x: auto;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .wp-block-table table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #ffffff;
+    }
+
+    .wp-block-table th {
+      background-color: #f5f5f5;
+      color: #1f3763;
+      padding: 14px 15px;
+      text-align: left;
+      font-weight: 600;
+      border: 1px solid #e6e6e6;
+    }
+
+    .wp-block-table td {
+      padding: 12px 15px;
+      border: 1px solid #e6e6e6;
+      color: #333333;
+    }
+
+    .wp-block-table tr:nth-child(even) td {
+      background: #f8f9fa;
+    }
+
+    /* Rúbrica y Sección de Evaluación */
+    .grading-section {
+      background: linear-gradient(135deg, #ff007f 0%, #c90063 100%);
+      color: #ffffff;
+      padding: 28px;
+      border-radius: 8px;
+      margin: 28px 0;
+    }
+
+    .grading-section h2,
+    .grading-section>p {
+      color: #ffffff;
+    }
+
+    .grading-section h2 {
+      margin-top: 0;
+    }
+
+    .grading-section .wp-block-table table {
+      background: #ffffff;
+    }
+
+    .grading-section .wp-block-table th {
+      background-color: #f1f5f9 !important;
+      color: #1f3763 !important;
+      font-weight: 700;
+    }
+
+    .grading-section .wp-block-table td {
+      color: #1e293b !important;
+    }
+
+    .grading-section .wp-block-table td strong {
+      color: #1f3763 !important;
+      font-weight: 700;
+    }
+
+    .grading-section .wp-block-table td:last-child strong {
+      color: #c90063 !important;
+      font-weight: 700;
+      font-size: 1.05em;
+    }
+
+    /* Condiciones Formales */
+    .conditions-section {
+      background: #f8fafc;
+      border: 2px solid #e2e8f0;
+      border-left: 6px solid #1f3763;
+      border-radius: 8px;
+      padding: 24px;
+      margin: 28px 0;
+    }
+
+    .conditions-section h2 {
+      color: #1f3763;
+      margin-top: 0;
+      font-size: 1.35em;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    /* Footer */
+    .footer-info {
+      background: #1f3763;
+      color: #ffffff;
+      padding: 22px;
+      text-align: center;
+      margin-top: 40px;
+      border-top: 4px solid #ffd800;
+    }
+
+    .footer-info p {
+      margin: 5px 0;
+      color: #e2e8f0;
+    }
+
+    /* Media Queries */
+    @media (max-width: 768px) {
       .header-ucse .logo {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 20px;
-        margin-bottom: 8px;
-        position: relative;
-        z-index: 1;
-      }
-
-      .header-ucse .logo img,
-      .header-ucse .logo .logo-shield {
-        height: 76px;
-        width: 76px;
-        border-radius: 50%;
-        box-shadow: 0 2px 10px rgba(255, 255, 255, 0.25);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        background: rgba(255, 255, 255, 0.15);
-        color: #ffd800;
-        font-size: 34px;
-        border: 2px solid rgba(255, 216, 0, 0.6);
-      }
-
-      .header-ucse .logo img:hover,
-      .header-ucse .logo .logo-shield:hover {
-        transform: scale(1.08) rotate(4deg);
-        box-shadow: 0 4px 20px rgba(255, 216, 0, 0.45);
+        flex-direction: column;
+        gap: 10px;
       }
 
       .header-ucse h1 {
-        margin: 0;
-        font-size: 2.2em;
-        font-weight: 500;
-        letter-spacing: 0.8px;
-        color: #ffffff;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-      }
-
-      .header-ucse .subtitle {
-        font-size: 1.1em;
-        color: #e2e8f0;
-        margin-top: 5px;
-      }
-
-      /* Barra de navegación estilo UCSE */
-      .wp-block-navigation {
-        background: #1f3763;
-        padding: 0;
-        margin: 0;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
-        position: sticky;
-        top: 0;
-        z-index: 100;
+        font-size: 1.8em;
       }
 
       .nav-menu {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        margin: 0;
-        padding: 0;
-        list-style: none;
-      }
-
-      .nav-menu li {
-        margin: 0;
+        flex-direction: column;
       }
 
       .nav-menu a {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        padding: 14px 20px;
-        color: #ffffff;
-        text-decoration: none;
-        font-weight: 500;
-        font-size: 0.95em;
-        transition: all 0.3s ease;
-        border-bottom: 3px solid transparent;
-      }
-
-      .nav-menu a:hover {
-        background: #00bfff;
-        color: #ffffff;
-        border-bottom-color: #ffd800;
-      }
-
-      .nav-menu a.active {
-        background: #ff007f;
-        color: #ffffff;
-        border-bottom-color: #ffd800;
-        font-weight: 600;
-      }
-
-      /* Contenedor Principal */
-      .main-container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 20px;
+        justify-content: center;
       }
 
       .content-section {
-        background: #ffffff;
-        padding: 32px;
-        margin: 24px 0;
-        border-radius: 8px;
-        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
-        animation: fadeIn 0.6s ease-out;
+        padding: 20px;
       }
 
-      .content-section h1 {
-        color: var(--ucse-azul-oscuro);
-        margin-top: 0;
-        border-bottom: 3px solid var(--ucse-cian);
-        padding-bottom: 12px;
-      }
-
-      /* Header Bar de la Evaluación */
       .exam-header-bar {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap: wrap;
-        gap: 16px;
-        margin-bottom: 24px;
-        border-bottom: 3px solid var(--ucse-cian);
-        padding-bottom: 16px;
-      }
-
-      .exam-badges {
-        display: flex;
-        gap: 8px;
-        align-items: center;
-        flex-wrap: wrap;
-        margin-bottom: 10px;
-      }
-
-      .main-exam-title {
-        border-bottom: none !important;
-        margin: 0 !important;
-        padding: 0 !important;
-        color: var(--ucse-azul-oscuro);
-        font-size: 2.1em;
-        font-weight: 700;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-      }
-
-      .badge-tema-code {
-        background: linear-gradient(135deg, #1f3763 0%, #2a5298 100%);
-        color: #ffd800;
-        font-size: 1.35em;
-        font-weight: 800;
-        letter-spacing: 2px;
-        padding: 8px 18px;
-        border-radius: 10px;
-        border: 2px solid #ffd800;
-        box-shadow: 0 4px 12px rgba(31, 55, 99, 0.25);
-        text-align: center;
-      }
-
-      /* Alertas y Secciones de Ejercicio */
-      .requirements-alert {
-        background: linear-gradient(135deg, #ffd800 0%, #ffe066 100%);
-        color: #1a1a1a;
-        padding: 20px 24px;
-        border-radius: 8px;
-        margin: 20px 0;
-        border-left: 5px solid #ff007f;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-      }
-
-      .requirements-alert:hover {
-        transform: translateX(4px);
-        box-shadow: 0 4px 15px rgba(255, 216, 0, 0.35);
-      }
-
-      .exercise-section {
-        background: #f8f9fa;
-        border: 2px solid #00bfff;
-        border-radius: 8px;
-        padding: 25px;
-        margin: 25px 0;
-        position: relative;
-        transition: all 0.3s ease;
-      }
-
-      .exercise-section::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 4px;
-        background: linear-gradient(90deg, #00bfff, #ffd800, #ff007f);
-        background-size: 200% 100%;
-        border-radius: 4px 4px 0 0;
-        animation: shimmer 3s linear infinite;
-      }
-
-      .exercise-section:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 8px 25px rgba(0, 191, 255, 0.18);
-        border-color: #ffd800;
-      }
-
-      .exercise-title {
-        color: #1f3763;
-        margin-top: 0;
-        margin-bottom: 20px;
-        padding-bottom: 10px;
-        border-bottom: 2px solid #e2e8f0;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        gap: 10px;
-        font-size: 1.35em;
-      }
-
-      .exercise-weight {
-        background: #00bfff;
-        color: #ffffff;
-        padding: 4px 14px;
-        border-radius: 20px;
-        font-size: 0.82em;
-        font-weight: 700;
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-      }
-
-      .icon-text {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        margin: 14px 0;
-      }
-
-      .icon-text i {
-        color: #00bfff;
-        font-size: 20px;
-        flex-shrink: 0;
-      }
-
-      .requirements-alert .icon-text i {
-        color: #1f3763;
-      }
-
-      /* Misión y Tarjetas de Tareas */
-      .mission-list {
-        display: flex;
         flex-direction: column;
-        gap: 14px;
-        margin: 18px 0;
+        align-items: flex-start;
       }
-
-      .mission-card {
-        background: #ffffff;
-        border: 1px solid #e2e8f0;
-        border-left: 5px solid var(--ucse-azul-oscuro);
-        border-radius: 8px;
-        padding: 16px 20px;
-        transition: all 0.3s ease;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
-        position: relative;
-      }
-
-      .mission-card:hover {
-        transform: translateX(4px);
-        border-left-color: var(--ucse-cian);
-        box-shadow: 0 4px 15px rgba(0, 191, 255, 0.15);
-      }
-
-      .mission-card-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap: wrap;
-        gap: 8px;
-        margin-bottom: 8px;
-      }
-
-      .mission-card-title {
-        font-weight: 700;
-        color: var(--ucse-azul-oscuro);
-        font-size: 1.05em;
-        display: flex;
-        align-items: center;
-        gap: 8px;
-      }
-
-      .mission-card-desc {
-        margin: 0;
-        color: #475569;
-        font-size: 0.95em;
-        line-height: 1.55;
-      }
-
-      /* Tooltips Interactivos de Rúbrica */
-      .rubric-pill {
-        position: relative;
-        display: inline-flex;
-        align-items: center;
-        background: linear-gradient(135deg, #1f3763 0%, #2a5298 100%);
-        color: #ffd800;
-        font-weight: 700;
-        font-size: 0.85em;
-        padding: 4px 12px;
-        border-radius: 20px;
-        border: 1px solid rgba(255, 216, 0, 0.5);
-        cursor: pointer;
-        transition: all 0.2s ease;
-      }
-
-      .rubric-pill:hover {
-        background: #ff007f;
-        color: #ffffff;
-        border-color: #ffd800;
-      }
-
-      .rubric-tooltip {
-        position: absolute;
-        bottom: calc(100% + 10px);
-        right: 0;
-        width: 270px;
-        background: #1f3763;
-        color: #ffffff;
-        padding: 12px 14px;
-        border-radius: 8px;
-        font-size: 0.82em;
-        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
-        border: 1px solid #ffd800;
-        opacity: 0;
-        visibility: hidden;
-        transition: all 0.25s ease;
-        z-index: 50;
-        pointer-events: none;
-        line-height: 1.4;
-      }
-
-      .rubric-tooltip::after {
-        content: "";
-        position: absolute;
-        top: 100%;
-        right: 20px;
-        border-width: 6px;
-        border-style: solid;
-        border-color: #ffd800 transparent transparent transparent;
-      }
-
-      .rubric-pill:hover .rubric-tooltip {
-        opacity: 1;
-        visibility: visible;
-        transform: translateY(-4px);
-      }
-
-      /* Tabs de Casos de Prueba */
-      .test-tabs {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 8px;
-        margin-bottom: 18px;
-        border-bottom: 2px solid #e2e8f0;
-        padding-bottom: 10px;
-      }
-
-      .tab-btn {
-        background: #ffffff;
-        color: var(--ucse-azul-oscuro);
-        border: 2px solid #cbd5e1;
-        border-radius: 8px;
-        padding: 10px 18px;
-        font-weight: 600;
-        font-size: 0.92em;
-        cursor: pointer;
-        transition: all 0.25s ease;
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-      }
-
-      .tab-btn:hover {
-        background: #f1f5f9;
-        border-color: var(--ucse-cian);
-        color: var(--ucse-azul-medio);
-      }
-
-      .tab-btn.active {
-        background: linear-gradient(135deg, #1f3763 0%, #2a5298 100%);
-        color: #ffffff;
-        border-color: #ffd800;
-        box-shadow: 0 4px 12px rgba(31, 55, 99, 0.25);
-      }
-
-      .tab-content {
-        display: none;
-        opacity: 0;
-        transition: all 0.3s ease-in-out;
-      }
-
-      .tab-content.active {
-        display: block;
-        opacity: 1;
-        animation: fadeIn 0.4s ease-in-out;
-      }
-
-      .test-case-grid {
-        display: grid;
-        grid-template-columns: 4fr 8fr;
-        gap: 16px;
-      }
-
-      @media (max-width: 900px) {
-        .test-case-grid {
-          grid-template-columns: 1fr;
-        }
-      }
-
-      /* Terminales y Consolas de Código */
-      .terminal-box {
-        background: #0f172a;
-        border: 1px solid #334155;
-        border-radius: 8px;
-        overflow: hidden;
-        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
-      }
-
-      .terminal-header {
-        background: #1e293b;
-        padding: 9px 14px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        border-bottom: 1px solid #334155;
-      }
-
-      .terminal-title {
-        font-size: 0.8em;
-        font-weight: 700;
-        letter-spacing: 0.8px;
-        text-transform: uppercase;
-        display: flex;
-        align-items: center;
-        gap: 8px;
-      }
-
-      .terminal-dots {
-        display: flex;
-        gap: 6px;
-      }
-
-      .terminal-dot {
-        width: 10px;
-        height: 10px;
-        border-radius: 50%;
-      }
-
-      .dot-red { background: #ef4444; }
-      .dot-yellow { background: #f59e0b; }
-      .dot-green { background: #10b981; }
-
-      .terminal-body {
-        padding: 16px;
-        overflow-x: auto;
-      }
-
-      .console {
-        font-family: 'Fira Code', 'Consolas', 'Courier New', monospace;
-        font-size: 0.88em;
-        line-height: 1.55;
-        margin: 0;
-        white-space: pre-wrap;
-      }
-
-      .console-input {
-        color: #93c5fd;
-      }
-
-      .console-output {
-        color: #4ade80;
-      }
-
-      /* Tablas estilo WordPress UCSE */
-      .wp-block-table {
-        margin: 20px 0;
-        border-radius: 8px;
-        overflow-x: auto;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-      }
-
-      .wp-block-table table {
-        width: 100%;
-        border-collapse: collapse;
-        background: #ffffff;
-      }
-
-      .wp-block-table th {
-        background-color: #f5f5f5;
-        color: #1f3763;
-        padding: 14px 15px;
-        text-align: left;
-        font-weight: 600;
-        border: 1px solid #e6e6e6;
-      }
-
-      .wp-block-table td {
-        padding: 12px 15px;
-        border: 1px solid #e6e6e6;
-        color: #333333;
-      }
-
-      .wp-block-table tr:nth-child(even) td {
-        background: #f8f9fa;
-      }
-
-      /* Rúbrica y Sección de Evaluación */
-      .grading-section {
-        background: linear-gradient(135deg, #ff007f 0%, #c90063 100%);
-        color: #ffffff;
-        padding: 28px;
-        border-radius: 8px;
-        margin: 28px 0;
-      }
-
-      .grading-section h2,
-      .grading-section > p {
-        color: #ffffff;
-      }
-
-      .grading-section h2 {
-        margin-top: 0;
-      }
-
-      .grading-section .wp-block-table table {
-        background: #ffffff;
-      }
-
-      .grading-section .wp-block-table th {
-        background-color: #f1f5f9 !important;
-        color: #1f3763 !important;
-        font-weight: 700;
-      }
-
-      .grading-section .wp-block-table td {
-        color: #1e293b !important;
-      }
-
-      .grading-section .wp-block-table td strong {
-        color: #1f3763 !important;
-        font-weight: 700;
-      }
-
-      .grading-section .wp-block-table td:last-child strong {
-        color: #c90063 !important;
-        font-weight: 700;
-        font-size: 1.05em;
-      }
-
-      /* Condiciones Formales */
-      .conditions-section {
-        background: #f8fafc;
-        border: 2px solid #e2e8f0;
-        border-left: 6px solid #1f3763;
-        border-radius: 8px;
-        padding: 24px;
-        margin: 28px 0;
-      }
-
-      .conditions-section h2 {
-        color: #1f3763;
-        margin-top: 0;
-        font-size: 1.35em;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-      }
-
-      /* Footer */
-      .footer-info {
-        background: #1f3763;
-        color: #ffffff;
-        padding: 22px;
-        text-align: center;
-        margin-top: 40px;
-        border-top: 4px solid #ffd800;
-      }
-
-      .footer-info p {
-        margin: 5px 0;
-        color: #e2e8f0;
-      }
-
-      /* Media Queries */
-      @media (max-width: 768px) {
-        .header-ucse .logo { flex-direction: column; gap: 10px; }
-        .header-ucse h1 { font-size: 1.8em; }
-        .nav-menu { flex-direction: column; }
-        .nav-menu a { justify-content: center; }
-        .content-section { padding: 20px; }
-        .exam-header-bar { flex-direction: column; align-items: flex-start; }
-      }
-    
-        /* === UCSE Password Gate (dialog + forms best practices) === */
-        html[data-auth-locked="true"] body > :not(#ucse-auth-dialog):not(script):not(style) {
-            display: none !important;
-        }
-        @media print {
-            html[data-auth-locked="true"] body {
-                display: none !important;
-            }
-        }
-        #ucse-auth-dialog {
-            border: 0;
-            border-radius: 14px;
-            padding: 0;
-            max-width: 420px;
-            width: calc(100% - 32px);
-            background: #ffffff;
-            color: #1e293b;
-            box-shadow: 0 20px 50px rgba(15, 23, 42, 0.35);
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-        }
-        #ucse-auth-dialog[open] {
-            display: block;
-        }
-        #ucse-auth-dialog:modal {
-            overscroll-behavior: contain;
-        }
-        #ucse-auth-dialog::backdrop {
-            background: linear-gradient(135deg, rgba(31, 55, 99, 0.96) 0%, rgba(15, 23, 42, 0.98) 100%);
-            overflow: hidden;
-            overscroll-behavior: contain;
-        }
-        .ucse-auth-header {
-            background: linear-gradient(135deg, #1f3763 0%, #2a5298 100%);
-            color: #ffffff;
-            padding: 22px 24px;
-            border-bottom: 4px solid #ffd800;
-            border-radius: 14px 14px 0 0;
-            text-align: center;
-        }
-        .ucse-auth-header h2 {
-            margin: 0 0 4px 0;
-            font-size: 1.2rem;
-            letter-spacing: 0.4px;
-            text-transform: uppercase;
-            color: #ffffff;
-        }
-        .ucse-auth-header p {
-            margin: 0;
-            font-size: 0.875rem;
-            opacity: 0.92;
-            color: #f8fafc;
-        }
-        .ucse-auth-body {
-            padding: 24px;
-        }
-        .ucse-auth-field {
-            display: flex;
-            flex-direction: column;
-            align-items: stretch;
-            gap: 0.35rem;
-            margin-block-end: 1.25rem;
-        }
-        .ucse-auth-field label {
-            font-weight: 700;
-            font-size: 0.95rem;
-            color: #1f3763;
-            display: inline-block;
-            padding: 6px 0;
-            margin: -6px 0;
-        }
-        .ucse-auth-input-wrap {
-            display: flex;
-            gap: 8px;
-            align-items: stretch;
-        }
-        .ucse-auth-input-wrap input {
-            flex: 1;
-            font: inherit;
-            font-size: max(1rem, 1em);
-            padding: 0.75rem 0.9rem;
-            min-height: 48px;
-            border: 2px solid #64748b;
-            border-radius: 8px;
-            box-sizing: border-box;
-            color: #0f172a;
-            background: #f8fafc;
-        }
-        .ucse-auth-input-wrap input:focus-visible,
-        .ucse-auth-toggle:focus-visible,
-        .ucse-auth-submit:focus-visible {
-            outline: 3px solid #2a5298;
-            outline-offset: 2px;
-        }
-        .ucse-auth-input-wrap input[aria-invalid="true"] {
-            border-color: #dc2626;
-            background: #fef2f2;
-        }
-        .ucse-auth-toggle {
-            font: inherit;
-            font-size: 0.875rem;
-            font-weight: 600;
-            min-height: 48px;
-            min-width: 72px;
-            padding: 0 12px;
-            border: 2px solid #cbd5e1;
-            border-radius: 8px;
-            background: #f1f5f9;
-            color: #1e293b;
-            cursor: pointer;
-        }
-        .ucse-auth-hint {
-            font-size: 0.82rem;
-            color: #475569;
-        }
-        .ucse-auth-error {
-            font-size: 0.875rem;
-            font-weight: 600;
-            color: #b91c1c;
-            min-height: 1.35rem;
-            visibility: hidden;
-        }
-        .ucse-auth-error[data-visible="true"] {
-            visibility: visible;
-        }
-        .ucse-auth-submit {
-            width: 100%;
-            font: inherit;
-            font-size: max(1rem, 1em);
-            font-weight: 700;
-            min-height: 48px;
-            padding: 0.75rem 1rem;
-            border: 0;
-            border-radius: 8px;
-            background: #1f3763;
-            color: #ffffff;
-            cursor: pointer;
-            transition: background 0.15s ease;
-        }
-        .ucse-auth-submit:hover {
-            background: #2a5298;
-        }
-
-    </style>
-    <script>
-        try {
-            if (sessionStorage.getItem('ucse_exam_unlocked') !== '1') {
-                document.documentElement.setAttribute('data-auth-locked', 'true');
-            }
-        } catch (e) {
-            document.documentElement.setAttribute('data-auth-locked', 'true');
-        }
-    </script>
+    }
+  </style>
 </head>
+
 <body class="teal">
 
-    <!-- Encabezado Institucional UCSE -->
-    <header class="header-ucse">
-      <div class="main-container">
-        <div class="logo">
-          <div class="logo-shield">
-            <i class="fas fa-university"></i>
+  <!-- Encabezado Institucional UCSE -->
+  <header class="header-ucse">
+    <div class="main-container">
+      <div class="logo">
+        <div class="logo-shield">
+          <i class="fas fa-university"></i>
+        </div>
+        <div>
+          <h1>Universidad Católica de Santiago del Estero</h1>
+          <div class="subtitle">Facultad de Ciencias de la Salud y Tecnologías de la Información • Algoritmos y
+            Programación (2026)</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Navegación Sticky estilo UCSE -->
+  <nav class="wp-block-navigation" aria-label="Navegación de temas del examen">
+    <ul class="nav-menu">
+      <li>
+        <a href="index.html">
+          <i class="fas fa-home"></i>
+          <span>Portal General</span>
+        </a>
+      </li>
+      <li>
+        <a href="tema1.html" id="nav-tema-1">
+          <i class="fas fa-file-code"></i>
+          <span>Tema 1</span>
+        </a>
+      </li>
+      <li>
+        <a href="tema2.html" id="nav-tema-2">
+          <i class="fas fa-file-code"></i>
+          <span>Tema 2</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Contenido Principal -->
+  <div class="main-container teal teal teal">
+    <div class="content-section">
+
+      <!-- Header del Tema Evaluativo -->
+      <div class="exam-header-bar">
+        <div>
+          <div class="exam-badges">
+            <span class="exercise-weight" style="background: var(--ucse-rosa);">Tema 2 — Libro de Reservas</span>
+            <span class="exercise-weight" style="background: var(--ucse-azul-medio);">Examen Recuperatorio Módulo
+              4</span>
+            <span class="exercise-weight" style="background: #10b981;"><i class="fas fa-balance-scale"></i> Bimodal: 75%
+              C++ + 25% Escrita</span>
           </div>
-          <div>
-            <h1>Universidad Católica de Santiago del Estero</h1>
-            <div class="subtitle">Facultad de Ciencias de la Salud y Tecnologías de la Información • Algoritmos y Programación (2026)</div>
+          <h1 class="main-exam-title teal">
+            <i class="fas fa-clipboard-list"></i> 🏨 Examen Recuperatorio Módulo 4 — Tema 2: Sistema de Reservas
+            Hoteleras (AoS)
+          </h1>
+        </div>
+        <div>
+          <div class="badge-tema-code">
+            RECUPERATORIO<br><small>Tema 2</small>
           </div>
         </div>
       </div>
-    </header>
 
-    <!-- Navegación Sticky estilo UCSE -->
-    <nav class="wp-block-navigation" aria-label="Navegación de temas del examen">
-      <ul class="nav-menu">
-        <li>
-          <a href="index.html">
-            <i class="fas fa-home"></i>
-            <span>Portal General</span>
-          </a>
-        </li>
-        <li>
-          <a href="tema1.html" id="nav-tema-1">
-            <i class="fas fa-file-code"></i>
-            <span>Tema 1</span>
-          </a>
-        </li>
-        <li>
-          <a href="tema2.html" id="nav-tema-2">
-            <i class="fas fa-file-code"></i>
-            <span>Tema 2</span>
-          </a>
-        </li>
-      </ul>
-    </nav>
-
-    <!-- Contenido Principal -->
-    <div class="main-container teal teal teal">
-      <div class="content-section">
-        
-        <!-- Header del Tema Evaluativo -->
-        <div class="exam-header-bar">
+      <!-- Contexto del Problema -->
+      <div class="requirements-alert">
+        <div class="icon-text" style="align-items: flex-start;">
+          <i class="fas fa-info-circle"></i>
           <div>
-            <div class="exam-badges">
-              <span class="exercise-weight" style="background: var(--ucse-rosa);">Tema 2 — Libro de Reservas</span>
-              <span class="exercise-weight" style="background: var(--ucse-azul-medio);">Examen Recuperatorio Módulo 4</span>
-              <span class="exercise-weight" style="background: #10b981;"><i class="fas fa-balance-scale"></i> Bimodal: 75% C++ + 25% Escrita</span>
-            </div>
-            <h1 class="main-exam-title teal">
-              <i class="fas fa-clipboard-list"></i> 🏨 Examen Recuperatorio Módulo 4 — Tema 2: Sistema de Reservas Hoteleras (AoS)
-            </h1>
-          </div>
-          <div>
-            <div class="badge-tema-code">
-              RECUPERATORIO<br><small>Tema 2</small>
+            <h3 style="margin: 0 0 8px 0; color: #1f3763; font-size: 1.25em;"><i class="fas fa-book-reader"></i>
+              Contexto de Gestión del Sistema</h3>
+            <div style="font-size: 1.05em; line-height: 1.7; color: #1a1a1a;">
+              <p style="margin: 0;">Sistema de gestión de reservas hoteleras en memoria RAM basado en Arreglo de
+                Estructuras (AoS). Implemente los módulos de gestión algorítmica sobre las reservas y resuelva la traza
+                manual en la hoja provista.</p>
+              <!-- Especificacion del Modelo de Datos (Struct) en el Enunciado -->
+              <div class="data-model-card"
+                style="margin-top: 16px; background: #ffffff; border: 1px solid #cbd5e1; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
+                <div
+                  style="background: #f8fafc; border-bottom: 1px solid #e2e8f0; padding: 10px 16px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px;">
+                  <span style="font-weight: 700; color: #1e3a8a; font-size: 0.95em;"><i class="fas fa-table"></i>
+                    ESPECIFICACIÓN DEL MODELO: <code>struct ReservaHotel</code> (A definir por el estudiante)</span>
+                  <span
+                    style="background: #e0f2fe; color: #0369a1; padding: 3px 10px; border-radius: 9999px; font-size: 0.8em; font-weight: 600;">Tipos
+                    Primitivos Exclusivos</span>
+                </div>
+                <div style="padding: 14px 16px;">
+                  <p style="margin: 0 0 12px 0; font-size: 0.93em; color: #334155; line-height: 1.5;">
+                    Cada registro de reserva hotelera está modelado por el struct <code>ReservaHotel</code>. El alumno
+                    debe declararlo en el código fuente utilizando <strong>exclusivamente tipos de datos
+                      primitivos</strong> (deduciendo el tipo correspondiente para cada campo según su dominio y rango):
+                  </p>
+                  <div style="overflow-x: auto;">
+                    <table style="width: 100%; border-collapse: collapse; font-size: 0.88em; text-align: left;">
+                      <thead>
+                        <tr style="background: #f1f5f9; border-bottom: 2px solid #cbd5e1; color: #1e293b;">
+                          <th style="padding: 9px 12px; width: 22%; font-weight: 700;">Campo</th>
+                          <th style="padding: 9px 12px; width: 18%; font-weight: 700;">Origen</th>
+                          <th style="padding: 9px 12px; font-weight: 700;">Descripción, Tipo y Regla de Cálculo</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr style="border-bottom: 1px solid #e2e8f0;">
+                          <td style="padding: 9px 12px; font-weight: 600; color: #1e3a8a;"><code>nroHabitacion</code>
+                          </td>
+                          <td style="padding: 9px 12px;"><span
+                              style="background: #e0f2fe; color: #0369a1; padding: 2px 8px; border-radius: 4px; font-size: 0.85em; font-weight: 600;">Entrada
+                              (cin)</span></td>
+                          <td style="padding: 9px 12px; color: #334155; line-height: 1.45;">Entero positivo único (&gt;
+                            0). Clave primaria inmutable.</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #e2e8f0;">
+                          <td style="padding: 9px 12px; font-weight: 600; color: #1e3a8a;"><code>noches</code></td>
+                          <td style="padding: 9px 12px;"><span
+                              style="background: #e0f2fe; color: #0369a1; padding: 2px 8px; border-radius: 4px; font-size: 0.85em; font-weight: 600;">Entrada
+                              (cin)</span></td>
+                          <td style="padding: 9px 12px; color: #334155; line-height: 1.45;">Cantidad de noches de
+                            estadía reservadas (entero, &gt; 0).</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #e2e8f0;">
+                          <td style="padding: 9px 12px; font-weight: 600; color: #1e3a8a;"><code>tipo</code></td>
+                          <td style="padding: 9px 12px;"><span
+                              style="background: #e0f2fe; color: #0369a1; padding: 2px 8px; border-radius: 4px; font-size: 0.85em; font-weight: 600;">Entrada
+                              (cin)</span></td>
+                          <td style="padding: 9px 12px; color: #334155; line-height: 1.45;">Carácter que indica
+                            tipología: <code>'S'</code> (Simple), <code>'D'</code> (Doble), <code>'T'</code> (Triple).
+                          </td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #e2e8f0;">
+                          <td style="padding: 9px 12px; font-weight: 600; color: #1e3a8a;"><code>precioNoche</code></td>
+                          <td style="padding: 9px 12px;"><span
+                              style="background: #e0f2fe; color: #0369a1; padding: 2px 8px; border-radius: 4px; font-size: 0.85em; font-weight: 600;">Entrada
+                              (cin)</span></td>
+                          <td style="padding: 9px 12px; color: #334155; line-height: 1.45;">Real con decimales (tipo
+                            <code>double</code>, &gt; 0.0). Tarifa base diaria.</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #e2e8f0;">
+                          <td style="padding: 9px 12px; font-weight: 600; color: #1e3a8a;"><code>importeTotal</code>
+                          </td>
+                          <td style="padding: 9px 12px;"><span
+                              style="background: #fef3c7; color: #92400e; padding: 2px 8px; border-radius: 4px; font-size: 0.85em; font-weight: 600;">Calculado</span>
+                          </td>
+                          <td style="padding: 9px 12px; color: #334155; line-height: 1.45;">Real con decimales (tipo
+                            <code>double</code>): <code>noches * precioNoche * (1.0 + recargo)</code>, con recargo:
+                            <code>'S'</code>: 0% (0.0), <code>'D'</code>: +10% (0.10), <code>'T'</code>: +20% (0.20).
+                          </td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #e2e8f0;">
+                          <td style="padding: 9px 12px; font-weight: 600; color: #1e3a8a;"><code>confirmada</code></td>
+                          <td style="padding: 9px 12px;"><span
+                              style="background: #e0f2fe; color: #0369a1; padding: 2px 8px; border-radius: 4px; font-size: 0.85em; font-weight: 600;">Entrada
+                              (cin)</span></td>
+                          <td style="padding: 9px 12px; color: #334155; line-height: 1.45;">Estado administrativo
+                            booleano: <code>true</code> (Confirmada) / <code>false</code> (Pendiente). En consola leer
+                            <code>1</code> (Confirmada) o <code>0</code> (Pendiente).</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div
+                    style="margin-top: 12px; background: #fffbeb; border: 1px solid #fef3c7; border-left: 4px solid #f59e0b; border-radius: 6px; padding: 10px 14px; font-size: 0.9em; color: #92400e;">
+                    <strong><i class="fas fa-exclamation-triangle"></i> Orden Obligatorio de Miembros en el
+                      Struct:</strong> Declare los campos del struct respetando <strong>estrictamente el mismo orden en
+                      que aparecen en la tabla</strong>. Esto es indispensable para que la inicialización por lista de
+                    llaves <code>{ ... }</code> del arreglo precargado provista en <code>main()</code> compile sin
+                    errores de tipos ni desfasaje de columnas.
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
+      </div>
 
-        <!-- Contexto del Problema -->
-        <div class="requirements-alert">
+
+
+      <!-- Tu Misión (Bimodal: 75% C++ + 25% Lápiz y Papel) -->
+      <div class="exercise-section">
+        <h2 class="exercise-title">
+          <span><i class="fas fa-code"></i> TU MISIÓN BIMODAL (75% C++ + 25% ESCRITA)</span>
+          <span class="exercise-weight"><i class="fas fa-check-circle"></i> 100% Calificación</span>
+        </h2>
+
+        <div class="requirements-alert"
+          style="background: #f0fdf4; border-left: 5px solid #16a34a; margin-bottom: 24px;">
           <div class="icon-text" style="align-items: flex-start;">
-            <i class="fas fa-info-circle"></i>
+            <i class="fas fa-layer-group" style="color: #16a34a;"></i>
             <div>
-              <h3 style="margin: 0 0 8px 0; color: #1f3763; font-size: 1.25em;"><i class="fas fa-book-reader"></i> Contexto de Gestión del Sistema</h3>
-              <div style="font-size: 1.05em; line-height: 1.7; color: #1a1a1a;">
-                <p style="margin: 0;">Sistema de gestión de reservas hoteleras en memoria RAM basado en Arreglo de Estructuras (AoS). Implemente los módulos de gestión algorítmica sobre las reservas y resuelva la traza manual en la hoja provista.</p>
-        <!-- Especificacion del Modelo de Datos (Struct) en el Enunciado -->
-        <div class="data-model-card" style="margin-top: 16px; background: #ffffff; border: 1px solid #cbd5e1; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
-          <div style="background: #f8fafc; border-bottom: 1px solid #e2e8f0; padding: 10px 16px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px;">
-            <span style="font-weight: 700; color: #1e3a8a; font-size: 0.95em;"><i class="fas fa-table"></i> ESPECIFICACIÓN DEL MODELO: <code>struct ReservaHotel</code> (A definir por el estudiante)</span>
-            <span style="background: #e0f2fe; color: #0369a1; padding: 3px 10px; border-radius: 9999px; font-size: 0.8em; font-weight: 600;">Tipos Primitivos Exclusivos</span>
-          </div>
-          <div style="padding: 14px 16px;">
-            <p style="margin: 0 0 12px 0; font-size: 0.93em; color: #334155; line-height: 1.5;">
-              Cada registro de reserva hotelera está modelado por el struct <code>ReservaHotel</code>. El alumno debe declararlo en el código fuente utilizando <strong>exclusivamente tipos de datos primitivos</strong> (deduciendo el tipo correspondiente para cada campo según su dominio y rango):
-            </p>
-            <div style="overflow-x: auto;">
-              <table style="width: 100%; border-collapse: collapse; font-size: 0.88em; text-align: left;">
-                <thead>
-                  <tr style="background: #f1f5f9; border-bottom: 2px solid #cbd5e1; color: #1e293b;">
-                    <th style="padding: 9px 12px; width: 22%; font-weight: 700;">Campo</th>
-                    <th style="padding: 9px 12px; width: 18%; font-weight: 700;">Origen</th>
-                    <th style="padding: 9px 12px; font-weight: 700;">Descripción, Tipo y Regla de Cálculo</th>
-                  </tr>
-                </thead>
-                <tbody>
-                <tr style="border-bottom: 1px solid #e2e8f0;">
-                  <td style="padding: 9px 12px; font-weight: 600; color: #1e3a8a;"><code>nroHabitacion</code></td>
-                  <td style="padding: 9px 12px;"><span style="background: #e0f2fe; color: #0369a1; padding: 2px 8px; border-radius: 4px; font-size: 0.85em; font-weight: 600;">Entrada (cin)</span></td>
-                  <td style="padding: 9px 12px; color: #334155; line-height: 1.45;">Entero positivo único (&gt; 0). Clave primaria inmutable.</td>
-                </tr>
-                <tr style="border-bottom: 1px solid #e2e8f0;">
-                  <td style="padding: 9px 12px; font-weight: 600; color: #1e3a8a;"><code>noches</code></td>
-                  <td style="padding: 9px 12px;"><span style="background: #e0f2fe; color: #0369a1; padding: 2px 8px; border-radius: 4px; font-size: 0.85em; font-weight: 600;">Entrada (cin)</span></td>
-                  <td style="padding: 9px 12px; color: #334155; line-height: 1.45;">Cantidad de noches de estadía reservadas (entero, &gt; 0).</td>
-                </tr>
-                <tr style="border-bottom: 1px solid #e2e8f0;">
-                  <td style="padding: 9px 12px; font-weight: 600; color: #1e3a8a;"><code>tipo</code></td>
-                  <td style="padding: 9px 12px;"><span style="background: #e0f2fe; color: #0369a1; padding: 2px 8px; border-radius: 4px; font-size: 0.85em; font-weight: 600;">Entrada (cin)</span></td>
-                  <td style="padding: 9px 12px; color: #334155; line-height: 1.45;">Carácter que indica tipología: <code>'S'</code> (Simple), <code>'D'</code> (Doble), <code>'T'</code> (Triple).</td>
-                </tr>
-                <tr style="border-bottom: 1px solid #e2e8f0;">
-                  <td style="padding: 9px 12px; font-weight: 600; color: #1e3a8a;"><code>precioNoche</code></td>
-                  <td style="padding: 9px 12px;"><span style="background: #e0f2fe; color: #0369a1; padding: 2px 8px; border-radius: 4px; font-size: 0.85em; font-weight: 600;">Entrada (cin)</span></td>
-                  <td style="padding: 9px 12px; color: #334155; line-height: 1.45;">Real con decimales (tipo <code>double</code>, &gt; 0.0). Tarifa base diaria.</td>
-                </tr>
-                <tr style="border-bottom: 1px solid #e2e8f0;">
-                  <td style="padding: 9px 12px; font-weight: 600; color: #1e3a8a;"><code>importeTotal</code></td>
-                  <td style="padding: 9px 12px;"><span style="background: #fef3c7; color: #92400e; padding: 2px 8px; border-radius: 4px; font-size: 0.85em; font-weight: 600;">Calculado</span></td>
-                  <td style="padding: 9px 12px; color: #334155; line-height: 1.45;">Real con decimales (tipo <code>double</code>): <code>noches * precioNoche * (1.0 + recargo)</code>, con recargo: <code>'S'</code>: 0% (0.0), <code>'D'</code>: +10% (0.10), <code>'T'</code>: +20% (0.20).</td>
-                </tr>
-                <tr style="border-bottom: 1px solid #e2e8f0;">
-                  <td style="padding: 9px 12px; font-weight: 600; color: #1e3a8a;"><code>confirmada</code></td>
-                  <td style="padding: 9px 12px;"><span style="background: #e0f2fe; color: #0369a1; padding: 2px 8px; border-radius: 4px; font-size: 0.85em; font-weight: 600;">Entrada (cin)</span></td>
-                  <td style="padding: 9px 12px; color: #334155; line-height: 1.45;">Estado administrativo booleano: <code>true</code> (Confirmada) / <code>false</code> (Pendiente). En consola leer <code>1</code> (Confirmada) o <code>0</code> (Pendiente).</td>
-                </tr>
-                </tbody>
-              </table>
-            </div>
-          <div style="margin-top: 12px; background: #fffbeb; border: 1px solid #fef3c7; border-left: 4px solid #f59e0b; border-radius: 6px; padding: 10px 14px; font-size: 0.9em; color: #92400e;">
-              <strong><i class="fas fa-exclamation-triangle"></i> Orden Obligatorio de Miembros en el Struct:</strong> Declare los campos del struct respetando <strong>estrictamente el mismo orden en que aparecen en la tabla</strong>. Esto es indispensable para que la inicialización por lista de llaves <code>{ ... }</code> del arreglo precargado provista en <code>main()</code> compile sin errores de tipos ni desfasaje de columnas.
-            </div>
-          </div>
-        </div>
-              </div>
+              <h4 style="margin: 0 0 6px 0; color: #166534; font-size: 1.1em;">Arquitectura de Software: Código Base y
+                Alcance Recortado (Sin Solapamiento con Módulo 3)</h4>
+              <p style="margin: 0; font-size: 0.95em; line-height: 1.55; color: #14532d;">
+                Para evitar re-evaluar contenidos ya acreditados en Módulo 3, la plantilla base provista entrega el
+                arreglo inicial precargado, el esqueleto del menú en <code>main()</code>, las vistas con
+                <code>&lt;iomanip&gt;</code> y las primitivas auxiliares (<code>buscarPorHabitacion</code>,
+                <code>darDeBajaReserva</code> y <code>calcularPromedioFacturacion</code>). Al igual que en el 4to
+                Examen, el estudiante debe completar los casos del <code>switch</code> (lectura de datos, validación de
+                estado 1/0, cálculo de <code>importeTotal</code> y llamadas a funciones), declarar el
+                <code>struct ReservaHotel</code>, implementar las <strong>4 funciones nucleares del Módulo 4</strong> en
+                C++ y resolver en papel la <strong>traza manual</strong>.
+              </p>
+              <p style="margin: 6px 0 0 0; font-size: 0.95em; line-height: 1.5; color: #14532d;">
+                <strong>Reutilización Modular:</strong> Tanto <code>insertarReserva</code> como
+                <code>modificarReserva</code> deben invocar la función provista <code>buscarPorHabitacion</code> para
+                alcanzar el 100% de valoración en modularidad.
+              </p>
             </div>
           </div>
         </div>
 
-        
+        <div class="mission-list">
 
-        <!-- Tu Misión (Bimodal: 75% C++ + 25% Lápiz y Papel) -->
-        <div class="exercise-section">
-          <h2 class="exercise-title">
-            <span><i class="fas fa-code"></i> TU MISIÓN BIMODAL (75% C++ + 25% ESCRITA)</span>
-            <span class="exercise-weight"><i class="fas fa-check-circle"></i> 100% Calificación</span>
-          </h2>
-          
-          <div class="requirements-alert" style="background: #f0fdf4; border-left: 5px solid #16a34a; margin-bottom: 24px;">
-            <div class="icon-text" style="align-items: flex-start;">
-              <i class="fas fa-layer-group" style="color: #16a34a;"></i>
-              <div>
-                <h4 style="margin: 0 0 6px 0; color: #166534; font-size: 1.1em;">Arquitectura de Software: Código Base y Alcance Recortado (Sin Solapamiento con Módulo 3)</h4>
-                <p style="margin: 0; font-size: 0.95em; line-height: 1.55; color: #14532d;">
-                  Para evitar re-evaluar contenidos ya acreditados en Módulo 3, la plantilla base provista entrega el arreglo inicial precargado, el esqueleto del menú en <code>main()</code>, las vistas con <code>&lt;iomanip&gt;</code> y las primitivas auxiliares (<code>buscarPorHabitacion</code>, <code>darDeBajaReserva</code> y <code>calcularPromedioFacturacion</code>). Al igual que en el 4to Examen, el estudiante debe completar los casos del <code>switch</code> (lectura de datos, validación de estado 1/0, cálculo de <code>importeTotal</code> y llamadas a funciones), declarar el <code>struct ReservaHotel</code>, implementar las <strong>4 funciones nucleares del Módulo 4</strong> en C++ y resolver en papel la <strong>traza manual</strong>.
-                </p>
-                <p style="margin: 6px 0 0 0; font-size: 0.95em; line-height: 1.5; color: #14532d;">
-                  <strong>Reutilización Modular:</strong> Tanto <code>insertarReserva</code> como <code>modificarReserva</code> deben invocar la función provista <code>buscarPorHabitacion</code> para alcanzar el 100% de valoración en modularidad.
-                </p></div>
+          <!-- Item 1: Declaracion del Struct AoS -->
+          <div class="mission-card">
+            <div class="mission-card-header">
+              <div class="mission-card-title">
+                <i class="fas fa-table"></i> 1. Definición de Estructura AoS (<code>struct ReservaHotel</code>)
+              </div>
+              <div class="rubric-pill">
+                <span>10%</span>
+                <div class="rubric-tooltip">
+                  <strong>Modelo de Datos en Tipos Primitivos</strong><br>
+                  Declarar los 6 campos con tipos primitivos puros (int, char, double, bool) en el orden exacto de la
+                  tabla para compatibilidad con la inicialización precargada en main().
+                </div>
+              </div>
             </div>
+            <ul style="margin: 4px 0 0 0; padding-left: 20px; font-size: 0.92em; line-height: 1.55; color: #334155;">
+              <li><strong>Contrato:</strong> Declarar los 6 atributos dentro de <code>struct ReservaHotel</code> en el
+                bloque indicado al inicio de la plantilla.</li>
+              <li><strong>Restricción:</strong> Respetar exactamente nombres, tipos primitivos y orden secuencial de la
+                tabla del enunciado para que el arreglo precargado y los módulos provistos compilen sin errores.</li>
+            </ul>
           </div>
 
-          <div class="mission-list">
-
-            <!-- Item 1: Declaracion del Struct AoS -->
-            <div class="mission-card">
-              <div class="mission-card-header">
-                <div class="mission-card-title">
-                  <i class="fas fa-table"></i> 1. Definición de Estructura AoS (<code>struct ReservaHotel</code>)
-                </div>
-                <div class="rubric-pill">
-                  <span>10%</span>
-                  <div class="rubric-tooltip">
-                    <strong>Modelo de Datos en Tipos Primitivos</strong><br>
-                    Declarar los 6 campos con tipos primitivos puros (int, char, double, bool) en el orden exacto de la tabla para compatibilidad con la inicialización precargada en main().
-                  </div>
+          <!-- Item 2: Alta / Inserción con Unicidad de Clave -->
+          <div class="mission-card">
+            <div class="mission-card-header">
+              <div class="mission-card-title">
+                <i class="fas fa-plus-circle"></i> 2. Alta / Inserción en Posición (Right-Shift)
+              </div>
+              <div class="rubric-pill">
+                <span>20%</span>
+                <div class="rubric-tooltip">
+                  <strong>Alta con Unicidad de Clave</strong><br>
+                  Control de capacidad (tam &lt; CAPACIDAD), validación de posición (0..tam), verificación de
+                  no-duplicado reutilizando buscarPorHabitacion, desplazamiento Right-Shift y tam++.
                 </div>
               </div>
-              <ul style="margin: 4px 0 0 0; padding-left: 20px; font-size: 0.92em; line-height: 1.55; color: #334155;">
-                <li><strong>Contrato:</strong> Declarar los 6 atributos dentro de <code>struct ReservaHotel</code> en el bloque indicado al inicio de la plantilla.</li>
-                <li><strong>Restricción:</strong> Respetar exactamente nombres, tipos primitivos y orden secuencial de la tabla del enunciado para que el arreglo precargado y los módulos provistos compilen sin errores.</li>
-              </ul>
             </div>
+            <ul style="margin: 4px 0 0 0; padding-left: 20px; font-size: 0.92em; line-height: 1.55; color: #334155;">
+              <li><strong>Firma:</strong>
+                <code>bool insertarReserva(ReservaHotel arr[], int &amp;tam, int capacidad, int pos, const ReservaHotel &amp;nueva)</code>
+                (recibe <code>nueva</code> con <code>importeTotal</code> calculado en el <code>switch</code>).</li>
+              <li><strong>Validaciones:</strong> Rechazar (<code>false</code>) si <code>tam &gt;= capacidad</code>, si
+                <code>pos &lt; 0</code> o <code>pos &gt; tam</code>, o si la habitación ya existe llamando a
+                <code>buscarPorHabitacion</code>.</li>
+              <li><strong>Proceso:</strong> Desplazar celdas a la derecha (<em>Right-Shift</em>) desde <code>tam</code>
+                hasta <code>pos + 1</code>, insertar <code>nueva</code> en <code>arr[pos]</code> e incrementar
+                <code>tam++</code>.</li>
+            </ul>
+          </div>
 
-            <!-- Item 2: Alta / Inserción con Unicidad de Clave -->
-            <div class="mission-card">
-              <div class="mission-card-header">
-                <div class="mission-card-title">
-                  <i class="fas fa-plus-circle"></i> 2. Alta / Inserción en Posición (Right-Shift)
-                </div>
-                <div class="rubric-pill">
-                  <span>20%</span>
-                  <div class="rubric-tooltip">
-                    <strong>Alta con Unicidad de Clave</strong><br>
-                    Control de capacidad (tam &lt; CAPACIDAD), validación de posición (0..tam), verificación de no-duplicado reutilizando buscarPorHabitacion, desplazamiento Right-Shift y tam++.
-                  </div>
+          <!-- Item 3: Modificación de Atributos con Clave Inmutable -->
+          <div class="mission-card">
+            <div class="mission-card-header">
+              <div class="mission-card-title">
+                <i class="fas fa-edit"></i> 3. Modificación in-place (PK Inmutable)
+              </div>
+              <div class="rubric-pill">
+                <span>15%</span>
+                <div class="rubric-tooltip">
+                  <strong>Modificación con PK Inmutable</strong><br>
+                  Reutilización modular de buscarPorHabitacion, actualización in-place sobre arr[pos] y preservación
+                  estricta de nroHabitacion sin alterar.
                 </div>
               </div>
-              <ul style="margin: 4px 0 0 0; padding-left: 20px; font-size: 0.92em; line-height: 1.55; color: #334155;">
-                <li><strong>Firma:</strong> <code>bool insertarReserva(ReservaHotel arr[], int &amp;tam, int capacidad, int pos, const ReservaHotel &amp;nueva)</code> (recibe <code>nueva</code> con <code>importeTotal</code> calculado en el <code>switch</code>).</li>
-                <li><strong>Validaciones:</strong> Rechazar (<code>false</code>) si <code>tam &gt;= capacidad</code>, si <code>pos &lt; 0</code> o <code>pos &gt; tam</code>, o si la habitación ya existe llamando a <code>buscarPorHabitacion</code>.</li>
-                <li><strong>Proceso:</strong> Desplazar celdas a la derecha (<em>Right-Shift</em>) desde <code>tam</code> hasta <code>pos + 1</code>, insertar <code>nueva</code> en <code>arr[pos]</code> e incrementar <code>tam++</code>.</li>
-              </ul>
             </div>
+            <ul style="margin: 4px 0 0 0; padding-left: 20px; font-size: 0.92em; line-height: 1.55; color: #334155;">
+              <li><strong>Firma:</strong>
+                <code>bool modificarReserva(ReservaHotel arr[], int tam, const ReservaHotel &amp;actualizada)</code>.
+              </li>
+              <li><strong>Proceso:</strong> Ubicar el índice mediante <code>buscarPorHabitacion</code>. Si existe,
+                actualizar <em>in-place</em> en <code>arr[pos]</code> los atributos <code>noches</code>,
+                <code>tipo</code>, <code>precioNoche</code>, <code>importeTotal</code> y <code>confirmada</code> (ya
+                validados y recalculados en el <code>switch</code> o recalculando <code>importeTotal</code> dentro de la
+                función según las reglas de la tabla), preservando intacto <code>nroHabitacion</code>.</li>
+              <li><strong>Retorno:</strong> <code>true</code> si se modificó con éxito; <code>false</code> si la
+                habitación no existe.</li>
+            </ul>
+          </div>
 
-            <!-- Item 3: Modificación de Atributos con Clave Inmutable -->
-            <div class="mission-card">
-              <div class="mission-card-header">
-                <div class="mission-card-title">
-                  <i class="fas fa-edit"></i> 3. Modificación in-place (PK Inmutable)
-                </div>
-                <div class="rubric-pill">
-                  <span>15%</span>
-                  <div class="rubric-tooltip">
-                    <strong>Modificación con PK Inmutable</strong><br>
-                    Reutilización modular de buscarPorHabitacion, actualización in-place sobre arr[pos] y preservación estricta de nroHabitacion sin alterar.
-                  </div>
+          <!-- Item 4: Ordenamiento Burbuja en C++ + Intercambio -->
+          <div class="mission-card">
+            <div class="mission-card-header">
+              <div class="mission-card-title">
+                <i class="fas fa-sort-amount-down-alt"></i> 4. Burbuja Mejorada e Intercambio de Estructuras
+              </div>
+              <div class="rubric-pill">
+                <span>30%</span>
+                <div class="rubric-tooltip">
+                  <strong>Intercambio Completo de Estructuras</strong><br>
+                  Burbuja Mejorada con bandera huboIntercambio comparando importeTotal e invocando
+                  intercambiar(ReservaHotel &amp;a, ReservaHotel &amp;b).
                 </div>
               </div>
-              <ul style="margin: 4px 0 0 0; padding-left: 20px; font-size: 0.92em; line-height: 1.55; color: #334155;">
-                <li><strong>Firma:</strong> <code>bool modificarReserva(ReservaHotel arr[], int tam, const ReservaHotel &amp;actualizada)</code>.</li>
-                <li><strong>Proceso:</strong> Ubicar el índice mediante <code>buscarPorHabitacion</code>. Si existe, actualizar <em>in-place</em> en <code>arr[pos]</code> los atributos <code>noches</code>, <code>tipo</code>, <code>precioNoche</code>, <code>importeTotal</code> y <code>confirmada</code> (ya validados y recalculados en el <code>switch</code> o recalculando <code>importeTotal</code> dentro de la función según las reglas de la tabla), preservando intacto <code>nroHabitacion</code>.</li>
-                <li><strong>Retorno:</strong> <code>true</code> si se modificó con éxito; <code>false</code> si la habitación no existe.</li>
-              </ul>
             </div>
+            <ul style="margin: 4px 0 0 0; padding-left: 20px; font-size: 0.92em; line-height: 1.55; color: #334155;">
+              <li><strong>Firmas:</strong> <code>void intercambiar(ReservaHotel &amp;a, ReservaHotel &amp;b)</code> y
+                <code>void ordenarPorImporteBurbujaDesc(ReservaHotel arr[], int tam)</code>.</li>
+              <li><strong>Proceso:</strong> Ordenar en forma <strong>DESCENDENTE</strong> por <code>importeTotal</code>
+                con Burbuja Mejorada y corte anticipado por bandera (<code>huboIntercambio</code>), permutando
+                estructuras completas mediante <code>intercambiar(arr[j], arr[j + 1])</code>.</li>
+            </ul>
+          </div>
 
-            <!-- Item 4: Ordenamiento Burbuja en C++ + Intercambio -->
-            <div class="mission-card">
-              <div class="mission-card-header">
-                <div class="mission-card-title">
-                  <i class="fas fa-sort-amount-down-alt"></i> 4. Burbuja Mejorada e Intercambio de Estructuras
-                </div>
-                <div class="rubric-pill">
-                  <span>30%</span>
-                  <div class="rubric-tooltip">
-                    <strong>Intercambio Completo de Estructuras</strong><br>
-                    Burbuja Mejorada con bandera huboIntercambio comparando importeTotal e invocando intercambiar(ReservaHotel &amp;a, ReservaHotel &amp;b).
-                  </div>
+          <!-- Item 5: Parte Escrita en Lápiz y Papel -->
+          <div class="mission-card" style="border-left-color: var(--ucse-rosa);">
+            <div class="mission-card-header">
+              <div class="mission-card-title" style="color: var(--ucse-rosa);">
+                <i class="fas fa-pen-fancy"></i> 5. Instancia Escrita: Traza de Ordenamiento
+              </div>
+              <div class="rubric-pill" style="background: var(--ucse-rosa);">
+                <span>25%</span>
+                <div class="rubric-tooltip">
+                  <strong>Traza Manual en Hoja Impresa</strong><br>
+                  Resolución paso a paso en hoja de examen indicando comparaciones, desplazamientos y prefijo
+                  consolidado.
                 </div>
               </div>
-              <ul style="margin: 4px 0 0 0; padding-left: 20px; font-size: 0.92em; line-height: 1.55; color: #334155;">
-                <li><strong>Firmas:</strong> <code>void intercambiar(ReservaHotel &amp;a, ReservaHotel &amp;b)</code> y <code>void ordenarPorImporteBurbujaDesc(ReservaHotel arr[], int tam)</code>.</li>
-                <li><strong>Proceso:</strong> Ordenar en forma <strong>DESCENDENTE</strong> por <code>importeTotal</code> con Burbuja Mejorada y corte anticipado por bandera (<code>huboIntercambio</code>), permutando estructuras completas mediante <code>intercambiar(arr[j], arr[j + 1])</code>.</li>
-              </ul>
             </div>
+            <ul style="margin: 4px 0 0 0; padding-left: 20px; font-size: 0.92em; line-height: 1.55; color: #334155;">
+              <li><strong>Consigna:</strong> En la hoja impresa A4, aplique <strong>Inserción Directa (Insertion
+                  Sort)</strong> para ordenar en forma <strong>DESCENDENTE</strong> el vector <i>V</i> = [33, 19, 58,
+                12, 41].</li>
+              <li><strong>Detalle requerido:</strong> Detallar en cada una de las 4 pasadas: el elemento
+                <code>aux</code> seleccionado, la secuencia de comparaciones y desplazamientos efectuados hacia la
+                derecha, la posición final de inserción y el estado resultante del vector.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
 
-            <!-- Item 5: Parte Escrita en Lápiz y Papel -->
-            <div class="mission-card" style="border-left-color: var(--ucse-rosa);">
-              <div class="mission-card-header">
-                <div class="mission-card-title" style="color: var(--ucse-rosa);">
-                  <i class="fas fa-pen-fancy"></i> 5. Instancia Escrita: Traza de Ordenamiento
-                </div>
-                <div class="rubric-pill" style="background: var(--ucse-rosa);">
-                  <span>25%</span>
-                  <div class="rubric-tooltip">
-                    <strong>Traza Manual en Hoja Impresa</strong><br>
-                    Resolución paso a paso en hoja de examen indicando comparaciones, desplazamientos y prefijo consolidado.
-                  </div>
-                </div>
-              </div>
-              <ul style="margin: 4px 0 0 0; padding-left: 20px; font-size: 0.92em; line-height: 1.55; color: #334155;">
-                <li><strong>Consigna:</strong> En la hoja impresa A4, aplique <strong>Inserción Directa (Insertion Sort)</strong> para ordenar en forma <strong>DESCENDENTE</strong> el vector <i>V</i> = [33, 19, 58, 12, 41].</li>
-                <li><strong>Detalle requerido:</strong> Detallar en cada una de las 4 pasadas: el elemento <code>aux</code> seleccionado, la secuencia de comparaciones y desplazamientos efectuados hacia la derecha, la posición final de inserción y el estado resultante del vector.</li>
-              </ul>
-            </div>
-</div>
+      <!-- Casos de Prueba Formales -->
+      <div class="exercise-section">
+        <h2 class="exercise-title">
+          <span><i class="fas fa-vial"></i> CASOS DE PRUEBA (EJECUCIONES ESPERADAS)</span>
+          <span class="exercise-weight">4 Casos de Verificación</span>
+        </h2>
+
+        <p style="margin-bottom: 8px;">
+          Verifique que el comportamiento, los datos calculados y el orden de los registros coincidan con los siguientes
+          casos de prueba. Las operaciones de consulta, baja y promedio (Casos 3 y 4) ya están resueltas en la plantilla
+          provista y permiten comprobar la compilación integral de su <code>struct</code>.
+        </p>
+        <div
+          style="margin-bottom: 14px; padding: 10px 14px; background: #eff6ff; border-left: 4px solid #3b82f6; border-radius: 4px; font-size: 0.93em; color: #1e40af;">
+          <strong><i class="fas fa-info-circle"></i> Nota sobre Pruebas:</strong> Cada caso de prueba debe ejecutarse de
+          manera independiente, reiniciando el programa con los cuatro registros iniciales. Los números iniciales y
+          finales de cada entrada corresponden a opciones del menú. Los casos mostrados son ejemplos de verificación y
+          no constituyen el conjunto completo de pruebas utilizado para evaluar la solución.
         </div>
 
-        <!-- Casos de Prueba Formales -->
-        <div class="exercise-section">
-          <h2 class="exercise-title">
-            <span><i class="fas fa-vial"></i> CASOS DE PRUEBA (EJECUCIONES ESPERADAS)</span>
-            <span class="exercise-weight">4 Casos de Verificación</span>
-          </h2>
+        <div class="test-tabs" id="tabs-container">
+          <button type="button" onclick="switchTab(0)" class="tab-btn active">
+            <i class="fas fa-terminal"></i> Caso 1: Alta en Posición
+          </button>
+          <button type="button" onclick="switchTab(1)" class="tab-btn">
+            <i class="fas fa-terminal"></i> Caso 2: Búsqueda y Modificación
+          </button>
+          <button type="button" onclick="switchTab(2)" class="tab-btn">
+            <i class="fas fa-terminal"></i> Caso 3: Baja con Compactación
+          </button>
+          <button type="button" onclick="switchTab(3)" class="tab-btn">
+            <i class="fas fa-terminal"></i> Caso 4: Ordenamiento y Reporte
+          </button>
+        </div>
 
-          <p style="margin-bottom: 8px;">
-            Verifique que el comportamiento, los datos calculados y el orden de los registros coincidan con los siguientes casos de prueba. Las operaciones de consulta, baja y promedio (Casos 3 y 4) ya están resueltas en la plantilla provista y permiten comprobar la compilación integral de su <code>struct</code>.
-          </p>
-          <div style="margin-bottom: 14px; padding: 10px 14px; background: #eff6ff; border-left: 4px solid #3b82f6; border-radius: 4px; font-size: 0.93em; color: #1e40af;">
-            <strong><i class="fas fa-info-circle"></i> Nota sobre Pruebas:</strong> Cada caso de prueba debe ejecutarse de manera independiente, reiniciando el programa con los cuatro registros iniciales. Los números iniciales y finales de cada entrada corresponden a opciones del menú. Los casos mostrados son ejemplos de verificación y no constituyen el conjunto completo de pruebas utilizado para evaluar la solución.
-          </div>
-
-          <div class="test-tabs" id="tabs-container">
-            <button type="button" onclick="switchTab(0)" class="tab-btn active">
-              <i class="fas fa-terminal"></i> Caso 1: Alta en Posición
-            </button>
-            <button type="button" onclick="switchTab(1)" class="tab-btn">
-              <i class="fas fa-terminal"></i> Caso 2: Búsqueda y Modificación
-            </button>
-            <button type="button" onclick="switchTab(2)" class="tab-btn">
-              <i class="fas fa-terminal"></i> Caso 3: Baja con Compactación
-            </button>
-            <button type="button" onclick="switchTab(3)" class="tab-btn">
-              <i class="fas fa-terminal"></i> Caso 4: Ordenamiento y Reporte
-            </button>
-          </div>
-
-          <div id="tab-contents">
-            <!-- Caso 1 -->
-            <div class="tab-content active">
-              <div class="test-case-grid">
-                <div class="terminal-box">
-                  <div class="terminal-header">
-                    <div class="terminal-title" style="color: #60a5fa;"><i class="fas fa-keyboard"></i> Entrada (Simulada)</div>
-                    <div class="terminal-dots">
-                      <span class="terminal-dot dot-red"></span>
-                      <span class="terminal-dot dot-yellow"></span>
-                      <span class="terminal-dot dot-green"></span>
-                    </div>
+        <div id="tab-contents">
+          <!-- Caso 1 -->
+          <div class="tab-content active">
+            <div class="test-case-grid">
+              <div class="terminal-box">
+                <div class="terminal-header">
+                  <div class="terminal-title" style="color: #60a5fa;"><i class="fas fa-keyboard"></i> Entrada (Simulada)
                   </div>
-                  <div class="terminal-body">
-                    <pre class="console console-input">3
+                  <div class="terminal-dots">
+                    <span class="terminal-dot dot-red"></span>
+                    <span class="terminal-dot dot-yellow"></span>
+                    <span class="terminal-dot dot-green"></span>
+                  </div>
+                </div>
+                <div class="terminal-body">
+                  <pre class="console console-input">3
 2
 250
 4
@@ -1188,19 +1198,20 @@ D
 1
 1
 0</pre>
+                </div>
+              </div>
+              <div class="terminal-box">
+                <div class="terminal-header">
+                  <div class="terminal-title" style="color: #4ade80;"><i class="fas fa-desktop"></i> Salida Esperada por
+                    Pantalla</div>
+                  <div class="terminal-dots">
+                    <span class="terminal-dot dot-red"></span>
+                    <span class="terminal-dot dot-yellow"></span>
+                    <span class="terminal-dot dot-green"></span>
                   </div>
                 </div>
-                <div class="terminal-box">
-                  <div class="terminal-header">
-                    <div class="terminal-title" style="color: #4ade80;"><i class="fas fa-desktop"></i> Salida Esperada por Pantalla</div>
-                    <div class="terminal-dots">
-                      <span class="terminal-dot dot-red"></span>
-                      <span class="terminal-dot dot-yellow"></span>
-                      <span class="terminal-dot dot-green"></span>
-                    </div>
-                  </div>
-                  <div class="terminal-body">
-                    <pre class="console console-output">>>> REGISTRO / INSERCION DE NUEVA RESERVA <<<
+                <div class="terminal-body">
+                  <pre class="console console-output">>>> REGISTRO / INSERCION DE NUEVA RESERVA <<<
   Ingrese posicion donde desea insertar [0 .. 4]: 2
   Ingrese Numero de Habitacion (entero unico): 250
   Ingrese Cantidad de noches (> 0): 4
@@ -1222,25 +1233,26 @@ D
 Total reservas activas: 5.
 
   [SISTEMA]: Sesion finalizada. Fin del programa.</pre>
-                  </div>
                 </div>
               </div>
             </div>
+          </div>
 
-            <!-- Caso 2 -->
-            <div class="tab-content">
-              <div class="test-case-grid">
-                <div class="terminal-box">
-                  <div class="terminal-header">
-                    <div class="terminal-title" style="color: #60a5fa;"><i class="fas fa-keyboard"></i> Entrada (Simulada)</div>
-                    <div class="terminal-dots">
-                      <span class="terminal-dot dot-red"></span>
-                      <span class="terminal-dot dot-yellow"></span>
-                      <span class="terminal-dot dot-green"></span>
-                    </div>
+          <!-- Caso 2 -->
+          <div class="tab-content">
+            <div class="test-case-grid">
+              <div class="terminal-box">
+                <div class="terminal-header">
+                  <div class="terminal-title" style="color: #60a5fa;"><i class="fas fa-keyboard"></i> Entrada (Simulada)
                   </div>
-                  <div class="terminal-body">
-                    <pre class="console console-input">4
+                  <div class="terminal-dots">
+                    <span class="terminal-dot dot-red"></span>
+                    <span class="terminal-dot dot-yellow"></span>
+                    <span class="terminal-dot dot-green"></span>
+                  </div>
+                </div>
+                <div class="terminal-body">
+                  <pre class="console console-input">4
 204
 6
 D
@@ -1249,19 +1261,20 @@ D
 2
 204
 0</pre>
+                </div>
+              </div>
+              <div class="terminal-box">
+                <div class="terminal-header">
+                  <div class="terminal-title" style="color: #4ade80;"><i class="fas fa-desktop"></i> Salida Esperada por
+                    Pantalla</div>
+                  <div class="terminal-dots">
+                    <span class="terminal-dot dot-red"></span>
+                    <span class="terminal-dot dot-yellow"></span>
+                    <span class="terminal-dot dot-green"></span>
                   </div>
                 </div>
-                <div class="terminal-box">
-                  <div class="terminal-header">
-                    <div class="terminal-title" style="color: #4ade80;"><i class="fas fa-desktop"></i> Salida Esperada por Pantalla</div>
-                    <div class="terminal-dots">
-                      <span class="terminal-dot dot-red"></span>
-                      <span class="terminal-dot dot-yellow"></span>
-                      <span class="terminal-dot dot-green"></span>
-                    </div>
-                  </div>
-                  <div class="terminal-body">
-                    <pre class="console console-output">>>> MODIFICACION DE RESERVA (UPDATE / PK INMUTABLE) <<<
+                <div class="terminal-body">
+                  <pre class="console console-output">>>> MODIFICACION DE RESERVA (UPDATE / PK INMUTABLE) <<<
   Ingrese Numero de Habitacion de la reserva a modificar: 204
   Modificando reserva de Habitacion: 204 (inalterable)
   Nuevas Noches de estadia (> 0): 6
@@ -1285,41 +1298,43 @@ D
   +------------------------------------------------------------------+
 
   [SISTEMA]: Sesion finalizada. Fin del programa.</pre>
-                  </div>
                 </div>
               </div>
             </div>
+          </div>
 
-            <!-- Caso 3 -->
-            <div class="tab-content">
-              <div class="test-case-grid">
-                <div class="terminal-box">
-                  <div class="terminal-header">
-                    <div class="terminal-title" style="color: #60a5fa;"><i class="fas fa-keyboard"></i> Entrada (Simulada)</div>
-                    <div class="terminal-dots">
-                      <span class="terminal-dot dot-red"></span>
-                      <span class="terminal-dot dot-yellow"></span>
-                      <span class="terminal-dot dot-green"></span>
-                    </div>
+          <!-- Caso 3 -->
+          <div class="tab-content">
+            <div class="test-case-grid">
+              <div class="terminal-box">
+                <div class="terminal-header">
+                  <div class="terminal-title" style="color: #60a5fa;"><i class="fas fa-keyboard"></i> Entrada (Simulada)
                   </div>
-                  <div class="terminal-body">
-                    <pre class="console console-input">5
+                  <div class="terminal-dots">
+                    <span class="terminal-dot dot-red"></span>
+                    <span class="terminal-dot dot-yellow"></span>
+                    <span class="terminal-dot dot-green"></span>
+                  </div>
+                </div>
+                <div class="terminal-body">
+                  <pre class="console console-input">5
 305
 1
 0</pre>
+                </div>
+              </div>
+              <div class="terminal-box">
+                <div class="terminal-header">
+                  <div class="terminal-title" style="color: #4ade80;"><i class="fas fa-desktop"></i> Salida Esperada por
+                    Pantalla</div>
+                  <div class="terminal-dots">
+                    <span class="terminal-dot dot-red"></span>
+                    <span class="terminal-dot dot-yellow"></span>
+                    <span class="terminal-dot dot-green"></span>
                   </div>
                 </div>
-                <div class="terminal-box">
-                  <div class="terminal-header">
-                    <div class="terminal-title" style="color: #4ade80;"><i class="fas fa-desktop"></i> Salida Esperada por Pantalla</div>
-                    <div class="terminal-dots">
-                      <span class="terminal-dot dot-red"></span>
-                      <span class="terminal-dot dot-yellow"></span>
-                      <span class="terminal-dot dot-green"></span>
-                    </div>
-                  </div>
-                  <div class="terminal-body">
-                    <pre class="console console-output">>>> CANCELACION / BAJA FISICA DE RESERVA (DELETE / COMPACTACION) <<<
+                <div class="terminal-body">
+                  <pre class="console console-output">>>> CANCELACION / BAJA FISICA DE RESERVA (DELETE / COMPACTACION) <<<
   Ingrese Numero de Habitacion a cancelar: 305
 
   [OK] Registro eliminado y arreglo compactado correctamente. Total activas: 3
@@ -1334,41 +1349,43 @@ D
 Total reservas activas: 3.
 
   [SISTEMA]: Sesion finalizada. Fin del programa.</pre>
-                  </div>
                 </div>
               </div>
             </div>
+          </div>
 
-            <!-- Caso 4 -->
-            <div class="tab-content">
-              <div class="test-case-grid">
-                <div class="terminal-box">
-                  <div class="terminal-header">
-                    <div class="terminal-title" style="color: #60a5fa;"><i class="fas fa-keyboard"></i> Entrada (Simulada)</div>
-                    <div class="terminal-dots">
-                      <span class="terminal-dot dot-red"></span>
-                      <span class="terminal-dot dot-yellow"></span>
-                      <span class="terminal-dot dot-green"></span>
-                    </div>
+          <!-- Caso 4 -->
+          <div class="tab-content">
+            <div class="test-case-grid">
+              <div class="terminal-box">
+                <div class="terminal-header">
+                  <div class="terminal-title" style="color: #60a5fa;"><i class="fas fa-keyboard"></i> Entrada (Simulada)
                   </div>
-                  <div class="terminal-body">
-                    <pre class="console console-input">6
+                  <div class="terminal-dots">
+                    <span class="terminal-dot dot-red"></span>
+                    <span class="terminal-dot dot-yellow"></span>
+                    <span class="terminal-dot dot-green"></span>
+                  </div>
+                </div>
+                <div class="terminal-body">
+                  <pre class="console console-input">6
 1
 7
 0</pre>
+                </div>
+              </div>
+              <div class="terminal-box">
+                <div class="terminal-header">
+                  <div class="terminal-title" style="color: #4ade80;"><i class="fas fa-desktop"></i> Salida Esperada por
+                    Pantalla</div>
+                  <div class="terminal-dots">
+                    <span class="terminal-dot dot-red"></span>
+                    <span class="terminal-dot dot-yellow"></span>
+                    <span class="terminal-dot dot-green"></span>
                   </div>
                 </div>
-                <div class="terminal-box">
-                  <div class="terminal-header">
-                    <div class="terminal-title" style="color: #4ade80;"><i class="fas fa-desktop"></i> Salida Esperada por Pantalla</div>
-                    <div class="terminal-dots">
-                      <span class="terminal-dot dot-red"></span>
-                      <span class="terminal-dot dot-yellow"></span>
-                      <span class="terminal-dot dot-green"></span>
-                    </div>
-                  </div>
-                  <div class="terminal-body">
-                    <pre class="console console-output">>>> ORDENAMIENTO BURBUJA (DESCENDENTE POR IMPORTE TOTAL) <<<
+                <div class="terminal-body">
+                  <pre class="console console-output">>>> ORDENAMIENTO BURBUJA (DESCENDENTE POR IMPORTE TOTAL) <<<
   [OK] Reservas ordenadas de mayor a menor segun importe total con exito.
 
 +-----+--------+--------+-----+--------------+---------------+------------+
@@ -1385,39 +1402,44 @@ Total reservas activas: 4.
   [RESULTADO] Promedio calculado: $154900.00
 
   [SISTEMA]: Sesion finalizada. Fin del programa.</pre>
-                  </div>
                 </div>
               </div>
             </div>
           </div>
-
         </div>
 
-        <!-- Código Base C++ con Structs -->
-        <div class="exercise-section">
-          <h2 class="exercise-title">
-            <span><i class="fas fa-file-code"></i> CÓDIGO BASE C++ CON STRUCTS</span>
-            <span class="exercise-weight" style="background: var(--ucse-azul-oscuro);"><i class="fas fa-code-branch"></i> Plantilla Modular</span>
-          </h2>
-          <p style="margin-bottom: 16px;">
-            Inicie su desarrollo copiando la siguiente plantilla oficial con la estructura modular, prototipos y menú interactivo:
-          </p>
-          <div class="terminal-box">
-            <div class="terminal-header" style="display: flex; justify-content: space-between; align-items: center;">
-              <div class="terminal-title" style="color: #ffd800;"><i class="fab fa-cuttlefish"></i> codigo_base_tema2.cpp</div>
-              <div style="display: flex; align-items: center; gap: 12px;">
-                <button type="button" onclick="navigator.clipboard.writeText(document.getElementById('code-plantilla').innerText); this.innerHTML='<i class=\'fas fa-check\'></i> ¡Copiado!'; setTimeout(() => this.innerHTML='<i class=\'fas fa-copy\'></i> Copiar Plantilla', 2000);" style="background: #334155; color: #f8fafc; border: 1px solid #475569; border-radius: 4px; padding: 4px 10px; font-size: 0.78em; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; gap: 5px;">
-                  <i class="fas fa-copy"></i> Copiar Plantilla
-                </button>
-                <div class="terminal-dots">
-                  <span class="terminal-dot dot-red"></span>
-                  <span class="terminal-dot dot-yellow"></span>
-                  <span class="terminal-dot dot-green"></span>
-                </div>
+      </div>
+
+      <!-- Código Base C++ con Structs -->
+      <div class="exercise-section">
+        <h2 class="exercise-title">
+          <span><i class="fas fa-file-code"></i> CÓDIGO BASE C++ CON STRUCTS</span>
+          <span class="exercise-weight" style="background: var(--ucse-azul-oscuro);"><i class="fas fa-code-branch"></i>
+            Plantilla Modular</span>
+        </h2>
+        <p style="margin-bottom: 16px;">
+          Inicie su desarrollo copiando la siguiente plantilla oficial con la estructura modular, prototipos y menú
+          interactivo:
+        </p>
+        <div class="terminal-box">
+          <div class="terminal-header" style="display: flex; justify-content: space-between; align-items: center;">
+            <div class="terminal-title" style="color: #ffd800;"><i class="fab fa-cuttlefish"></i> codigo_base_tema2.cpp
+            </div>
+            <div style="display: flex; align-items: center; gap: 12px;">
+              <button type="button"
+                onclick="navigator.clipboard.writeText(document.getElementById('code-plantilla').innerText); this.innerHTML='<i class=\'fas fa-check\'></i> ¡Copiado!'; setTimeout(() => this.innerHTML='<i class=\'fas fa-copy\'></i> Copiar Plantilla', 2000);"
+                style="background: #334155; color: #f8fafc; border: 1px solid #475569; border-radius: 4px; padding: 4px 10px; font-size: 0.78em; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; gap: 5px;">
+                <i class="fas fa-copy"></i> Copiar Plantilla
+              </button>
+              <div class="terminal-dots">
+                <span class="terminal-dot dot-red"></span>
+                <span class="terminal-dot dot-yellow"></span>
+                <span class="terminal-dot dot-green"></span>
               </div>
             </div>
-            <div class="terminal-body" style="max-height: 380px; overflow-y: auto;">
-              <pre id="code-plantilla" class="console" style="color: #e2e8f0;">#include &lt;iostream&gt;
+          </div>
+          <div class="terminal-body" style="max-height: 380px; overflow-y: auto;">
+            <pre id="code-plantilla" class="console" style="color: #e2e8f0;">#include &lt;iostream&gt;
 #include &lt;iomanip&gt;
 
 using namespace std;
@@ -1592,170 +1614,75 @@ void mostrarTabla(const ReservaHotel arr[], int tam) {
     cout &lt;&lt; "Total reservas activas: " &lt;&lt; tam &lt;&lt; ".\n";
 }
 </pre>
-            </div>
           </div>
         </div>
-
-        <!-- Condiciones Formales de Desarrollo -->
-        <div class="conditions-section">
-          <h2><i class="fas fa-calendar-check"></i> CONDICIONES FORMALES DE DESARROLLO Y EVALUACIÓN</h2>
-          <ul>
-            <li><strong>Modalidad Bimodal:</strong> 75% Laboratorio de Programación (C++) + 25% Instancia Escrita (Lápiz y Papel).</li>
-            <li><strong>Entorno de Desarrollo:</strong> El código deberá compilar bajo el estándar C++17 (en Code::Blocks, VS Code, CLion, MinGW / GCC).</li>
-            <li><strong>Estructura de Datos:</strong> Se debe utilizar exclusivamente arreglo de estructuras (<code>struct</code> + array AoS). Prohibido vectores paralelos.</li>
-            <li><strong>Plantilla Modular y Primitivas Provistas:</strong> La estructura base de <code>main()</code> (con los datos precargados y el bucle del menú), las rutinas de visualización con <code>&lt;iomanip&gt;</code> y las primitivas repetidas del Módulo 3 (<code>buscarPorHabitacion</code>, <code>darDeBajaReserva</code> y <code>calcularPromedioFacturacion</code>) ya vienen implementadas. Al igual que en el 4to Examen, el estudiante debe completar en los <code>case</code> del <code>switch</code> la lectura y validación básica de datos (estado <code>1/0</code>), el cálculo de <code>importeTotal</code>, las llamadas a las funciones (propias y provistas) y los mensajes correspondientes, además de declarar el <code>struct ReservaHotel</code> y codificar las <strong>4 funciones nucleares de Módulo 4</strong> (<code>intercambiar</code>, <code>insertarReserva</code>, <code>modificarReserva</code> y <code>ordenarPorImporteBurbujaDesc</code>).</li>
-            <li><strong>Criterio de Aprobación:</strong> El programa debe compilar sin errores bajo C++17. Las advertencias que evidencien problemas funcionales, conversiones inseguras o variables sin inicializar podrán considerarse dentro del bloque afectado; la hoja escrita debe entregarse al finalizar.</li>
-          </ul>
-        </div>
-
       </div>
+
+      <!-- Condiciones Formales de Desarrollo -->
+      <div class="conditions-section">
+        <h2><i class="fas fa-calendar-check"></i> CONDICIONES FORMALES DE DESARROLLO Y EVALUACIÓN</h2>
+        <ul>
+          <li><strong>Modalidad Bimodal:</strong> 75% Laboratorio de Programación (C++) + 25% Instancia Escrita (Lápiz y
+            Papel).</li>
+          <li><strong>Entorno de Desarrollo:</strong> El código deberá compilar bajo el estándar C++17 (en Code::Blocks,
+            VS Code, CLion, MinGW / GCC).</li>
+          <li><strong>Estructura de Datos:</strong> Se debe utilizar exclusivamente arreglo de estructuras
+            (<code>struct</code> + array AoS). Prohibido vectores paralelos.</li>
+          <li><strong>Plantilla Modular y Primitivas Provistas:</strong> La estructura base de <code>main()</code> (con
+            los datos precargados y el bucle del menú), las rutinas de visualización con <code>&lt;iomanip&gt;</code> y
+            las primitivas repetidas del Módulo 3 (<code>buscarPorHabitacion</code>, <code>darDeBajaReserva</code> y
+            <code>calcularPromedioFacturacion</code>) ya vienen implementadas. Al igual que en el 4to Examen, el
+            estudiante debe completar en los <code>case</code> del <code>switch</code> la lectura y validación básica de
+            datos (estado <code>1/0</code>), el cálculo de <code>importeTotal</code>, las llamadas a las funciones
+            (propias y provistas) y los mensajes correspondientes, además de declarar el
+            <code>struct ReservaHotel</code> y codificar las <strong>4 funciones nucleares de Módulo 4</strong>
+            (<code>intercambiar</code>, <code>insertarReserva</code>, <code>modificarReserva</code> y
+            <code>ordenarPorImporteBurbujaDesc</code>).</li>
+          <li><strong>Criterio de Aprobación:</strong> El programa debe compilar sin errores bajo C++17. Las
+            advertencias que evidencien problemas funcionales, conversiones inseguras o variables sin inicializar podrán
+            considerarse dentro del bloque afectado; la hoja escrita debe entregarse al finalizar.</li>
+        </ul>
+      </div>
+
     </div>
+  </div>
 
-    <!-- Pie de Página Institucional UCSE -->
-    <footer class="footer-info">
-      <div class="main-container">
-        <p><strong>Universidad Católica de Santiago del Estero</strong></p>
-        <p>Departamento Académico San Salvador • Facultad de Ciencias de la Salud y Tecnologías de la Información</p>
-        <p>Algoritmos y Programación — Examen Módulo 4: Arreglos de Estructuras (Ciclo Lectivo 2026)</p>
-      </div>
-    </footer>
+  <!-- Pie de Página Institucional UCSE -->
+  <footer class="footer-info">
+    <div class="main-container">
+      <p><strong>Universidad Católica de Santiago del Estero</strong></p>
+      <p>Departamento Académico San Salvador • Facultad de Ciencias de la Salud y Tecnologías de la Información</p>
+      <p>Algoritmos y Programación — Examen Módulo 4: Arreglos de Estructuras (Ciclo Lectivo 2026)</p>
+    </div>
+  </footer>
 
-    <script>
-      function switchTab(tabIndex) {
-        document.querySelectorAll('.tab-btn').forEach((btn, idx) => {
-          if (idx === tabIndex) {
-            btn.classList.add('active');
-          } else {
-            btn.classList.remove('active');
-          }
-        });
-        document.querySelectorAll('.tab-content').forEach((content, idx) => {
-          if (idx === tabIndex) {
-            content.classList.add('active');
-          } else {
-            content.classList.remove('active');
-          }
-        });
-      }
-
-      // Activar nav-item correspondiente al tema actual automáticamente
-      document.addEventListener("DOMContentLoaded", function() {
-        const numTema = "2".trim();
-        const activeNav = document.getElementById("nav-tema-" + numTema);
-        if (activeNav) {
-          activeNav.classList.add("active");
+  <script>
+    function switchTab(tabIndex) {
+      document.querySelectorAll('.tab-btn').forEach((btn, idx) => {
+        if (idx === tabIndex) {
+          btn.classList.add('active');
+        } else {
+          btn.classList.remove('active');
         }
       });
-    </script>
+      document.querySelectorAll('.tab-content').forEach((content, idx) => {
+        if (idx === tabIndex) {
+          content.classList.add('active');
+        } else {
+          content.classList.remove('active');
+        }
+      });
+    }
 
-    <dialog id="ucse-auth-dialog" closedby="none" aria-labelledby="ucse-auth-title">
-        <div class="ucse-auth-header">
-            <h2 id="ucse-auth-title">Acceso Restringido al Examen</h2>
-            <p>Algoritmos y Programación • UCSE</p>
-        </div>
-        <div class="ucse-auth-body">
-            <form id="ucse-auth-form" method="dialog" novalidate>
-                <div class="ucse-auth-field">
-                    <label for="ucse-auth-pass">Contraseña de habilitación <span aria-hidden="true">*</span></label>
-                    <div class="ucse-auth-input-wrap">
-                        <input id="ucse-auth-pass" name="exam_password" type="password" inputmode="numeric" autocomplete="current-password" autocorrect="off" autocapitalize="none" spellcheck="false" enterkeyhint="done" aria-describedby="ucse-auth-hint ucse-auth-error" required autofocus>
-                        <button type="button" id="ucse-auth-toggle" class="ucse-auth-toggle" aria-pressed="false" aria-label="Mostrar contraseña">Mostrar</button>
-                    </div>
-                    <span id="ucse-auth-hint" class="ucse-auth-hint">Solicite la clave numérica al docente en el aula.</span>
-                    <div id="ucse-auth-error" class="ucse-auth-error" role="alert" aria-live="polite">Contraseña incorrecta. Acceso bloqueado.</div>
-                </div>
-                <button type="submit" class="ucse-auth-submit">Desbloquear Examen</button>
-            </form>
-        </div>
-    </dialog>
-    <script>
-        (function () {
-            const STORAGE_KEY = 'ucse_exam_unlocked';
-            const EXPECTED_SIG = 1076444563;
-            const dialog = document.getElementById('ucse-auth-dialog');
-            const form = document.getElementById('ucse-auth-form');
-            const input = document.getElementById('ucse-auth-pass');
-            const errorEl = document.getElementById('ucse-auth-error');
-            const toggleBtn = document.getElementById('ucse-auth-toggle');
-
-            function sig(str) {
-                let h = 2166136261 >>> 0;
-                for (let i = 0; i < str.length; i++) {
-                    h ^= str.charCodeAt(i);
-                    h = Math.imul(h, 16777619) >>> 0;
-                }
-                return h >>> 0;
-            }
-
-            function isUnlocked() {
-                try {
-                    return sessionStorage.getItem(STORAGE_KEY) === '1';
-                } catch (e) {
-                    return false;
-                }
-            }
-
-            function markUnlocked() {
-                try {
-                    sessionStorage.setItem(STORAGE_KEY, '1');
-                } catch (e) {}
-            }
-
-            if (isUnlocked()) {
-                document.documentElement.removeAttribute('data-auth-locked');
-                return;
-            }
-
-            document.documentElement.setAttribute('data-auth-locked', 'true');
-            if (dialog && typeof dialog.showModal === 'function' && !dialog.open) {
-                dialog.showModal();
-            }
-
-            dialog.addEventListener('cancel', function (e) {
-                if (!isUnlocked()) {
-                    e.preventDefault();
-                    errorEl.setAttribute('data-visible', 'true');
-                    input.setAttribute('aria-invalid', 'true');
-                    input.focus();
-                }
-            });
-
-            dialog.addEventListener('close', function () {
-                dialog.returnValue = '';
-                if (!isUnlocked()) {
-                    dialog.showModal();
-                }
-            });
-
-            input.addEventListener('input', function () {
-                input.removeAttribute('aria-invalid');
-                errorEl.removeAttribute('data-visible');
-            });
-
-            toggleBtn.addEventListener('click', function () {
-                const showing = input.type === 'text';
-                input.type = showing ? 'password' : 'text';
-                toggleBtn.setAttribute('aria-pressed', String(!showing));
-                toggleBtn.setAttribute('aria-label', showing ? 'Mostrar contraseña' : 'Ocultar contraseña');
-                toggleBtn.textContent = showing ? 'Mostrar' : 'Ocultar';
-                input.focus();
-            });
-
-            form.addEventListener('submit', function (e) {
-                e.preventDefault();
-                if (sig(input.value.trim()) === EXPECTED_SIG) {
-                    markUnlocked();
-                    document.documentElement.removeAttribute('data-auth-locked');
-                    dialog.close();
-                } else {
-                    input.setAttribute('aria-invalid', 'true');
-                    errorEl.setAttribute('data-visible', 'true');
-                    input.select();
-                    input.focus();
-                }
-            });
-        })();
-    </script>
-
+    // Activar nav-item correspondiente al tema actual automáticamente
+    document.addEventListener("DOMContentLoaded", function () {
+      const numTema = "2".trim();
+      const activeNav = document.getElementById("nav-tema-" + numTema);
+      if (activeNav) {
+        activeNav.classList.add("active");
+      }
+    });
+  </script>
 </body>
+
 </html>
