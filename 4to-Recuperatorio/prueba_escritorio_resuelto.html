@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resolución Docente - Instancia Escrita 4to Recuperatorio 2026</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 24px;
+            color: #0f172a;
+            background-color: #f8fafc;
+        }
+
+        .page {
+            max-width: 880px;
+            margin: 0 auto 30px auto;
+            background: #ffffff;
+            padding: 32px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            page-break-after: always;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .page:last-child {
+            page-break-after: auto;
+        }
+
+        .header-box {
+            text-align: center;
+            border-bottom: 2px solid #16a34a;
+            padding-bottom: 12px;
+            margin-bottom: 20px;
+        }
+
+        .header-box h1 {
+            font-size: 20px;
+            margin: 0 0 4px 0;
+            color: #166534;
+            text-transform: uppercase;
+        }
+
+        .header-box p {
+            margin: 0;
+            font-size: 13px;
+            color: #475569;
+        }
+
+        .docente-badge {
+            display: inline-block;
+            background-color: #dcfce7;
+            color: #15803d;
+            font-weight: bold;
+            font-size: 11px;
+            padding: 3px 10px;
+            border-radius: 999px;
+            border: 1px solid #86efac;
+            margin-top: 6px;
+        }
+
+        h2 {
+            font-size: 16px;
+            color: #1e293b;
+            border-left: 4px solid #16a34a;
+            padding-left: 10px;
+            margin: 20px 0 10px 0;
+        }
+
+        .instruction-box {
+            background-color: #f0fdf4;
+            border-left: 4px solid #16a34a;
+            padding: 12px 16px;
+            font-size: 13px;
+            color: #14532d;
+            margin-bottom: 18px;
+            line-height: 1.5;
+        }
+
+        .vector-display {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin: 16px 0 24px 0;
+        }
+
+        .vector-cell {
+            width: 52px;
+            height: 48px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid #1e293b;
+            background: #ffffff;
+            font-weight: bold;
+            font-size: 16px;
+            position: relative;
+        }
+
+        .vector-cell span {
+            font-size: 10px;
+            font-weight: normal;
+            color: #64748b;
+            margin-top: 2px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0 24px 0;
+            font-size: 13px;
+        }
+
+        table, th, td {
+            border: 1px solid #334155;
+        }
+
+        th {
+            background-color: #1f2937;
+            color: #ffffff;
+            padding: 8px;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        td {
+            padding: 8px;
+            text-align: center;
+            height: 28px;
+        }
+
+        .col-idx {
+            width: 46px;
+            font-weight: bold;
+        }
+
+        .sorted-cell {
+            background-color: #bbf7d0;
+            font-weight: bold;
+            color: #14532d;
+        }
+
+        .swapped-cell {
+            background-color: #fef08a;
+            font-weight: bold;
+            color: #854d0e;
+        }
+
+        .shift-cell {
+            background-color: #fed7aa;
+            font-weight: bold;
+            color: #9a3412;
+        }
+
+        .pedagogical-notes {
+            background-color: #eff6ff;
+            border-left: 4px solid #3b82f6;
+            padding: 12px 16px;
+            margin-top: 15px;
+            border-radius: 4px;
+            font-size: 12px;
+            color: #1e3a8a;
+            line-height: 1.5;
+        }
+
+        .nav-links {
+            max-width: 880px;
+            margin: 0 auto 20px auto;
+            display: flex;
+            gap: 10px;
+        }
+
+        .nav-links a {
+            padding: 8px 16px;
+            background: #1f3763;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="nav-links">
+        <a href="index.html">← Volver al Hub Principal</a>
+        <a href="prueba_escritorio_imprimir.html">🖨️ Ver Versión Imprimible para Alumnos</a>
+    </div>
+
+    <!-- TEMA 1 RESOLUCIÓN -->
+    <div class="page">
+        <div class="header-box">
+            <h1>Algoritmos y Programación — Solucionario Docente</h1>
+            <p><strong>4to Examen Recuperatorio 2026 — Instancia Escrita (25% Calificación)</strong></p>
+            <span class="docente-badge">CLAVE DE CORRECCIÓN — TEMA 1</span>
+        </div>
+
+        <h2>Tema 1: Selección Directa Ascendente (<i>V</i> = [45, 11, 72, 28, 6])</h2>
+
+        <div class="instruction-box">
+            <strong>Mecánica del Algoritmo:</strong> En cada pasada <i>i</i> (desde 0 hasta <i>N</i> - 2), se busca el índice del menor elemento en el subarreglo <i>V</i>[<i>i</i> .. <i>N</i> - 1]. Al finalizar la pasada, se realiza un único swap entre <i>V</i>[<i>i</i>] y <i>V</i>[minIdx] si minIdx ≠ <i>i</i>.
+        </div>
+
+        <div class="vector-display">
+            <div class="vector-cell">45<span>[0]</span></div>
+            <div class="vector-cell">11<span>[1]</span></div>
+            <div class="vector-cell">72<span>[2]</span></div>
+            <div class="vector-cell">28<span>[3]</span></div>
+            <div class="vector-cell">6<span>[4]</span></div>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 14%;">Pasada</th>
+                    <th style="width: 25%;">Subarreglo Analizado</th>
+                    <th style="width: 20%;">Mínimo Encontrado</th>
+                    <th style="width: 21%;">Swap Ejecutado</th>
+                    <th class="col-idx">[0]</th>
+                    <th class="col-idx">[1]</th>
+                    <th class="col-idx">[2]</th>
+                    <th class="col-idx">[3]</th>
+                    <th class="col-idx">[4]</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr style="background-color: #f1f5f9; font-weight: bold;">
+                    <td>Inicial</td>
+                    <td>Todo el vector</td>
+                    <td>-</td>
+                    <td>Ninguno</td>
+                    <td>45</td>
+                    <td>11</td>
+                    <td>72</td>
+                    <td>28</td>
+                    <td>6</td>
+                </tr>
+                <tr>
+                    <td><strong>Pasada 0</strong> (<i>i</i> = 0)</td>
+                    <td><i>V</i>[0 .. 4] = {45, 11, 72, 28, 6}</td>
+                    <td>Valor <strong>6</strong> en índice <strong>4</strong></td>
+                    <td>Swap <i>V</i>[0] ↔ <i>V</i>[4]</td>
+                    <td class="sorted-cell">6</td>
+                    <td>11</td>
+                    <td>72</td>
+                    <td>28</td>
+                    <td class="swapped-cell">45</td>
+                </tr>
+                <tr>
+                    <td><strong>Pasada 1</strong> (<i>i</i> = 1)</td>
+                    <td><i>V</i>[1 .. 4] = {11, 72, 28, 45}</td>
+                    <td>Valor <strong>11</strong> en índice <strong>1</strong></td>
+                    <td>No hay (minIdx == <i>i</i>)</td>
+                    <td class="sorted-cell">6</td>
+                    <td class="sorted-cell">11</td>
+                    <td>72</td>
+                    <td>28</td>
+                    <td>45</td>
+                </tr>
+                <tr>
+                    <td><strong>Pasada 2</strong> (<i>i</i> = 2)</td>
+                    <td><i>V</i>[2 .. 4] = {72, 28, 45}</td>
+                    <td>Valor <strong>28</strong> en índice <strong>3</strong></td>
+                    <td>Swap <i>V</i>[2] ↔ <i>V</i>[3]</td>
+                    <td class="sorted-cell">6</td>
+                    <td class="sorted-cell">11</td>
+                    <td class="sorted-cell">28</td>
+                    <td class="swapped-cell">72</td>
+                    <td>45</td>
+                </tr>
+                <tr>
+                    <td><strong>Pasada 3</strong> (<i>i</i> = 3)</td>
+                    <td><i>V</i>[3 .. 4] = {72, 45}</td>
+                    <td>Valor <strong>45</strong> en índice <strong>4</strong></td>
+                    <td>Swap <i>V</i>[3] ↔ <i>V</i>[4]</td>
+                    <td class="sorted-cell">6</td>
+                    <td class="sorted-cell">11</td>
+                    <td class="sorted-cell">28</td>
+                    <td class="sorted-cell">45</td>
+                    <td class="sorted-cell">72</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="pedagogical-notes">
+            <strong>Criterios de Corrección para Tema 1:</strong>
+            <ul>
+                <li><strong>Cálculo de pasadas exactas:</strong> Deben constar exactamente 4 pasadas (<i>N</i> - 1 = 4). La última posición queda ordenada por transitividad.</li>
+                <li><strong>Pasada 1 (Sin swap):</strong> Otorgar puntaje completo si el alumno explicita que minIdx == 1 y no se requiere permutación.</li>
+                <li><strong>Puntaje:</strong> 25 puntos totales (6.25 pts por pasada correctamente justificada y trazada).</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- TEMA 2 RESOLUCIÓN -->
+    <div class="page">
+        <div class="header-box">
+            <h1>Algoritmos y Programación — Solucionario Docente</h1>
+            <p><strong>4to Examen Recuperatorio 2026 — Instancia Escrita (25% Calificación)</strong></p>
+            <span class="docente-badge">CLAVE DE CORRECCIÓN — TEMA 2</span>
+        </div>
+
+        <h2>Tema 2: Inserción Directa Descendente (<i>V</i> = [33, 19, 58, 12, 41])</h2>
+
+        <div class="instruction-box">
+            <strong>Mecánica del Algoritmo:</strong> Para ordenar de forma <strong>DESCENDENTE</strong> (mayor a menor), cada elemento nuevo <i>V</i>[<i>i</i>] (desde <i>i</i> = 1 hasta <i>N</i> - 1) se extrae a `aux`. Se desplazan hacia la derecha los elementos del prefijo ordenado que sean <strong>menores que `aux`</strong> (<i>V</i>[<i>j</i>] &lt; aux), y se implanta `aux` en la posición liberada.
+        </div>
+
+        <div class="vector-display">
+            <div class="vector-cell">33<span>[0]</span></div>
+            <div class="vector-cell">19<span>[1]</span></div>
+            <div class="vector-cell">58<span>[2]</span></div>
+            <div class="vector-cell">12<span>[3]</span></div>
+            <div class="vector-cell">41<span>[4]</span></div>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 13%;">Pasada</th>
+                    <th style="width: 14%;">Elemento Aux</th>
+                    <th style="width: 25%;">Comparaciones</th>
+                    <th style="width: 20%;">Desplazamientos</th>
+                    <th class="col-idx">[0]</th>
+                    <th class="col-idx">[1]</th>
+                    <th class="col-idx">[2]</th>
+                    <th class="col-idx">[3]</th>
+                    <th class="col-idx">[4]</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr style="background-color: #f1f5f9; font-weight: bold;">
+                    <td>Inicial</td>
+                    <td>-</td>
+                    <td>Prefijo base <i>V</i>[0]</td>
+                    <td>Ninguno</td>
+                    <td class="sorted-cell">33</td>
+                    <td>19</td>
+                    <td>58</td>
+                    <td>12</td>
+                    <td>41</td>
+                </tr>
+                <tr>
+                    <td><strong>Pasada 1</strong> (<i>i</i> = 1)</td>
+                    <td>aux = 19</td>
+                    <td>¿33 &lt; 19? No (33 ya es mayor)</td>
+                    <td>0 desplazamientos. Se inserta en [1].</td>
+                    <td class="sorted-cell">33</td>
+                    <td class="sorted-cell">19</td>
+                    <td>58</td>
+                    <td>12</td>
+                    <td>41</td>
+                </tr>
+                <tr>
+                    <td><strong>Pasada 2</strong> (<i>i</i> = 2)</td>
+                    <td>aux = 58</td>
+                    <td>¿19 &lt; 58? Sí.<br>¿33 &lt; 58? Sí.</td>
+                    <td>2 desplazamientos:<br>19 va a [2], 33 va a [1]. Se inserta 58 en [0].</td>
+                    <td class="sorted-cell">58</td>
+                    <td class="shift-cell">33</td>
+                    <td class="shift-cell">19</td>
+                    <td>12</td>
+                    <td>41</td>
+                </tr>
+                <tr>
+                    <td><strong>Pasada 3</strong> (<i>i</i> = 3)</td>
+                    <td>aux = 12</td>
+                    <td>¿19 &lt; 12? No.</td>
+                    <td>0 desplazamientos. Se inserta en [3].</td>
+                    <td class="sorted-cell">58</td>
+                    <td class="sorted-cell">33</td>
+                    <td class="sorted-cell">19</td>
+                    <td class="sorted-cell">12</td>
+                    <td>41</td>
+                </tr>
+                <tr>
+                    <td><strong>Pasada 4</strong> (<i>i</i> = 4)</td>
+                    <td>aux = 41</td>
+                    <td>¿12 &lt; 41? Sí.<br>¿19 &lt; 41? Sí.<br>¿33 &lt; 41? Sí.<br>¿58 &lt; 41? No.</td>
+                    <td>3 desplazamientos:<br>12 va a [4], 19 va a [3], 33 va a [2]. Se inserta 41 en [1].</td>
+                    <td class="sorted-cell">58</td>
+                    <td class="sorted-cell">41</td>
+                    <td class="shift-cell">33</td>
+                    <td class="shift-cell">19</td>
+                    <td class="shift-cell">12</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="pedagogical-notes">
+            <strong>Criterios de Corrección para Tema 2:</strong>
+            <ul>
+                <li><strong>Pasada 4 Crítica (3 desplazamientos):</strong> Evaluar con especial atención la pasada 4, donde 41 es mayor que 12, 19 y 33, requiriendo 3 desplazamientos consecutivos hacia la derecha.</li>
+                <li><strong>Criterio Descendente:</strong> Se desplazan a la derecha los elementos <em>menores</em> que `aux`.</li>
+                <li><strong>Puntaje:</strong> 25 puntos totales (6.25 pts por pasada correctamente trazada).</li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+
+</html>
+

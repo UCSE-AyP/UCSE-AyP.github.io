@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recuperatorio Integral 2026 (Módulos 3 y 4) - Portal Unificado UCSE</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <!-- Google Fonts Fira Code -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            color-scheme: light;
+            --ucse-azul-oscuro: #1f3763;
+            --ucse-azul-medio: #2a5298;
+            --ucse-amarillo: #ffd800;
+            --ucse-cian: #00bfff;
+            --ucse-rosa: #c90063;
+            --ucse-blanco: #ffffff;
+            --ucse-gris-fondo: #f8fafc;
+            --ucse-texto: #1e293b;
+            --ucse-texto-sec: #334155;
+            --ucse-borde: #cbd5e1;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: var(--ucse-texto);
+            background-color: var(--ucse-gris-fondo);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            min-height: 100dvh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        code {
+            font-family: 'Fira Code', 'Consolas', 'Courier New', monospace;
+            background: #f1f5f9;
+            color: #0f172a;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+
+        .visually-hidden:where(:not(:focus-within, :active)) {
+            position: absolute !important;
+            clip-path: inset(50%) !important;
+            overflow: hidden !important;
+            width: 1px !important;
+            height: 1px !important;
+            margin: -1px !important;
+            padding: 0 !important;
+            border: 0 !important;
+            white-space: nowrap !important;
+        }
+
+        .skip-link:focus {
+            position: fixed;
+            top: 12px;
+            left: 12px;
+            z-index: 999;
+            background: var(--ucse-azul-oscuro);
+            color: var(--ucse-amarillo);
+            border: 2px solid var(--ucse-amarillo);
+            padding: 10px 16px;
+            border-radius: 8px;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        :where(a:any-link, button, [tabindex="-1"]):focus-visible {
+            outline: 3px solid var(--ucse-azul-medio);
+            outline-offset: 3px;
+        }
+
+        .header-ucse :where(a:any-link, button, [tabindex="-1"]):focus-visible {
+            outline-color: var(--ucse-amarillo);
+        }
+
+        .header-ucse {
+            background: linear-gradient(135deg, var(--ucse-azul-oscuro) 0%, var(--ucse-azul-medio) 100%);
+            color: #ffffff;
+            padding: 36px 20px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+            border-bottom: 4px solid var(--ucse-amarillo);
+        }
+
+        .header-ucse h1 {
+            font-size: clamp(1.3rem, 1rem + 1.2vw, 1.75rem);
+            margin: 0 0 6px 0;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .header-ucse p {
+            margin: 0;
+            font-size: 14.5px;
+            opacity: 0.96;
+        }
+
+        .header-subtitle {
+            margin-top: 6px !important;
+            font-weight: 700;
+            color: #fffde7;
+        }
+
+        .badge-bar {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 16px;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            background: rgba(15, 23, 42, 0.35);
+            padding: 6px 14px;
+            border-radius: 999px;
+            font-size: 12.5px;
+            font-weight: 600;
+            border: 1px solid rgba(255, 255, 255, 0.45);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: #ffffff;
+        }
+
+        .badge-student {
+            background: rgba(255, 216, 0, 0.18);
+            border-color: var(--ucse-amarillo);
+            color: #fffde7;
+            font-weight: 700;
+        }
+
+        .container {
+            max-width: 1040px;
+            margin: 30px auto;
+            padding: 0 20px;
+            flex: 1;
+            width: 100%;
+            container-type: inline-size;
+        }
+
+        .welcome-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-left: 5px solid var(--ucse-azul-oscuro);
+            padding: 24px 26px;
+            border-radius: 10px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+            margin-bottom: 28px;
+        }
+
+        .welcome-card h2 {
+            margin: 0 0 8px 0;
+            font-size: clamp(1.1rem, 1rem + 0.45vw, 1.3rem);
+            color: var(--ucse-azul-oscuro);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .welcome-lead {
+            margin: 0 0 18px 0;
+            font-size: 14px;
+            color: var(--ucse-texto-sec);
+        }
+
+        .path-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 14px;
+        }
+
+        @container (max-width: 820px) {
+            .path-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .path-card {
+            background: #f8fafc;
+            border: 1px solid #cbd5e1;
+            border-top: 4px solid var(--ucse-azul-medio);
+            border-radius: 8px;
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 12px;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+        }
+
+        .path-card.path-m3 {
+            border-top-color: #1d4ed8;
+        }
+
+        .path-card.path-m4 {
+            border-top-color: #0f766e;
+        }
+
+        .path-card.path-both {
+            border-top-color: var(--ucse-rosa);
+        }
+
+        .path-card.is-selected {
+            background: #ffffff;
+            border-color: var(--ucse-azul-medio);
+            box-shadow: 0 6px 18px rgba(31, 55, 99, 0.14);
+        }
+
+        .path-card h3 {
+            margin: 0 0 6px 0;
+            font-size: 15.5px;
+            color: #0f172a;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .path-card p {
+            margin: 0;
+            font-size: 13px;
+            color: var(--ucse-texto-sec);
+        }
+
+        .path-tag {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.4px;
+            padding: 3px 9px;
+            border-radius: 999px;
+            margin-bottom: 8px;
+        }
+
+        .path-m3 .path-tag {
+            background: #dbeafe;
+            color: #1e40af;
+        }
+
+        .path-m4 .path-tag {
+            background: #ccfbf1;
+            color: #0f766e;
+        }
+
+        .path-both .path-tag {
+            background: #fce7f3;
+            color: #9d174d;
+        }
+
+        .btn-filter {
+            width: 100%;
+            min-height: 44px;
+            padding: 9px 12px;
+            border-radius: 7px;
+            border: 1px solid #94a3b8;
+            background: #ffffff;
+            color: var(--ucse-azul-oscuro);
+            font-weight: 700;
+            font-size: 13px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 7px;
+            transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+        }
+
+        .btn-filter:hover {
+            background: #e2e8f0;
+            border-color: var(--ucse-azul-oscuro);
+        }
+
+        .btn-filter[aria-pressed="true"] {
+            background: var(--ucse-azul-oscuro);
+            color: #ffffff;
+            border-color: var(--ucse-azul-oscuro);
+        }
+
+        .guidance-banner {
+            margin-top: 16px;
+            padding: 13px 16px;
+            border-radius: 8px;
+            background: #eff6ff;
+            border: 1px solid #bfdbfe;
+            color: #1e3a8a;
+            font-size: 13.5px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .guidance-banner i {
+            margin-top: 3px;
+            flex-shrink: 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin: 26px 0 20px 0;
+        }
+
+        .section-header h2 {
+            font-size: clamp(1.15rem, 1rem + 0.6vw, 1.4rem);
+            color: var(--ucse-azul-oscuro);
+            margin: 0;
+            font-weight: 700;
+        }
+
+        .section-header p {
+            margin: 5px 0 0 0;
+            color: #475569;
+            font-size: 14px;
+        }
+
+        .grid-temas {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 24px;
+            margin-bottom: 28px;
+        }
+
+        .grid-temas.is-single {
+            grid-template-columns: minmax(0, 680px);
+            justify-content: center;
+        }
+
+        @container (max-width: 780px) {
+            .grid-temas,
+            .grid-temas.is-single {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .card-tema {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 26px;
+            border: 1px solid var(--ucse-borde);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            opacity: 1;
+            translate: 0 0;
+            transition:
+                display 0.25s ease,
+                opacity 0.25s ease,
+                translate 0.25s ease,
+                transform 0.25s ease,
+                box-shadow 0.25s ease;
+            transition-behavior: allow-discrete;
+        }
+
+        @starting-style {
+            .card-tema {
+                opacity: 0;
+                translate: 0 12px;
+            }
+        }
+
+        .card-tema:where([hidden], [data-closing]) {
+            opacity: 0;
+            translate: 0 12px;
+        }
+
+        .card-tema[hidden] {
+            display: none;
+        }
+
+        .card-tema:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 26px rgba(0, 0, 0, 0.09);
+        }
+
+        .card-tema.tema-1 {
+            border-top: 6px solid #1d4ed8;
+        }
+
+        .card-tema.tema-2 {
+            border-top: 6px solid #0f766e;
+        }
+
+        .tema-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+
+        .tema-badge {
+            font-size: 11.5px;
+            font-weight: 800;
+            padding: 5px 12px;
+            border-radius: 999px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .tema-1 .tema-badge {
+            background: #dbeafe;
+            color: #1e40af;
+        }
+
+        .tema-2 .tema-badge {
+            background: #ccfbf1;
+            color: #0f766e;
+        }
+
+        .tema-icon {
+            font-size: 28px;
+            color: var(--ucse-azul-oscuro);
+        }
+
+        .tema-2 .tema-icon {
+            color: #0f766e;
+        }
+
+        .tema-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #0f172a;
+            margin: 0 0 4px 0;
+        }
+
+        .tema-subtitle {
+            font-size: 13.5px;
+            font-weight: 600;
+            color: #475569;
+            margin-bottom: 12px;
+        }
+
+        .tema-desc {
+            font-size: 13.5px;
+            color: var(--ucse-texto-sec);
+            line-height: 1.55;
+            margin: 0 0 18px 0;
+        }
+
+        .spec-box {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 12px 14px;
+            margin-bottom: 18px;
+            font-size: 12.5px;
+        }
+
+        .spec-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 10px;
+            padding: 6px 0;
+            border-bottom: 1px dashed #cbd5e1;
+        }
+
+        .spec-row:last-child {
+            border-bottom: none;
+        }
+
+        .spec-label {
+            color: #475569;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+
+        .spec-value {
+            font-weight: 700;
+            color: #0f172a;
+            text-align: right;
+        }
+
+        .card-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .btn-start {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            width: 100%;
+            min-height: 46px;
+            text-align: center;
+            padding: 12px 20px;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 14.5px;
+            transition: transform 0.2s ease, background 0.2s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+        }
+
+        .tema-1 .btn-start {
+            background: linear-gradient(135deg, #1d4ed8 0%, #2563eb 100%);
+        }
+
+        .tema-1 .btn-start:hover {
+            background: linear-gradient(135deg, #1e40af 0%, #1d4ed8 100%);
+            transform: translateY(-2px);
+        }
+
+        .tema-2 .btn-start {
+            background: linear-gradient(135deg, #0f766e 0%, #0d9488 100%);
+        }
+
+        .tema-2 .btn-start:hover {
+            background: linear-gradient(135deg, #115e59 0%, #0f766e 100%);
+            transform: translateY(-2px);
+        }
+
+        .quick-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .quick-link {
+            flex: 1 1 130px;
+            min-height: 44px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            padding: 8px 10px;
+            border-radius: 7px;
+            border: 1px solid #cbd5e1;
+            background: #f8fafc;
+            color: #1e293b;
+            text-decoration: none;
+            font-size: 12.5px;
+            font-weight: 600;
+            text-align: center;
+            transition: background-color 0.2s ease, border-color 0.2s ease;
+        }
+
+        .quick-link:hover {
+            background: #e2e8f0;
+            border-color: var(--ucse-azul-medio);
+        }
+
+        .rules-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 14px;
+            margin-top: 14px;
+        }
+
+        .rule-item {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            padding: 14px 16px;
+            border-radius: 8px;
+            font-size: 13px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            color: var(--ucse-texto-sec);
+        }
+
+        .rule-item i {
+            color: var(--ucse-azul-medio);
+            font-size: 16px;
+            margin-top: 2px;
+            flex-shrink: 0;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 24px 20px;
+            font-size: 13px;
+            color: #e2e8f0;
+            border-top: 4px solid var(--ucse-amarillo);
+            margin-top: auto;
+            background: var(--ucse-azul-oscuro);
+        }
+
+        .footer strong {
+            color: #ffffff;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .card-tema {
+                translate: none;
+                transition-duration: 0.1s;
+            }
+            @starting-style {
+                .card-tema {
+                    translate: none;
+                }
+            }
+            .card-tema:where([hidden], [data-closing]) {
+                translate: none;
+            }
+            .btn-start,
+            .path-card,
+            .btn-filter,
+            .quick-link {
+                transition: none !important;
+            }
+            .card-tema:hover,
+            .btn-start:hover {
+                transform: none !important;
+            }
+        }
+
+        @media (forced-colors: active) {
+            .card-tema,
+            .welcome-card,
+            .path-card,
+            .rule-item,
+            .spec-box,
+            .guidance-banner {
+                border: 2px solid CanvasText !important;
+            }
+            .btn-start,
+            .btn-filter,
+            .quick-link {
+                border: 2px solid ButtonText !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <a href="#contenido-principal" class="skip-link visually-hidden">Saltar al contenido principal</a>
+
+    <header class="header-ucse">
+        <h1>Universidad Católica de Santiago del Estero</h1>
+        <p>Facultad de Ciencias de la Salud y Tecnologías de la Información • Cátedra de Algoritmos y Programación</p>
+        <p class="header-subtitle">Recuperatorio Integral 2026 — Portal Unificado de Módulos 3 y 4</p>
+        <div class="badge-bar">
+            <span class="badge badge-student"><i class="fas fa-user-graduate" aria-hidden="true"></i> Acceso Unificado de Estudiantes</span>
+            <span class="badge"><i class="fas fa-layer-group" aria-hidden="true"></i> Módulo 3: Arreglos 1D</span>
+            <span class="badge"><i class="fas fa-cubes" aria-hidden="true"></i> Módulo 4: Structs AoS + Ordenamiento</span>
+        </div>
+    </header>
+
+    <main id="contenido-principal" class="container" tabindex="-1">
+
+        <!-- SELECTOR DE MODALIDAD SEGUN SITUACION DEL ALUMNO -->
+        <section class="welcome-card" aria-labelledby="sec-modalidad">
+            <h2 id="sec-modalidad"><i class="fas fa-route" aria-hidden="true"></i> Identifique qué Módulos debe Recuperar</h2>
+            <p class="welcome-lead">
+                Según su condición académica, puede tener que rendir únicamente el <strong>Módulo 3</strong>, únicamente el <strong>Módulo 4</strong> o <strong>ambos módulos en conjunto</strong>. Seleccione su escenario para mostrar únicamente los portales que debe rendir, o ingrese directamente abajo.
+            </p>
+
+            <div class="path-grid" role="group" aria-label="Filtrar portales según situación del alumno">
+                <article class="path-card path-m3" data-path="m3">
+                    <div>
+                        <span class="path-tag">Escenario A • 1 Módulo</span>
+                        <h3><i class="fas fa-list-ol" aria-hidden="true"></i> Solo Recupera Módulo 3</h3>
+                        <p>Rinde exclusivamente el examen práctico en C++ sobre arreglos 1D (<code>float[15]</code>): 5 funciones puras con menú y <code>main()</code> ya provistos, compactación <em>Shift-Left</em> y estadísticas.</p>
+                    </div>
+                    <button type="button" class="btn-filter" data-mode="m3" aria-pressed="false">
+                        <i class="fas fa-eye" aria-hidden="true"></i> Mostrar Solo Módulo 3
+                    </button>
+                </article>
+
+                <article class="path-card path-m4" data-path="m4">
+                    <div>
+                        <span class="path-tag">Escenario B • 1 Módulo</span>
+                        <h3><i class="fas fa-table" aria-hidden="true"></i> Solo Recupera Módulo 4</h3>
+                        <p>Rinde la instancia bimodal: 75% laboratorio C++ (definición de <code>struct</code>, conexión del <code>switch</code> y 4 funciones nucleares con vistas y primitivas auxiliares ya provistas) + 25% traza escrita en papel.</p>
+                    </div>
+                    <button type="button" class="btn-filter" data-mode="m4" aria-pressed="false">
+                        <i class="fas fa-eye" aria-hidden="true"></i> Mostrar Solo Módulo 4
+                    </button>
+                </article>
+
+                <article class="path-card path-both" data-path="both">
+                    <div>
+                        <span class="path-tag">Escenario C • Integral</span>
+                        <h3><i class="fas fa-layer-group" aria-hidden="true"></i> Recupera Ambos (3 y 4)</h3>
+                        <p>Debe completar ambos módulos en la misma fecha. Las consignas están calibradas sin superposición entre M3 y M4; trabaje en archivos <code>.cpp</code> independientes y reserve tiempo para la hoja escrita.</p>
+                    </div>
+                    <button type="button" class="btn-filter" data-mode="both" aria-pressed="true">
+                        <i class="fas fa-check-double" aria-hidden="true"></i> Mostrar Ambos Módulos
+                    </button>
+                </article>
+            </div>
+
+            <div id="guidance-banner" class="guidance-banner" role="status" aria-live="polite">
+                <i class="fas fa-info-circle" aria-hidden="true"></i>
+                <div>
+                    <strong>Modo Integral Activo (Módulo 3 + Módulo 4):</strong> Se muestran ambos portales calibrados sin contenidos duplicados. Verifique qué Tema (Tema 1 o Tema 2) le fue asignado en cada módulo y reserve tiempo para la instancia escrita del Módulo 4.
+                </div>
+            </div>
+        </section>
+
+        <!-- PORTALES DE EXAMEN POR MODULO -->
+        <section aria-labelledby="sec-portales">
+            <div class="section-header">
+                <h2 id="sec-portales">Portales de Examen Disponibles</h2>
+                <p>Se muestran los portales correspondientes al escenario seleccionado. Ingrese para leer las instrucciones y abrir su Tema asignado.</p>
+            </div>
+
+            <div id="grid-temas" class="grid-temas">
+
+                <!-- CARD MODULO 3 -->
+                <article id="card-m3" class="card-tema tema-1">
+                    <div>
+                        <div class="tema-header">
+                            <span class="tema-badge">Módulo 3 • 100% Laboratorio C++</span>
+                            <span class="tema-icon" aria-hidden="true"><i class="fas fa-solar-panel"></i></span>
+                        </div>
+                        <h3 class="tema-title">3er Examen Recuperatorio</h3>
+                        <div class="tema-subtitle">Arreglos Unidimensionales y Operaciones Fundamentales</div>
+                        <p class="tema-desc">
+                            Procesamiento de series técnicas sobre <code>float[15]</code> partiendo de plantilla con <code>MostrarMenu</code> y <code>main()</code> completos. Implemente exactamente 5 funciones puras: alta validada con <code>while</code>, filtro por umbral, búsqueda lineal, baja física <em>Shift-Left</em> y estadísticas.
+                        </p>
+
+                        <div class="spec-box">
+                            <div class="spec-row">
+                                <span class="spec-label">Evaluación:</span>
+                                <span class="spec-value">100% Código C++ (5 funciones • sin escrita)</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-label">Estructura:</span>
+                                <span class="spec-value"><code>float[15]</code> (sin <code>struct</code> ni ordenamiento)</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-label">Tema 1:</span>
+                                <span class="spec-value">Parque Solar Cauchari (kWh)</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-label">Tema 2:</span>
+                                <span class="spec-value">Parque Eólico Rawson (kW)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-actions">
+                        <a href="3er-Recuperatorio/index.html" class="btn-start">
+                            Abrir Portal Módulo 3 <span aria-hidden="true">→</span>
+                        </a>
+                        <nav class="quick-links" aria-label="Accesos directos a temas del Módulo 3">
+                            <a href="3er-Recuperatorio/tema1.html" class="quick-link">
+                                <i class="fas fa-sun" aria-hidden="true"></i> Tema 1 (Solar)
+                            </a>
+                            <a href="3er-Recuperatorio/tema2.html" class="quick-link">
+                                <i class="fas fa-wind" aria-hidden="true"></i> Tema 2 (Eólico)
+                            </a>
+                        </nav>
+                    </div>
+                </article>
+
+                <!-- CARD MODULO 4 -->
+                <article id="card-m4" class="card-tema tema-2">
+                    <div>
+                        <div class="tema-header">
+                            <span class="tema-badge">Módulo 4 • 75% C++ + 25% Escrita</span>
+                            <span class="tema-icon" aria-hidden="true"><i class="fas fa-layer-group"></i></span>
+                        </div>
+                        <h3 class="tema-title">4to Examen Recuperatorio</h3>
+                        <div class="tema-subtitle">Arreglos de Estructuras (AoS) y Ordenamiento Bimodal</div>
+                        <p class="tema-desc">
+                            Gestión de registros <code>struct</code> (<code>CAPACIDAD = 15</code>, 4 registros precargados, esqueleto de <code>main()</code> con <code>switch</code> a completar, vistas y primitivas de M3 provistas). Implemente el <code>struct</code>, inserción <em>Shift-Right</em> con clave única, modificación <em>in-place</em>, Burbuja Mejorada con <code>intercambiar()</code> y traza escrita.
+                        </p>
+
+                        <div class="spec-box">
+                            <div class="spec-row">
+                                <span class="spec-label">Evaluación:</span>
+                                <span class="spec-value">75% Código C++ + 25% Escrita (Papel A4)</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-label">Estructura:</span>
+                                <span class="spec-value"><code>struct</code> AoS (4 funciones + Burbuja Mejorada)</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-label">Tema 1:</span>
+                                <span class="spec-value">Inventario Tienda (<code>ProductoTienda</code>)</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-label">Tema 2:</span>
+                                <span class="spec-value">Reservas Hotel (<code>ReservaHotel</code>)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-actions">
+                        <a href="4to-Recuperatorio/index.html" class="btn-start">
+                            Abrir Portal Módulo 4 <span aria-hidden="true">→</span>
+                        </a>
+                        <nav class="quick-links" aria-label="Accesos directos a temas del Módulo 4">
+                            <a href="4to-Recuperatorio/tema1.html" class="quick-link">
+                                <i class="fas fa-store" aria-hidden="true"></i> Tema 1 (Tienda)
+                            </a>
+                            <a href="4to-Recuperatorio/tema2.html" class="quick-link">
+                                <i class="fas fa-hotel" aria-hidden="true"></i> Tema 2 (Hotel)
+                            </a>
+                        </nav>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- REGLAS COMUNES DE ENTREGA -->
+        <section class="welcome-card" aria-labelledby="sec-reglas">
+            <h2 id="sec-reglas"><i class="fas fa-shield-alt" aria-hidden="true"></i> Reglas Comunes y Organización de la Entrega</h2>
+            <div class="rules-grid">
+                <div class="rule-item">
+                    <i class="fas fa-file-code" aria-hidden="true"></i>
+                    <div>
+                        <strong>Archivos Independientes:</strong> Si recupera ambos módulos, cree un archivo <code>.cpp</code> distinto por cada módulo (por ejemplo, <code>m3_apellido.cpp</code> y <code>m4_apellido.cpp</code>) para compilar y entregar sin sobreescribir trabajo.
+                    </div>
+                </div>
+                <div class="rule-item">
+                    <i class="fas fa-ban" aria-hidden="true"></i>
+                    <div>
+                        <strong>Contratos de C++ Estrictos:</strong> No utilice variables globales mutables, <code>std::vector</code> ni asistentes externos/IA. Respete los prototipos, uso de <code>const</code> y referencias pedidos en cada enunciado.
+                    </div>
+                </div>
+                <div class="rule-item">
+                    <i class="fas fa-clock" aria-hidden="true"></i>
+                    <div>
+                        <strong>Gestión de Tiempo (Ambos Módulos):</strong> Verifique en cada portal la asignación de tema con el docente, compile de forma incremental tras cada función y reserve tiempo al final para la instancia escrita del Módulo 4.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <strong>Universidad Católica de Santiago del Estero</strong><br>
+        Facultad de Ciencias de la Salud y Tecnologías de la Información • Cátedra de Algoritmos y Programación (2026)
+    </footer>
+
+    <script>
+        (function () {
+            const buttons = document.querySelectorAll('.btn-filter');
+            const pathCards = document.querySelectorAll('.path-card');
+            const gridTemas = document.getElementById('grid-temas');
+            const cardM3 = document.getElementById('card-m3');
+            const cardM4 = document.getElementById('card-m4');
+            const banner = document.getElementById('guidance-banner');
+
+            const messages = {
+                m3: '<strong>Solo Módulo 3 seleccionado:</strong> Se muestra únicamente el <strong>Portal Módulo 3</strong>. El esqueleto de <code>main()</code> ya viene resuelto: implemente las 5 funciones sobre <code>float[15]</code> (sin parte escrita).',
+                m4: '<strong>Solo Módulo 4 seleccionado:</strong> Se muestra únicamente el <strong>Portal Módulo 4</strong>. Implemente el <code>struct</code>, los casos del <code>switch</code> en <code>main()</code> y las 4 funciones nucleares (75%) — con vistas y primitivas auxiliares ya provistas — más la hoja escrita en papel (25%).',
+                both: '<strong>Modo Integral Activo (Módulo 3 + Módulo 4):</strong> Se muestran ambos portales calibrados sin contenidos duplicados. Verifique con el equipo docente qué Tema (Tema 1 o Tema 2) le fue asignado en cada módulo y reserve tiempo para la instancia escrita del Módulo 4.'
+            };
+
+            let supportsDisplayTransition;
+            function canTransitionDisplay() {
+                if (supportsDisplayTransition !== undefined) return supportsDisplayTransition;
+                if (!window.CSS || typeof window.CSS.supports !== 'function' || !window.CSS.supports('transition-behavior', 'allow-discrete') || !document.body) {
+                    return false;
+                }
+                const probe = document.createElement('div');
+                // Shorthand is intentional so browsers ignoring allow-discrete fail the probe
+                probe.style.cssText = 'transition: display 1s allow-discrete !important; display: block;';
+                document.body.appendChild(probe);
+                getComputedStyle(probe).display;
+                probe.style.display = 'none';
+                supportsDisplayTransition = getComputedStyle(probe).display === 'block';
+                probe.remove();
+                return supportsDisplayTransition;
+            }
+
+            async function hideElement(el) {
+                if (el.hidden) return;
+                if (canTransitionDisplay()) {
+                    el.hidden = true;
+                } else {
+                    el.setAttribute('data-closing', '');
+                }
+
+                const animations = typeof el.getAnimations === 'function' ? el.getAnimations() : [];
+                if (animations.length > 0) {
+                    await Promise.race([
+                        Promise.allSettled(animations.map(a => a.finished)),
+                        new Promise(r => setTimeout(r, 500))
+                    ]);
+                }
+
+                if (el.hasAttribute('data-closing')) {
+                    el.removeAttribute('data-closing');
+                    el.hidden = true;
+                }
+            }
+
+            function showElement(el) {
+                el.removeAttribute('data-closing');
+                el.hidden = false;
+            }
+
+            let activeMode = null;
+
+            async function setMode(mode) {
+                if (mode === activeMode) return;
+                activeMode = mode;
+
+                buttons.forEach(btn => {
+                    btn.setAttribute('aria-pressed', String(btn.dataset.mode === mode));
+                });
+                pathCards.forEach(card => {
+                    card.classList.toggle('is-selected', card.dataset.path === mode);
+                });
+
+                banner.innerHTML = '<i class="fas fa-info-circle" aria-hidden="true"></i><div>' + messages[mode] + '</div>';
+
+                if (mode === 'both') {
+                    gridTemas.classList.remove('is-single');
+                    showElement(cardM3);
+                    showElement(cardM4);
+                    return;
+                }
+
+                const showTarget = mode === 'm3' ? cardM3 : cardM4;
+                const hideTarget = mode === 'm3' ? cardM4 : cardM3;
+
+                await hideElement(hideTarget);
+                if (activeMode !== mode) return;
+
+                gridTemas.classList.add('is-single');
+                showElement(showTarget);
+            }
+
+            buttons.forEach(btn => {
+                btn.addEventListener('click', () => setMode(btn.dataset.mode));
+            });
+
+            setMode('both');
+        })();
+    </script>
+
+</body>
+
+</html>
