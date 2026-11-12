@@ -27,7 +27,7 @@ Todas las devoluciones individuales dirigidas a los alumnos se encuentran redact
 | **Gallardo, Lucas Octavio** | M4 | Tema 2 | — | 72.0 / 75 (96.0%) | **25 / 25 (100%)** | **97.0%** | **10 (Sobresaliente)** | **Aprobado (Sobresaliente)** | [Ver Devolución](file:///c:/Universidad/Algoritmos%20y%20Programación/Integral/Entregas-Integral/feedbacks/feedback-GallardoLucas.md) |
 | **Gallardo, Tiziana** | M3 | Tema 2 | **97% / 100%** | — | — | — | **10 (Sobresaliente)** | **Aprobado (Sobresaliente)** | [Ver Devolución](file:///c:/Universidad/Algoritmos%20y%20Programación/Integral/Entregas-Integral/feedbacks/feedback-GallardoTiziana.md) |
 | **Jerez, Ulises Joaquín** | M4 | Tema 1 | — | 68.0 / 75 (90.7%) | **25 / 25 (100%)** | **93.0%** | **9 (Excelente)** | **Aprobado (Excelente)** | [Ver Devolución](file:///c:/Universidad/Algoritmos%20y%20Programación/Integral/Entregas-Integral/feedbacks/feedback-JerezJoaquin.md) |
-| **Videla, Mariano** | M3 | Tema 2 | **82% / 100%** | — | — | — | **6 (Seis)** | **Aprobado (Bueno)** | [Ver Devolución](file:///c:/Universidad/Algoritmos%20y%20Programación/Integral/Entregas-Integral/feedbacks/feedback-VidelaMariano.md) |
+| **Videla, Mariano** | M3 | Tema 2 | **92% / 100%** | — | — | — | **9 (Excelente)** | **Aprobado (Excelente)** | [Ver Devolución](file:///c:/Universidad/Algoritmos%20y%20Programación/Integral/Entregas-Integral/feedbacks/feedback-VidelaMariano.md) |
 | **Tabarcache, Martina** | M4 | Tema 1 | — | 75.0 / 75 (100%) | **0 / 25 (0%)** | **75.0%** | **5 (Cinco)** | **Aprobado (Aceptable)** | [Ver Devolución](file:///c:/Universidad/Algoritmos%20y%20Programación/Integral/Entregas-Integral/feedbacks/feedback-TabarcacheMartina.md) |
 | **Fernández, Facundo Mauricio** | M4 | Tema 2 | — | 68.0 / 75 (90.7%) | **0 / 25 (0%)** | **68.0%** | **5 (Cinco)** | **Aprobado (Aceptable)** | [Ver Devolución](file:///c:/Universidad/Algoritmos%20y%20Programación/Integral/Entregas-Integral/feedbacks/feedback-FernandezMauricio.md) |
 | **Rodríguez, Jairo** | M3 | Tema 1 | **59% / 100%** | — | — | — | **3 (Tres)** | **Insuficiente (Recupera)** | [Ver Devolución](file:///c:/Universidad/Algoritmos%20y%20Programación/Integral/Entregas-Integral/feedbacks/feedback-RodriguezJairo.md) |
@@ -36,7 +36,7 @@ Todas las devoluciones individuales dirigidas a los alumnos se encuentran redact
 | **Rodríguez, Benjamín** | Ambos | Tema 2 | **48% / 100%** | 24.0 / 75 (32.0%) | *No reg. (0/25)* | **24.0%** | **M3: 3 / M4: 2** | **Insuficiente (M3) / No Aprobado (M4)** | [Ver Devolución](file:///c:/Universidad/Algoritmos%20y%20Programación/Integral/Entregas-Integral/feedbacks/feedback-RodriguezBenjamin.md) |
 | **Colman, Araceli Rafaela** | Ambos | Tema 1 | **8% / 100%** | 12.0 / 75 (16.0%) | **25 / 25 (100%)** | **37.0%** | **M3: 1 / M4: 2** | **No Aprobado** | [Ver Devolución](file:///c:/Universidad/Algoritmos%20y%20Programación/Integral/Entregas-Integral/feedbacks/feedback-ColmanAraceli.md) |
 | **Sosa, Noelia** | M3 | Tema 2 | **35% / 100%** | — | — | — | **2 (Dos)** | **No Aprobado** | [Ver Devolución](file:///c:/Universidad/Algoritmos%20y%20Programación/Integral/Entregas-Integral/feedbacks/feedback-SosaNoelia.md) |
-| **Narváez, Leonel** | M3 | Tema 1 | **34% / 100%** | — | — | — | **2 (Dos)** | **No Aprobado** | [Ver Devolución](file:///c:/Universidad/Algoritmos%20y%20Programación/Integral/Entregas-Integral/feedbacks/feedback-NarvaezLeonel.md) |
+| **Narváez, Leonel** | M3 | Tema 1 | **47% / 100%** | — | — | — | **3 (Tres)** | **Insuficiente (Recupera)** | [Ver Devolución](file:///c:/Universidad/Algoritmos%20y%20Programación/Integral/Entregas-Integral/feedbacks/feedback-NarvaezLeonel.md) |
 | **Lozano, Ignacio** | Ambos | Tema 2 | **15% / 100%** | 8.0 / 75 (10.7%) | **25 / 25 (100%)** | **33.0%** | **M3: 2 / M4: 2** | **No Aprobado** | [Ver Devolución](file:///c:/Universidad/Algoritmos%20y%20Programación/Integral/Entregas-Integral/feedbacks/feedback-LozanoIgnacio.md) |
 | **Mir, Sofía Valentina** | Ambos | Tema 1 | **22% / 100%** | 18.0 / 75 (24.0%) | **0 / 25 (0%)** | **18.0%** | **M3: 2 / M4: 2** | **No Aprobado** | [Ver Devolución](file:///c:/Universidad/Algoritmos%20y%20Programación/Integral/Entregas-Integral/feedbacks/feedback-MirSofiaValentina.md) |
 
@@ -46,12 +46,14 @@ Todas las devoluciones individuales dirigidas a los alumnos se encuentran redact
 
 - **Total de Estudiantes Evaluados:** 15
 - **Aprobados en al menos un Módulo (Calificación ≥ 4 / 60%):** 6 estudiantes (**40.0%**)
-  - **Módulo 3:** 2 estudiantes aprobados (Gallardo Tiziana: 97% - Nota 10; Videla Mariano: 82% - Nota 6).
+  - **Módulo 3:** 2 estudiantes aprobados (Gallardo Tiziana: 97% - Nota 10; Videla Mariano: 92% - Nota 9).
   - **Módulo 4:** 4 estudiantes aprobados (Gallardo Lucas: 97% - Nota 10; Jerez Joaquín: 93% - Nota 9; Tabarcache Martina: 75% - Nota 5; Fernández Facundo: 68% - Nota 5).
-- **Estudiantes en Condición de Insuficiente (40 – 59% / Nota 3):** 3 estudiantes
+- **Estudiantes en Condición de Insuficiente (40 – 59% / Nota 3):** 5 estudiantes
   - **Rodríguez Jairo (M3: 59%):** Quedó a tan solo 1 punto porcentual de acreditar el Módulo 3.
   - **Palavecino Ignacio (M3: 58%):** A 2 puntos porcentuales de acreditar el Módulo 3.
   - **Velásquez Hernán (M4: 48%):** Aprobó el laboratorio C++ con 48/75 (64%), pero al tener 0/25 en la parte escrita su total acumulado fue 48%, quedando en condición de recuperar.
+  - **Rodríguez Benjamín (M3: 48%):** Calificación de 48% en Módulo 3, en condición de recuperar.
+  - **Narváez Leonel (M3: 47%):** Tras convalidar el tipo `double` por parte del JTP (eliminando la penalización de -10% y el descuento en carga), alcanzó 47% (Nota 3), accediendo a condición de recuperar.
 - **Impacto de la Evaluación Escrita en Papel (25%):**
   - Casos como **Colman Araceli (25/25)** y **Lozano Ignacio (25/25)** demostraron una excelente comprensión teórica de las trazas de ordenamiento en papel, permitiéndoles subir de notas mínimas en máquina a 37% y 33% respectivamente, aunque sin alcanzar el 60% global.
   - Casos como **Tabarcache Martina** y **Fernández Facundo** lograron acreditar la materia gracias a su sobresaliente desempeño práctico en máquina (75/75 y 68/75 respectivamente), compensando la ausencia de puntaje en la parte escrita.

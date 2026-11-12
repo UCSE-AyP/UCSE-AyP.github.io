@@ -7,13 +7,13 @@
 - **Tema Asignado:** Tema 1 (*Parque Solar Cauchari*)
 - **Fecha de Evaluación:** 12 de Noviembre de 2026
 - **Estado de Compilación:** Compila con advertencias de función sin valor de retorno (`BuscarMedicion`) y recursión infinita potencial.
-- **Calificación Final:** **2 (Dos) — NO APROBADO (34% / 100%)**
+- **Calificación Final:** **3 (Tres) — INSUFICIENTE (47% / 100%)**
 
 ---
 
-Hola **Leonel**, a continuación te comparto la devolución detallada de tu examen de Módulo 3. Tu calificación final es de **2 / 10 (No Aprobado)**, alcanzando un **34% / 100%** neto.
+Hola **Leonel**, a continuación te comparto la devolución detallada de tu examen de Módulo 3. Tu calificación final es de **3 / 10 (Insuficiente)**, alcanzando un **47% / 100%** neto, lo que te sitúa en condición de **recuperar el módulo**.
 
-Se reconoce tu iniciativa y prolijidad al crear una función auxiliar modular (`ValidacionDouble`) para controlar el ingreso de mediciones en la carga. Sin embargo, tu entrega presentó fallas conceptuales críticas en los algoritmos esenciales: en la búsqueda secuencial generaste una llamada recursiva infinita hacia la propia función sin base de parada (provocando desbordamiento de pila / *Stack Overflow*), en la compactación *Shift-Left* iteraste fuera del límite activo leyendo basura en `arr[tam]`, en el listado omitiste mostrar el arreglo completo (solo mostraste los valores que superaban el umbral), y en las estadísticas te limitaste a imprimir valores sin calcular promedio ni máximo. Además, cambiaste el tipo del arreglo de `float` a `double` y modificaste las firmas de los prototipos provistos en la plantilla.
+Se reconoce tu iniciativa y prolijidad al crear una función auxiliar modular (`ValidacionDouble`) para controlar el ingreso de mediciones en la carga. El uso de `double` en lugar de `float` fue debidamente autorizado por la cátedra (JTP), por lo que no se aplica penalización de tipos. Sin embargo, tu entrega presentó fallas conceptuales críticas en los algoritmos esenciales: en la búsqueda secuencial generaste una llamada recursiva infinita hacia la propia función sin base de parada (provocando desbordamiento de pila / *Stack Overflow*), en la compactación *Shift-Left* iteraste fuera del límite activo leyendo basura en `arr[tam]`, en el listado omitiste mostrar el arreglo completo (solo mostraste los valores que superaban el umbral), y en las estadísticas te limitaste a imprimir valores sin calcular promedio ni máximo.
 
 ---
 
@@ -21,24 +21,21 @@ Se reconoce tu iniciativa y prolijidad al crear una función auxiliar modular (`
 
 | Criterio Evaluado | Ponderación | Puntaje Obtenido | Observaciones Principales |
 | :--- | :---: | :---: | :--- |
-| **1. Carga Controlada (`RegistrarInversor`)** | 25% | **22%** | Implementó una función auxiliar de validación modular `ValidacionDouble`, verificó capacidad e incrementó `tam++`. Descuento por cambio no autorizado de tipo a `double`. |
+| **1. Carga Controlada (`RegistrarInversor`)** | 25% | **25%** | **Excelente:** Implementó una función auxiliar de validación modular `ValidacionDouble`, verificó capacidad e incrementó `tam++`. Tipo `double` autorizado por JTP. |
 | **2. Recorrido y Filtro (`ListarInversores`)** | 20% | **8%** | Alteró la firma quitando el parámetro del umbral. Solo lista los elementos mayores a 140.0, omitiendo mostrar el arreglo completo. |
 | **3. Búsqueda Secuencial (`BuscarMedicion`)** | 15% | **2%** | **Falla crítica:** En lugar de recorrer el arreglo, la función se invoca a sí misma recursivamente sin caso base (*Stack Overflow* en runtime) y carece de `return`. |
 | **4. Eliminación Física (*Shift-Left*) (`DarDeBajaInversor`)** | 25% | **10%** | Desplaza hacia la izquierda pero con error *off-by-one* en el bucle (`i < tam`) leyendo basura en `arr[tam]`. Depende de una búsqueda rota. |
 | **5. Estadísticas con Guarda (`CalcularEstadisticas`)** | 15% | **2%** | Solo imprime las celdas entre barras. No calculó el promedio ni buscó el máximo y su posición. |
-| **Penalización Directa** | -10% | **-10%** | Violación de prototipos y tipos provistos en plantilla (`float` reemplazado por `double`). |
-| **TOTAL FINAL** | **100%** | **34% (Nota 2)** | **No Aprobado.** |
+| **TOTAL FINAL** | **100%** | **47% (Nota 3)** | **Insuficiente (Recupera: rango 40 - 59%).** |
 
 ---
 
 ## 🔍 Desglose Técnico por Criterio
 
-### 1. Carga Controlada (`RegistrarInversor`) (22% / 25%)
+### 1. Carga Controlada (`RegistrarInversor`) (25% / 25%)
 * ✅ **Logrado:**
   - Buena modularización mediante la función `ValidacionDouble` y control de capacidad máxima `if (tam == capacidad) return;`.
-* ⚠️ **A mejorar (-3%):**
-  - **Sustitución de tipos primitivos (`NarvaezLeonel.cpp`, L51):**  
-    El dominio establecía `float arr[]` y cambiaste los contratos a `double arr[]`.
+  - Tipo `double` autorizado por el JTP sin deducción de puntaje.
 
 ### 2. Recorrido y Filtro (`ListarInversores`) (8% / 20%)
 * ⚠️ **A mejorar (-12%):**
@@ -118,4 +115,5 @@ Se reconoce tu iniciativa y prolijidad al crear una función auxiliar modular (`
    ```
 2. **Cuidado con el límite del Shift-Left:**  
    Como accedes a `arr[i + 1]`, el bucle debe detenerse estrictamente en `i < tam - 1`.
-3. **Respeta los prototipos provistos por la cátedra sin alterar tipos ni parámetros.**
+3. **Respeta los prototipos y firmas provistas:**  
+   Evita omitir parámetros solicitados (como `float umbralAltaIrradiacion` en el listado) para preservar la interfaz modular esperada.

@@ -7,17 +7,15 @@
 - **Tema Asignado:** Tema 2 (*Parque Eólico Rawson*)
 - **Fecha de Evaluación:** 12 de Noviembre de 2026
 - **Estado de Compilación:** Compila limpio y sin advertencias bajo estándar C++17.
-- **Calificación Final:** **6 (Seis) — BUENO (82% / 100%)**
+- **Calificación Final:** **9 (Nueve) — EXCELENTE (92% / 100%)**
 
 ---
 
-Hola **Mariano**, a continuación te comparto la devolución detallada de tu examen de Módulo 3. Tu desempeño técnico alcanzó un **82% / 100% (Nota final: 6 - Bueno)**, logrando la **aprobación del módulo**.
+Hola **Mariano**, a continuación te comparto la devolución detallada de tu examen de Módulo 3. Tu desempeño técnico alcanzó un **92% / 100% (Nota final: 9 - Excelente)**, logrando una **destacada aprobación del módulo**.
 
-Demostraste un nivel muy sólido y prolijo en la estructuración de algoritmos sobre arreglos unidimensionales. Tu entrega destaca por una excelente carga interactiva con control de capacidad estricto, una búsqueda secuencial canónica con corte temprano, un listado con filtro de umbral impecable y estadísticas protegidas contra división por cero que calculan con éxito el promedio y el mínimo del parque eólico.
+Demostraste un nivel muy sólido y prolijo en la estructuración de algoritmos sobre arreglos unidimensionales. Tu entrega destaca por una excelente carga interactiva con control de capacidad estricto, una búsqueda secuencial canónica con corte temprano, un listado con filtro de umbral impecable y estadísticas protegidas contra división por cero que calculan con éxito el promedio y el mínimo del parque eólico. Cabe señalar que el uso del tipo `double` en lugar de `float` fue debidamente convalidado por la cátedra (JTP), por lo que no se aplica deducción de tipos.
 
-Los únicos dos aspectos que impidieron una calificación sobresaliente fueron:
-1. Un sutil error de límites (*off-by-one*) en el bucle de compactación *Shift-Left*, donde la condición `i < tam` provoca que en la última vuelta se lea la posición `arr[tam]` (fuera del arreglo activo).
-2. La sustitución sistemática del tipo de dato `float` por `double` en las constantes, prototipos y el arreglo de `main()`, lo cual incurre en la penalización reglamentaria por modificación de firmas provistas en plantilla.
+El único aspecto técnico que impidió la calificación perfecta fue un sutil error de límites (*off-by-one*) en el bucle de compactación *Shift-Left*, donde la condición `i < tam` provoca que en la última vuelta se lea la posición `arr[tam]` (fuera del arreglo activo), junto con un desliz menor de nomenclatura en la variable del índice mínimo.
 
 ---
 
@@ -25,13 +23,12 @@ Los únicos dos aspectos que impidieron una calificación sobresaliente fueron:
 
 | Criterio Evaluado | Ponderación | Puntaje Obtenido | Observaciones Principales |
 | :--- | :---: | :---: | :--- |
-| **1. Carga Controlada (`RegistrarAerogenerador`)** | 25% | **25%** | **Excelente:** Control de cupo `tam >= capacidad`, validación con `while` de rango `[50.0, 600.0]`, asignación e incremento `tam++` por referencia, con opción interactiva de carga continua. |
+| **1. Carga Controlada (`RegistrarAerogenerador`)** | 25% | **25%** | **Excelente:** Control de cupo `tam >= capacidad`, validación con `while` de rango `[50.0, 600.0]`, asignación e incremento `tam++` por referencia, con opción interactiva de carga continua. Tipo `double` autorizado por JTP. |
 | **2. Recorrido y Filtro (`ListarAerogeneradores`)** | 20% | **20%** | **Impecable:** Protección de arreglo vacío `tam == 0`, filtro estricto por umbral `> 350.0`, formateo claro con etiqueta `[RENDIMIENTO OPTIMO]` y reporte de conteo final. |
 | **3. Búsqueda Secuencial (`BuscarPotencia`)** | 15% | **15%** | **Excelente:** Recorrido secuencial canónico con salida anticipada inmediata ante el hallazgo y centinela `-1` ante ausencia. |
 | **4. Eliminación Física (*Shift-Left*) (`DarDeBajaAerogenerador`)** | 25% | **18%** | **Muy Bueno:** Protege `tam == 0`, reutiliza modularmente `BuscarPotencia` y decrementa `tam--`. Detalle *off-by-one*: el bucle `i < tam` lee datos inactivos en `arr[tam]` en la última iteración. |
 | **5. Estadísticas con Guarda (`CalcularEstadisticas`)** | 15% | **14%** | Protege contra división por cero, calcula promedio y busca mínimo. Desliz menor de nomenclatura: variable del índice denominada `posMax` en lugar de `posMin`. |
-| **Penalización Directa** | -10% | **-10%** | Alteración de prototipos y contratos provistos en plantilla (sustitución de `float` por `double` en constantes, funciones y arreglo). |
-| **TOTAL FINAL** | **100%** | **82% (Nota 6)** | **Aprobado (Bueno: rango 76 - 83%).** |
+| **TOTAL FINAL** | **100%** | **92% (Nota 9)** | **Aprobado con Calificación Excelente (rango 92 - 95%).** |
 
 ---
 
@@ -125,11 +122,6 @@ Los únicos dos aspectos que impidieron una calificación sobresaliente fueron:
     int posMax = 0; // Desliz semántico: almacena el índice del mínimo, debió ser posMin
     ```
 
-### 6. Penalización Directa (-10%)
-* ⚠️ **A mejorar (-10%):**
-  - **Sustitución de tipo base provisto en plantilla (`Recu3erParcial - Mariano Videla.cpp`, L14-16, L23-27, L30):**  
-    La plantilla oficial establecía trabajar con `float` (`MIN_POTENCIA = 50.0f`, `float arr[]`, etc.). Reemplazaste todos los tipos por `double`, incurriendo en la penalización reglamentaria por alteración de firmas provistas.
-
 ---
 
 ## 💡 Recomendaciones de Mejora
@@ -142,7 +134,8 @@ Los únicos dos aspectos que impidieron una calificación sobresaliente fueron:
    }
    tam--;
    ```
-2. **Respeta los tipos de datos de los contratos provistos:**  
-   Si la plantilla define `float arr[]`, mantén siempre `float` para no quebrar la compatibilidad de firmas en proyectos colaborativos o suites de testeo automático.
+2. **Nomenclatura semántica en variables:**  
+   Cuando busques el mínimo, procura nombrar a su índice `posMin` en lugar de `posMax` para evitar confusiones al leer o mantener el código.
 3. ¡Felicitaciones por la claridad, orden y calidad lógica demostrada en tu código!
+
 
