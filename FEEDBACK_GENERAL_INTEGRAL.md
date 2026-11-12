@@ -3,7 +3,7 @@
 **Fecha de Evaluación:** 12 de Noviembre de 2026  
 **Instancia Evaluativa:** Recuperatorio Integral (3er y 4to Examen Parcial)  
 **Modalidad Módulo 4:** Bimodal — 75% Laboratorio C++ + 25% Instancia Escrita Individual en Papel A4  
-**Población Evaluada:** 14 estudiantes (19 entregas de código fuente en C++ y 9 evaluaciones escritas registradas)
+**Población Evaluada:** 15 estudiantes (20 entregas de código fuente en C++ y 9 evaluaciones escritas registradas)
 
 ---
 
@@ -27,6 +27,7 @@ Todas las devoluciones individuales dirigidas a los alumnos se encuentran redact
 | **Gallardo, Lucas Octavio** | M4 | Tema 2 | — | 72.0 / 75 (96.0%) | **25 / 25 (100%)** | **97.0%** | **10 (Sobresaliente)** | **Aprobado (Sobresaliente)** | [Ver Devolución](file:///c:/Universidad/Algoritmos%20y%20Programación/Integral/Entregas-Integral/feedbacks/feedback-GallardoLucas.md) |
 | **Gallardo, Tiziana** | M3 | Tema 2 | **97% / 100%** | — | — | — | **10 (Sobresaliente)** | **Aprobado (Sobresaliente)** | [Ver Devolución](file:///c:/Universidad/Algoritmos%20y%20Programación/Integral/Entregas-Integral/feedbacks/feedback-GallardoTiziana.md) |
 | **Jerez, Ulises Joaquín** | M4 | Tema 1 | — | 68.0 / 75 (90.7%) | **25 / 25 (100%)** | **93.0%** | **9 (Excelente)** | **Aprobado (Excelente)** | [Ver Devolución](file:///c:/Universidad/Algoritmos%20y%20Programación/Integral/Entregas-Integral/feedbacks/feedback-JerezJoaquin.md) |
+| **Videla, Mariano** | M3 | Tema 2 | **82% / 100%** | — | — | — | **6 (Seis)** | **Aprobado (Bueno)** | [Ver Devolución](file:///c:/Universidad/Algoritmos%20y%20Programación/Integral/Entregas-Integral/feedbacks/feedback-VidelaMariano.md) |
 | **Tabarcache, Martina** | M4 | Tema 1 | — | 75.0 / 75 (100%) | **0 / 25 (0%)** | **75.0%** | **5 (Cinco)** | **Aprobado (Aceptable)** | [Ver Devolución](file:///c:/Universidad/Algoritmos%20y%20Programación/Integral/Entregas-Integral/feedbacks/feedback-TabarcacheMartina.md) |
 | **Fernández, Facundo Mauricio** | M4 | Tema 2 | — | 68.0 / 75 (90.7%) | **0 / 25 (0%)** | **68.0%** | **5 (Cinco)** | **Aprobado (Aceptable)** | [Ver Devolución](file:///c:/Universidad/Algoritmos%20y%20Programación/Integral/Entregas-Integral/feedbacks/feedback-FernandezMauricio.md) |
 | **Rodríguez, Jairo** | M3 | Tema 1 | **59% / 100%** | — | — | — | **3 (Tres)** | **Insuficiente (Recupera)** | [Ver Devolución](file:///c:/Universidad/Algoritmos%20y%20Programación/Integral/Entregas-Integral/feedbacks/feedback-RodriguezJairo.md) |
@@ -43,9 +44,9 @@ Todas las devoluciones individuales dirigidas a los alumnos se encuentran redact
 
 ## 📈 3. Balance Estadístico de Rendimiento
 
-- **Total de Estudiantes Evaluados:** 14
-- **Aprobados en al menos un Módulo (Calificación ≥ 4 / 60%):** 5 estudiantes (**35.7%**)
-  - **Módulo 3:** 1 estudiante aprobada (Gallardo Tiziana: 97% - Nota 10).
+- **Total de Estudiantes Evaluados:** 15
+- **Aprobados en al menos un Módulo (Calificación ≥ 4 / 60%):** 6 estudiantes (**40.0%**)
+  - **Módulo 3:** 2 estudiantes aprobados (Gallardo Tiziana: 97% - Nota 10; Videla Mariano: 82% - Nota 6).
   - **Módulo 4:** 4 estudiantes aprobados (Gallardo Lucas: 97% - Nota 10; Jerez Joaquín: 93% - Nota 9; Tabarcache Martina: 75% - Nota 5; Fernández Facundo: 68% - Nota 5).
 - **Estudiantes en Condición de Insuficiente (40 – 59% / Nota 3):** 3 estudiantes
   - **Rodríguez Jairo (M3: 59%):** Quedó a tan solo 1 punto porcentual de acreditar el Módulo 3.
