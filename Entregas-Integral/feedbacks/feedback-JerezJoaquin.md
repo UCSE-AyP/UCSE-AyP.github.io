@@ -6,6 +6,7 @@
 - **Archivo Entregado:** `Jerez_tema1.cpp`
 - **Tema Asignado:** Tema 1 (*Gestión de Inventario de Tienda*)
 - **Fecha de Evaluación:** 12 de Noviembre de 2026
+- **Condición Final de la Cursada:** **REGULAR**
 - **Estado de Compilación:** Compila correctamente bajo C++17.
 - **Calificación Final Módulo 4:** **9 (Nueve) — EXCELENTE (93% / 100%)** [Lab C++: 68.0/75 + Escrita Papel: 25/25]
 
@@ -100,3 +101,24 @@ El único punto donde se concentraron los descuentos fue en la función `modific
    ```
 3. **Asigna los datos del registro entrante:**  
    Recuerda escribir `arr[pos].stock = actualizado.stock;` en lugar de asignar la celda a sí misma.
+
+---
+
+## 🎓 Condición Final de la Cursada y Cierre de Ciclo Lectivo 2026
+
+- **Condición Académica Definitiva:** **REGULAR**
+- **Coloquio Teórico:** 0 (Acreditación por examen práctico / instancia regularizadora)
+- **Situación en Actas:** Materia Regularizada (Habilitado/a para Examen Final)
+
+> [!TIP]
+> ### 📘 ¡Felicitaciones por la Regularización de la Asignatura!
+> Has alcanzado formalmente la condición de alumno **REGULAR** en la cátedra de **Algoritmos y Programación (Ciclo Lectivo 2026)**. Esto te otorga el derecho académico a presentarte a rendir el **Examen Final Regular** en cualquiera de las mesas ordinarias habilitadas por la universidad (Diciembre 2026, Febrero-Marzo 2027 o turnos subsiguientes dentro del período de regularidad reglamentario).
+>
+> **Recomendaciones para Preparar el Examen Final:**
+> 1. **Eje Práctico (Laboratorio C++):** Practicar de forma intensiva la arquitectura de Arreglos de Estructuras (*Array of Structs - AoS*), asegurando la implementación fluida de:
+>    - Búsqueda secuencial con salida anticipada.
+>    - Alta posicional (*Right-Shift*) con preservación de unicidad de clave primaria.
+>    - Baja física (*Shift-Left*) compactando el arreglo contiguo y liberando cupo.
+>    - Ordenamiento por método de Burbuja Mejorada (con bandera booleana) e intercambio completo de registros por referencia.
+> 2. **Eje Teórico y Trazas en Papel:** Ejercitar la resolución manual paso a paso de ordenamientos elementales (Selección Directa e Inserción Directa) sobre vectores numéricos ($N=5$).
+> 3. ¡Excelente esfuerzo durante el cuatrimestre y muchos éxitos en el examen final!

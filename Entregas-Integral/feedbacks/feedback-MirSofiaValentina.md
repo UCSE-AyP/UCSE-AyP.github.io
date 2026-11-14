@@ -6,6 +6,7 @@
 - **Archivos Entregados:** `3erParcial-MirSofiaValentina.cpp` (Módulo 3, Tema 1) y `4toParcial-MirSofiaValentina.cpp` (Módulo 4, Tema 1)
 - **Tema Asignado:** Tema 1 (*Parque Solar Cauchari* en M3 / *Gestión de Inventario de Tienda* en M4)
 - **Fecha de Evaluación:** 12 de Noviembre de 2026
+- **Condición Final de la Cursada:** **NO REGULAR**
 - **Estado de Compilación:** Compila con advertencias de variables no inicializadas y funciones sin valor de retorno en todos sus caminos.
 - **Calificación Global:** **M3: 2 (No Aprobado - 22%) / M4: 2 (No Aprobado - 18% [Lab: 18/75 + Escrita: 0/25])**
 
@@ -234,3 +235,22 @@ A continuación encontrarás el desglose exhaustivo de cada criterio evaluado ju
    }
    ```
 3. **Inicializa siempre las variables acumuladoras y extremas antes de utilizarlas (`float suma = 0.0f;`).**
+
+---
+
+## 🎓 Condición Final de la Cursada y Cierre de Ciclo Lectivo 2026
+
+- **Condición Académica Definitiva:** **NO REGULAR**
+- **Coloquio Teórico:** 0
+- **Situación en Actas:** Deberá recursar la asignatura en el Ciclo Lectivo 2027.
+
+> [!NOTE]
+> ### 💬 Mensaje de Cierre y Orientación Académica
+> Al no haberse alcanzado el puntaje mínimo de acreditación requerido en las instancias de recuperación práctica, tu condición final en la materia es **NO REGULAR**.
+> 
+> Queremos transmitirte un mensaje constructivo y de aliento: el aprendizaje de la programación estructurada y el pensamiento algorítmico es un proceso que demanda práctica continua y maduración conceptual. A lo largo del cuatrimestre has transitado temas complejos (estructuras de control, modularización por funciones, pasaje por referencia y arreglos), sentando las bases necesarias para afianzar el razonamiento lógico.
+> 
+> **Recomendaciones Clave para el Recursado 2027:**
+> 1. **Práctica de Compilación Incremental:** Adquirir el hábito de compilar cada 2 o 3 líneas escritas; esto previene errores sintácticos acumulativos (puntos y coma, llaves, tipos) que bloquean la evaluación de la lógica.
+> 2. **Entrenamiento en Algoritmos de Arreglos:** Dedicar tiempo en el receso a implementar de manera autónoma los algoritmos nucleares: búsqueda lineal con centinela `-1`, corrimiento a la izquierda (*Shift-Left*) para bajas, corrimiento a la derecha (*Right-Shift*) para inserciones, y ordenamiento por Burbuja.
+> 3. La cátedra estará a tu disposición para consultas y acompañamiento pedagógico desde el inicio del ciclo 2027. ¡A no desanimarse y a encarar la próxima cursada con renovado compromiso y confianza!

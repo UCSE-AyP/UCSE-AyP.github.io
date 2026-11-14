@@ -6,6 +6,7 @@
 - **Archivo Entregado:** `Recu3erParcial - Mariano Videla.cpp`
 - **Tema Asignado:** Tema 2 (*Parque Eólico Rawson*)
 - **Fecha de Evaluación:** 12 de Noviembre de 2026
+- **Condición Final de la Cursada:** **REGULAR**
 - **Estado de Compilación:** Compila limpio y sin advertencias bajo estándar C++17.
 - **Calificación Final:** **9 (Nueve) — EXCELENTE (92% / 100%)**
 
@@ -139,3 +140,21 @@ El único aspecto técnico que impidió la calificación perfecta fue un sutil e
 3. ¡Felicitaciones por la claridad, orden y calidad lógica demostrada en tu código!
 
 
+
+
+---
+
+## 🎓 Condición Final de la Cursada y Cierre de Ciclo Lectivo 2026
+
+- **Condición Académica Definitiva:** **REGULAR**
+- **Coloquio Teórico:** 0 (Acreditación por examen práctico / instancia regularizadora)
+- **Situación en Actas:** Materia Regularizada (Habilitado para Examen Final)
+
+> [!TIP]
+> ### 📘 ¡Felicitaciones por la Regularización de la Asignatura!
+> Has alcanzado formalmente la condición de alumno **REGULAR** en la cátedra de **Algoritmos y Programación (Ciclo Lectivo 2026)**. Esto te otorga el derecho académico a presentarte a rendir el **Examen Final Regular** en cualquiera de las mesas ordinarias habilitadas por la universidad (Diciembre 2026, Febrero-Marzo 2027 o turnos subsiguientes dentro del período de regularidad reglamentario).
+>
+> **Recomendaciones para Preparar el Examen Final:**
+> 1. **Eje Práctico (Laboratorio C++):** Practicar la arquitectura de Arreglos de Estructuras (*Array of Structs - AoS*), combinando búsqueda secuencial con salida anticipada, alta posicional con *Right-Shift* y clave primaria única, compactación física con *Shift-Left* y algoritmos de ordenamiento elemental (Burbuja Mejorada, Selección Directa e Inserción Directa).
+> 2. **Eje Teórico y Trazas en Papel:** Ejercitar la resolución manual paso a paso de ordenamientos elementales sobre vectores numéricos.
+> 3. ¡Excelente esfuerzo durante el cuatrimestre y muchos éxitos en el examen final!

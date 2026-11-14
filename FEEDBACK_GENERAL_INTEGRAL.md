@@ -1,94 +1,83 @@
-# 📋 Acta General y Consolidado de Calificaciones: Recuperatorio Integral 2026
+# 📋 Acta General y Consolidado Definitivo: Cierre de Cursada 2026
 ### Cátedra de Algoritmos y Programación — Universidad Católica de Santiago del Estero (DASS)
-**Fecha de Evaluación:** 12 de Noviembre de 2026  
-**Instancia Evaluativa:** Recuperatorio Integral (3er y 4to Examen Parcial)  
-**Modalidad Módulo 4:** Bimodal — 75% Laboratorio C++ + 25% Instancia Escrita Individual en Papel A4  
-**Población Evaluada:** 15 estudiantes (20 entregas de código fuente en C++ y 9 evaluaciones escritas registradas)
+**Ciclo Lectivo 2026** — *Último Mensaje de Cierre de Cursada*  
+**Fecha de Publicación:** 14 de Noviembre de 2026  
+**Población Total de la Cátedra:** 28 estudiantes
 
 ---
 
-## 🎯 1. Resumen Ejecutivo de la Evaluación
+## 🎯 1. Resumen Ejecutivo y Cierre de la Cursada
 
-En el marco de la instancia de recuperación integral unificada de la materia **Algoritmos y Programación (Ciclo 2026)**, se consolidaron las calificaciones definitivas tras auditar el código fuente en C++ y registrar las calificaciones de la **evaluación escrita individual en papel A4 (traza manual de ordenamiento)**:
+Habiéndose sustanciado las instancias ordinarias de examen, el **Recuperatorio Integral (Módulos 3 y 4)** y el **Coloquio Teórico de Promoción**, la cátedra de **Algoritmos y Programación** publica a continuación la **nómina oficial definitiva de condiciones académicas finales** para el Ciclo Lectivo 2026.
 
-- **Módulo 3 (3er Recuperatorio - 100% C++):** Arreglos Unidimensionales (Cauchari / Rawson) evaluado en 5 funciones puras sobre 100 puntos. Mínimo de acreditación: **60%**.
-- **Módulo 4 (4to Recuperatorio - Bimodal 100%):** Arreglos de Estructuras (AoS) y Ordenamiento (Inventario Tienda / Reservas Hotel), ponderado en:
-  - **75% Laboratorio de Programación C++** (Struct primitivo, Inserción posicional *Right-Shift* con unicidad, Modificación *in-place* con clave inmutable y Ordenamiento Burbuja Mejorada con intercambio completo).
-  - **25% Instancia Escrita Individual (Papel A4)** (Traza paso a paso de Selección Directa en Tema 1 o Inserción Directa en Tema 2).
-
-Todas las devoluciones individuales dirigidas a los alumnos se encuentran redactadas en segunda persona, con desglose de descuentos (`* ⚠️ **A mejorar (-X%):**`), líneas textuales y recomendaciones en la carpeta [`feedbacks/`](file:///c:/Universidad/Algoritmos%20y%20Programación/Integral/Entregas-Integral/feedbacks).
+Las devoluciones cualitativas y cuantitativas dirigidas a los estudiantes evaluados en el recuperatorio y a los estudiantes ausentes se encuentran individualizadas en la carpeta [`feedbacks/`](file:///c:/Universidad/Algoritmos%20y%20Programación/Integral/Entregas-Integral/feedbacks).
 
 ---
 
-## 📊 2. Tabla Consolidada de Calificaciones Definitivas
+## 📊 2. Nómina Oficial Definitiva de Calificaciones y Condiciones (Cohorte 2026)
 
-| Estudiante | Módulo(s) | Tema | Subtotal M3 (100%) | Lab C++ M4 (75p) | Escrita M4 (25p) | Total M4 (100%) | Nota Final Definitiva | Condición Académica | Devolución Individual |
-| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| **Gallardo, Lucas Octavio** | M4 | Tema 2 | — | 72.0 / 75 (96.0%) | **25 / 25 (100%)** | **97.0%** | **10 (Sobresaliente)** | **Aprobado (Sobresaliente)** | [Ver Devolución](file:///c:/Universidad/Algoritmos%20y%20Programación/Integral/Entregas-Integral/feedbacks/feedback-GallardoLucas.md) |
-| **Gallardo, Tiziana** | M3 | Tema 2 | **97% / 100%** | — | — | — | **10 (Sobresaliente)** | **Aprobado (Sobresaliente)** | [Ver Devolución](file:///c:/Universidad/Algoritmos%20y%20Programación/Integral/Entregas-Integral/feedbacks/feedback-GallardoTiziana.md) |
-| **Jerez, Ulises Joaquín** | M4 | Tema 1 | — | 68.0 / 75 (90.7%) | **25 / 25 (100%)** | **93.0%** | **9 (Excelente)** | **Aprobado (Excelente)** | [Ver Devolución](file:///c:/Universidad/Algoritmos%20y%20Programación/Integral/Entregas-Integral/feedbacks/feedback-JerezJoaquin.md) |
-| **Videla, Mariano** | M3 | Tema 2 | **92% / 100%** | — | — | — | **9 (Excelente)** | **Aprobado (Excelente)** | [Ver Devolución](file:///c:/Universidad/Algoritmos%20y%20Programación/Integral/Entregas-Integral/feedbacks/feedback-VidelaMariano.md) |
-| **Tabarcache, Martina** | M4 | Tema 1 | — | 75.0 / 75 (100%) | **0 / 25 (0%)** | **75.0%** | **5 (Cinco)** | **Aprobado (Aceptable)** | [Ver Devolución](file:///c:/Universidad/Algoritmos%20y%20Programación/Integral/Entregas-Integral/feedbacks/feedback-TabarcacheMartina.md) |
-| **Fernández, Facundo Mauricio** | M4 | Tema 2 | — | 68.0 / 75 (90.7%) | **0 / 25 (0%)** | **68.0%** | **5 (Cinco)** | **Aprobado (Aceptable)** | [Ver Devolución](file:///c:/Universidad/Algoritmos%20y%20Programación/Integral/Entregas-Integral/feedbacks/feedback-FernandezMauricio.md) |
-| **Rodríguez, Jairo** | M3 | Tema 1 | **59% / 100%** | — | — | — | **3 (Tres)** | **Insuficiente (Recupera)** | [Ver Devolución](file:///c:/Universidad/Algoritmos%20y%20Programación/Integral/Entregas-Integral/feedbacks/feedback-RodriguezJairo.md) |
-| **Velásquez, Hernán** | M4 | Tema 1 | — | 48.0 / 75 (64.0%) | **0 / 25 (0%)** | **48.0%** | **3 (Tres)** | **Insuficiente (Recupera)** | [Ver Devolución](file:///c:/Universidad/Algoritmos%20y%20Programación/Integral/Entregas-Integral/feedbacks/feedback-VelasquezHernan.md) |
-| **Palavecino Orellana, Ignacio** | Ambos | Tema 1 | **58% / 100%** | 14.0 / 75 (18.7%) | **20 / 25 (80%)** | **34.0%** | **M3: 3 / M4: 2** | **Insuficiente (M3) / No Aprobado (M4)** | [Ver Devolución](file:///c:/Universidad/Algoritmos%20y%20Programación/Integral/Entregas-Integral/feedbacks/feedback-PalavecinoIgnacio.md) |
-| **Rodríguez, Benjamín** | Ambos | Tema 2 | **48% / 100%** | 24.0 / 75 (32.0%) | *No reg. (0/25)* | **24.0%** | **M3: 3 / M4: 2** | **Insuficiente (M3) / No Aprobado (M4)** | [Ver Devolución](file:///c:/Universidad/Algoritmos%20y%20Programación/Integral/Entregas-Integral/feedbacks/feedback-RodriguezBenjamin.md) |
-| **Colman, Araceli Rafaela** | Ambos | Tema 1 | **8% / 100%** | 12.0 / 75 (16.0%) | **25 / 25 (100%)** | **37.0%** | **M3: 1 / M4: 2** | **No Aprobado** | [Ver Devolución](file:///c:/Universidad/Algoritmos%20y%20Programación/Integral/Entregas-Integral/feedbacks/feedback-ColmanAraceli.md) |
-| **Sosa, Noelia** | M3 | Tema 2 | **35% / 100%** | — | — | — | **2 (Dos)** | **No Aprobado** | [Ver Devolución](file:///c:/Universidad/Algoritmos%20y%20Programación/Integral/Entregas-Integral/feedbacks/feedback-SosaNoelia.md) |
-| **Narváez, Leonel** | M3 | Tema 1 | **47% / 100%** | — | — | — | **3 (Tres)** | **Insuficiente (Recupera)** | [Ver Devolución](file:///c:/Universidad/Algoritmos%20y%20Programación/Integral/Entregas-Integral/feedbacks/feedback-NarvaezLeonel.md) |
-| **Lozano, Ignacio** | Ambos | Tema 2 | **15% / 100%** | 8.0 / 75 (10.7%) | **25 / 25 (100%)** | **33.0%** | **M3: 2 / M4: 2** | **No Aprobado** | [Ver Devolución](file:///c:/Universidad/Algoritmos%20y%20Programación/Integral/Entregas-Integral/feedbacks/feedback-LozanoIgnacio.md) |
-| **Mir, Sofía Valentina** | Ambos | Tema 1 | **22% / 100%** | 18.0 / 75 (24.0%) | **0 / 25 (0%)** | **18.0%** | **M3: 2 / M4: 2** | **No Aprobado** | [Ver Devolución](file:///c:/Universidad/Algoritmos%20y%20Programación/Integral/Entregas-Integral/feedbacks/feedback-MirSofiaValentina.md) |
-
----
-
-## 📈 3. Balance Estadístico de Rendimiento
-
-- **Total de Estudiantes Evaluados:** 15
-- **Aprobados en al menos un Módulo (Calificación ≥ 4 / 60%):** 6 estudiantes (**40.0%**)
-  - **Módulo 3:** 2 estudiantes aprobados (Gallardo Tiziana: 97% - Nota 10; Videla Mariano: 92% - Nota 9).
-  - **Módulo 4:** 4 estudiantes aprobados (Gallardo Lucas: 97% - Nota 10; Jerez Joaquín: 93% - Nota 9; Tabarcache Martina: 75% - Nota 5; Fernández Facundo: 68% - Nota 5).
-- **Estudiantes en Condición de Insuficiente (40 – 59% / Nota 3):** 5 estudiantes
-  - **Rodríguez Jairo (M3: 59%):** Quedó a tan solo 1 punto porcentual de acreditar el Módulo 3.
-  - **Palavecino Ignacio (M3: 58%):** A 2 puntos porcentuales de acreditar el Módulo 3.
-  - **Velásquez Hernán (M4: 48%):** Aprobó el laboratorio C++ con 48/75 (64%), pero al tener 0/25 en la parte escrita su total acumulado fue 48%, quedando en condición de recuperar.
-  - **Rodríguez Benjamín (M3: 48%):** Calificación de 48% en Módulo 3, en condición de recuperar.
-  - **Narváez Leonel (M3: 47%):** Tras convalidar el tipo `double` por parte del JTP (eliminando la penalización de -10% y el descuento en carga), alcanzó 47% (Nota 3), accediendo a condición de recuperar.
-- **Impacto de la Evaluación Escrita en Papel (25%):**
-  - Casos como **Colman Araceli (25/25)** y **Lozano Ignacio (25/25)** demostraron una excelente comprensión teórica de las trazas de ordenamiento en papel, permitiéndoles subir de notas mínimas en máquina a 37% y 33% respectivamente, aunque sin alcanzar el 60% global.
-  - Casos como **Tabarcache Martina** y **Fernández Facundo** lograron acreditar la materia gracias a su sobresaliente desempeño práctico en máquina (75/75 y 68/75 respectivamente), compensando la ausencia de puntaje en la parte escrita.
+| # | Apellido y Nombre | Condición Final Oficial | Coloquio Teórico | Nota de Promoción | Observaciones / Devolución Individual |
+| :-: | :--- | :---: | :---: | :---: | :--- |
+| 1 | **Bravo, Guadalupe Verónica** | <span style="color:red; font-weight:bold;">NO REGULAR</span> | 0 | — | *Ausente a recuperación / coloquio.* [Ver Devolución](file:///c:/Universidad/Algoritmos%20y%20Programación/Integral/Entregas-Integral/feedbacks/feedback-BravoGuadalupe.md) |
+| 2 | **Castillo, Lisandro** | **PROMOCIONADO** | 93 | **9 (Nueve)** | *Promoción directa acreditada.* |
+| 3 | **Chocobar Pereyra, Hernán José** | **REGULAR** | 0 | — | *Materia regularizada. Habilitado para Examen Final.* |
+| 4 | **Colman, Araceli Rafaela** | **NO REGULAR** | 0 | — | *Recu Integral insuficiente (37%).* [Ver Devolución](file:///c:/Universidad/Algoritmos%20y%20Programación/Integral/Entregas-Integral/feedbacks/feedback-ColmanAraceli.md) |
+| 5 | **Cortez, Leandro Ariel** | **PROMOCIONADO** | 80 | **9 (Nueve)** | *Promoción directa acreditada.* |
+| 6 | **Estrada, Aaron Javier** | <span style="color:red; font-weight:bold;">NO REGULAR</span> | 0 | — | *Ausente a recuperación / coloquio.* [Ver Devolución](file:///c:/Universidad/Algoritmos%20y%20Programación/Integral/Entregas-Integral/feedbacks/feedback-EstradaAaron.md) |
+| 7 | **Farquin, Mauricio Ezequiel** | **REGULAR** | 0 | — | *Materia regularizada. Habilitado para Examen Final.* |
+| 8 | **Fernández, Facundo Mauricio** | **REGULAR** | 0 | — | *Aprobó M4 Lab (68/75).* [Ver Devolución](file:///c:/Universidad/Algoritmos%20y%20Programación/Integral/Entregas-Integral/feedbacks/feedback-FernandezMauricio.md) |
+| 9 | **Gallardo, Lucas Octavio** | **PROMOCIONADO** | 67 | **9 (Nueve)** | *Aprobó M4 (97%) y Coloquio (67).* [Ver Devolución](file:///c:/Universidad/Algoritmos%20y%20Programación/Integral/Entregas-Integral/feedbacks/feedback-GallardoLucas.md) |
+| 10 | **Gallardo, Tiziana Florencia** | **REGULAR** | 0 | — | *Aprobó M3 (97%).* [Ver Devolución](file:///c:/Universidad/Algoritmos%20y%20Programación/Integral/Entregas-Integral/feedbacks/feedback-GallardoTiziana.md) |
+| 11 | **Jerez, Ulises Joaquín** | **REGULAR** | 0 | — | *Aprobó M4 (93%).* [Ver Devolución](file:///c:/Universidad/Algoritmos%20y%20Programación/Integral/Entregas-Integral/feedbacks/feedback-JerezJoaquin.md) |
+| 12 | **Lozano, Ignacio** | **NO REGULAR** | 0 | — | *Recu Integral insuficiente (33%).* [Ver Devolución](file:///c:/Universidad/Algoritmos%20y%20Programación/Integral/Entregas-Integral/feedbacks/feedback-LozanoIgnacio.md) |
+| 13 | **Mir, Sofía Valentina** | **NO REGULAR** | 0 | — | *Recu Integral insuficiente (18%).* [Ver Devolución](file:///c:/Universidad/Algoritmos%20y%20Programación/Integral/Entregas-Integral/feedbacks/feedback-MirSofiaValentina.md) |
+| 14 | **Montórfano C., Lucas E.** | **REGULAR** | 0 | — | *Materia regularizada. Habilitado para Examen Final.* |
+| 15 | **Moya, Mateo D.** | <span style="color:red; font-weight:bold;">NO REGULAR</span> | 0 | — | *Ausente a recuperación / coloquio.* [Ver Devolución](file:///c:/Universidad/Algoritmos%20y%20Programación/Integral/Entregas-Integral/feedbacks/feedback-MoyaMateo.md) |
+| 16 | **Narváez, Leonel L.** | **NO REGULAR** | 0 | — | *Recu M3 reprobado (5% - Nota 1).* [Ver Devolución](file:///c:/Universidad/Algoritmos%20y%20Programación/Integral/Entregas-Integral/feedbacks/feedback-NarvaezLeonel.md) |
+| 17 | **Palavecino O., Ignacio M.** | **NO REGULAR** | 0 | — | *Recu Integral insuficiente (M3: 58%, M4: 34%).* [Ver Devolución](file:///c:/Universidad/Algoritmos%20y%20Programación/Integral/Entregas-Integral/feedbacks/feedback-PalavecinoIgnacio.md) |
+| 18 | **Rodríguez, Benjamín Emanuel** | **NO REGULAR** | 0 | — | *Recu Integral insuficiente (M3: 48%, M4: 24%).* [Ver Devolución](file:///c:/Universidad/Algoritmos%20y%20Programación/Integral/Entregas-Integral/feedbacks/feedback-RodriguezBenjamin.md) |
+| 19 | **Rodríguez, Jairo Gustavo** | **REGULAR** | 0 | — | *Regularizado.* [Ver Devolución](file:///c:/Universidad/Algoritmos%20y%20Programación/Integral/Entregas-Integral/feedbacks/feedback-RodriguezJairo.md) |
+| 20 | **Rodríguez, Marcelo Ignacio** | **PROMOCIONADO** | 80 | **9 (Nueve)** | *Promoción directa acreditada.* |
+| 21 | **Sajama, Lucía Victoria** | <span style="color:red; font-weight:bold;">NO REGULAR</span> | 0 | — | *Ausente a recuperación / coloquio.* [Ver Devolución](file:///c:/Universidad/Algoritmos%20y%20Programación/Integral/Entregas-Integral/feedbacks/feedback-SajamaVictoria.md) |
+| 22 | **Sosa, Noelia Soledad** | **NO REGULAR** | 0 | — | *Recu M3 reprobado (10% - Nota 1).* [Ver Devolución](file:///c:/Universidad/Algoritmos%20y%20Programación/Integral/Entregas-Integral/feedbacks/feedback-SosaNoelia.md) |
+| 23 | **Tabarcache, Martina Pilar** | **REGULAR** | 0 | — | *Aprobó M4 Lab (75/75).* [Ver Devolución](file:///c:/Universidad/Algoritmos%20y%20Programación/Integral/Entregas-Integral/feedbacks/feedback-TabarcacheMartina.md) |
+| 24 | **Valdez, Micaela Agustina** | **PROMOCIONADO** | 80 | **9 (Nueve)** | *Promoción directa acreditada.* |
+| 25 | **Velásquez, Hernán Agustín** | **REGULAR** | 0 | — | *Regularizado.* [Ver Devolución](file:///c:/Universidad/Algoritmos%20y%20Programación/Integral/Entregas-Integral/feedbacks/feedback-VelasquezHernan.md) |
+| 26 | **Videla, Mariano Lucas** | **REGULAR** | 0 | — | *Aprobó M3 (92%).* [Ver Devolución](file:///c:/Universidad/Algoritmos%20y%20Programación/Integral/Entregas-Integral/feedbacks/feedback-VidelaMariano.md) |
+| 27 | **Vigabriel, Abril Constanza** | **PROMOCIONADO** | 87 | **9 (Nueve)** | *Promoción directa acreditada.* |
+| 28 | **Zajama, Matías Javier** | **PROMOCIONADO** | 87 | **9 (Nueve)** | *Promoción directa acreditada.* |
 
 ---
 
-## ⚠️ 4. Catálogo de Errores Frecuentes Detectados en la Cohorte
+## 📈 3. Distribución Estadística de la Cursada
 
-### En Módulo 3 (Arreglos Unidimensionales):
-1. **Confusión entre Shift-Left y Decremento Aislado de Tamaño:**  
-   Varios estudiantes (Mir, Rodríguez Benjamín, Palavecino) entendieron que dar de baja consistía únicamente en hacer `tam--`, sin desplazar contiguamente los elementos posteriores hacia la izquierda (`arr[i] = arr[i + 1]`). Esto deja el elemento "borrado" en su celda original y oculta indebidamente el último dato válido.
-2. **Condiciones Invertidas en Capacidad:**  
-   Escribir `if (tam < capacidad)` para abortar (Sosa) o `while (... || tam == capacidad)` (Rodríguez B.), generando bloqueos inmediatos o accesos fuera de rango en la posición `[15]`.
-3. **Variables Acumuladoras y de Búsqueda sin Inicializar:**  
-   Declarar `float acumulador;` o `int pos;` sin inicializar en 0, sumando sobre basura residual de la pila o evaluando centinelas inexistentes.
-4. **Recursión no controlada en Búsqueda:**  
-   Llamar a la propia función `BuscarMedicion` dentro de su cuerpo (Narváez), provocando desbordamiento de pila (*Stack Overflow*).
+```
++-------------------------------------------------------------------+
+| PROMOCIONADOS:  7 alumnos (25.0%)  [Nota 9 en actas oficiales]   |
+| REGULARES:     10 alumnos (35.7%)  [Habilitados a Examen Final]   |
+| NO REGULARES:  11 alumnos (39.3%)  [Recursan en Ciclo 2027]       |
+| TOTAL COHORTE: 28 alumnos (100.0%)                                |
++-------------------------------------------------------------------+
+```
 
-### En Módulo 4 (Arreglos de Estructuras y Ordenamiento):
-1. **Omisión de la Instancia Escrita en Papel A4:**  
-   Tres estudiantes (Tabarcache, Fernández, Velásquez) obtuvieron 0/25 en la traza en papel, lo que redujo drásticamente su nota final (en el caso de Velásquez, impidiéndole la acreditación directa pese a haber aprobado en máquina).
-2. **Permutación de Campos Sueltos en Ordenamiento:**  
-   Intercambiar únicamente el atributo numérico (ej. `precioTotal`) en lugar del `struct` completo (Rodríguez B.), desincronizando los datos del arreglo y destruyendo la integridad referencial de cada entidad.
-3. **Desfasaje de Límites en Right-Shift (Off-by-One):**  
-   Frenar el corrimiento en `i > pos + 1` en lugar de `i > pos` (Fernández), sobreescribiendo el elemento alojado en `arr[pos]` sin haberlo copiado previamente a `arr[pos + 1]`.
-4. **Puntos y Coma en Cierre de Struct:**  
-   Olvidar el `;` obligatorio tras la llave de cierre de la definición del struct (Palavecino), o declarar el struct con paréntesis como si fuera una función (Colman).
+- **Porcentaje de Retención Académica (Promocionados + Regulares):** **60.7%** (17 alumnos han acreditado la regularidad o promoción de la asignatura).
+- **Estudiantes Ausentes a la Instancia de Recuperación:** 4 alumnos (Bravo Guadalupe, Estrada Aaron, Moya Mateo, Sajama Victoria), con condición final **No Regular**.
+- **Promociones Directas:** 7 estudiantes alcanzaron notas de coloquio sobresalientes (entre 67 y 93 puntos), consolidando una calificación definitiva de **9 (Nueve)**.
 
 ---
 
-## 💡 5. Recomendaciones Docentes para Instancias de Recuperación
+## 🎓 4. Orientaciones para las Siguientes Etapas
 
-1. **Jerarquización Equitativa de la Instancia Escrita:**  
-   Recordar y concientizar a los estudiantes que la evaluación en papel A4 representa el **25% neto de la nota final**. Ningún estudiante debe retirarse del examen sin intentar la traza de ordenamiento manual.
-2. **Práctica Obligatoria de Compilación Incremental:**  
-   Fomentar que los alumnos compilen tras escribir cada bloque o función. Quienes acumularon más de 50 líneas sin compilar sufrieron errores sintácticos bloqueantes que invalidaron su lógica algorítmica.
-3. **Refuerzo en Pizarra de Corrimientos (Shifts):**  
-   Realizar ejercicios gráficos de traza diferenciando el sentido y los índices exactos de *Shift-Left* (de izquierda a derecha para borrar) y *Shift-Right* (de derecha a izquierda para insertar).
+### Para los alumnos PROMOCIONADOS:
+- Quedan eximidos de rendir examen final.
+- La nota final de 9 (Nueve) ya fue comunicada para el labrado de actas de promoción.
+- Pueden inscribirse en las asignaturas correlativas de segundo año en el período de matrícula 2027.
+
+### Para los alumnos REGULARES:
+- Conservan la regularidad por el período reglamentario establecido por la UCSE (2 años / 6 turnos ordinarios).
+- Las mesas de exámenes finales comienzan en el turno Diciembre 2026.
+- Se sugiere preparar el examen final repasando la integración en C++ de algoritmos de ordenamiento (Burbuja Mejorada, Selección, Inserción), búsqueda y compactación contigua sobre Arreglos de Estructuras (*AoS*).
+
+### Para los alumnos NO REGULARES:
+- Deberán reinscribirse para recursar la asignatura en el primer cuatrimestre del Ciclo Lectivo 2027.
+- La cátedra habilitará canales de consulta desde el inicio del período lectivo para brindar orientación temprana en sintaxis, modularización y resolución de problemas algorítmicos.

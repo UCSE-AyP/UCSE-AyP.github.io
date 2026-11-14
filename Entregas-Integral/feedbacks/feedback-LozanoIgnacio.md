@@ -6,6 +6,7 @@
 - **Archivos Entregados:** `Lozanoignacio 3er parcial tema 2.cpp` (Módulo 3, Tema 2) y `4to parcial tema 2 Lozano ignacio.cpp` (Módulo 4, Tema 2)
 - **Tema Asignado:** Tema 2 (*Parque Eólico Rawson* en M3 / *Sistema de Reservas Hoteleras* en M4)
 - **Fecha de Evaluación:** 12 de Noviembre de 2026
+- **Condición Final de la Cursada:** **NO REGULAR**
 - **Estado de Compilación:** **No compila** en ninguno de los dos módulos por múltiples errores sintácticos severos (omisión masiva de punto y coma, palabras clave mal escritas, operadores inexistentes y llaves desbalanceadas).
 - **Calificación Global:** **M3: 2 (No Aprobado - 15%) / M4: 2 (No Aprobado - 33% [Lab: 8/75 + Escrita: 25/25])**
 
@@ -174,3 +175,22 @@ Es indispensable que realices prácticas de compilación incremental: escribir u
    - Salida: `cout << "Texto" << variable << endl;`
    - Bucle `for`: `for (int i = 0; i < tam; i++) { ... }` (¡nunca con `;` al final de la línea del `for`!).
    - Asignación: `arr[tam] = valor;` (el signo `=` es obligatorio).
+
+---
+
+## 🎓 Condición Final de la Cursada y Cierre de Ciclo Lectivo 2026
+
+- **Condición Académica Definitiva:** **NO REGULAR**
+- **Coloquio Teórico:** 0
+- **Situación en Actas:** Deberá recursar la asignatura en el Ciclo Lectivo 2027.
+
+> [!NOTE]
+> ### 💬 Mensaje de Cierre y Orientación Académica
+> Al no haberse alcanzado el puntaje mínimo de acreditación requerido en las instancias de recuperación práctica, tu condición final en la materia es **NO REGULAR**.
+> 
+> Queremos transmitirte un mensaje constructivo y de aliento: el aprendizaje de la programación estructurada y el pensamiento algorítmico es un proceso que demanda práctica continua y maduración conceptual. A lo largo del cuatrimestre has transitado temas complejos (estructuras de control, modularización por funciones, pasaje por referencia y arreglos), sentando las bases necesarias para afianzar el razonamiento lógico.
+> 
+> **Recomendaciones Clave para el Recursado 2027:**
+> 1. **Práctica de Compilación Incremental:** Adquirir el hábito de compilar cada 2 o 3 líneas escritas; esto previene errores sintácticos acumulativos (puntos y coma, llaves, tipos) que bloquean la evaluación de la lógica.
+> 2. **Entrenamiento en Algoritmos de Arreglos:** Dedicar tiempo en el receso a implementar de manera autónoma los algoritmos nucleares: búsqueda lineal con centinela `-1`, corrimiento a la izquierda (*Shift-Left*) para bajas, corrimiento a la derecha (*Right-Shift*) para inserciones, y ordenamiento por Burbuja.
+> 3. La cátedra estará a tu disposición para consultas y acompañamiento pedagógico desde el inicio del ciclo 2027. ¡A no desanimarse y a encarar la próxima cursada con renovado compromiso y confianza!

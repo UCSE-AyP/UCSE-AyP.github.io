@@ -6,6 +6,7 @@
 - **Archivo Entregado:** `rodriguezjairo_modulo3.cpp`
 - **Tema Asignado:** Tema 1 (*Parque Solar Cauchari*)
 - **Fecha de Evaluación:** 12 de Noviembre de 2026
+- **Condición Final de la Cursada:** **REGULAR**
 - **Estado de Compilación:** Compila limpio bajo C++17.
 - **Calificación Final:** **3 (Tres) — INSUFICIENTE (59% / 100%)**
 
@@ -123,3 +124,24 @@ Sin embargo, no lograste alcanzar la aprobación debido a que dejaste incompleta
    ```
 2. **Cuidado con las ramas en bifurcaciones:**  
    Si la condición principal es `if (arr[i] > umbral)`, en el `else` no vuelvas a preguntar `if (arr[i] < umbral)` porque dejarás afuera el valor igual al umbral (`140.0`). Usa simplemente `else { cout << ...; }`.
+
+---
+
+## 🎓 Condición Final de la Cursada y Cierre de Ciclo Lectivo 2026
+
+- **Condición Académica Definitiva:** **REGULAR**
+- **Coloquio Teórico:** 0 (Acreditación por examen práctico / instancia regularizadora)
+- **Situación en Actas:** Materia Regularizada (Habilitado/a para Examen Final)
+
+> [!TIP]
+> ### 📘 ¡Felicitaciones por la Regularización de la Asignatura!
+> Has alcanzado formalmente la condición de alumno **REGULAR** en la cátedra de **Algoritmos y Programación (Ciclo Lectivo 2026)**. Esto te otorga el derecho académico a presentarte a rendir el **Examen Final Regular** en cualquiera de las mesas ordinarias habilitadas por la universidad (Diciembre 2026, Febrero-Marzo 2027 o turnos subsiguientes dentro del período de regularidad reglamentario).
+>
+> **Recomendaciones para Preparar el Examen Final:**
+> 1. **Eje Práctico (Laboratorio C++):** Practicar de forma intensiva la arquitectura de Arreglos de Estructuras (*Array of Structs - AoS*), asegurando la implementación fluida de:
+>    - Búsqueda secuencial con salida anticipada.
+>    - Alta posicional (*Right-Shift*) con preservación de unicidad de clave primaria.
+>    - Baja física (*Shift-Left*) compactando el arreglo contiguo y liberando cupo.
+>    - Ordenamiento por método de Burbuja Mejorada (con bandera booleana) e intercambio completo de registros por referencia.
+> 2. **Eje Teórico y Trazas en Papel:** Ejercitar la resolución manual paso a paso de ordenamientos elementales (Selección Directa e Inserción Directa) sobre vectores numéricos ($N=5$).
+> 3. ¡Excelente esfuerzo durante el cuatrimestre y muchos éxitos en el examen final!
